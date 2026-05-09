@@ -44,6 +44,11 @@ class Array {
   // ============================================================================
   void replaceByIndex(int index, const std::string &value);
 
+  // ============================================================================
+  // A6 Получение длины массива: ALENGTH
+  // ============================================================================
+  int length() const;
+
   void saveToFile(const std::string &filename) const;
   void loadFromFile(const std::string &filename);
 };

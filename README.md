@@ -44,3 +44,7 @@
 ```bash
 ./dbms --file data/Adata.txt --query 'AREPLACE 2 Grey'
 ```
+- A6 Длина массива: `ALEN`
+```bash
+./dbms --file data/Adata.txt --query 'ALEN'
+```

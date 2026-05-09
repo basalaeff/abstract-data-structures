@@ -83,6 +83,15 @@ void ConsoleUI::processQuery(const std::string& query) {
     } else {
       std::cout << "Error: AREPLACE command requires 2 arguments." << std::endl;
     }
+    // ============================================================================
+    // A6 Получение длины массива: ALENGTH
+    // ============================================================================
+  } else if (tokens[0] == "ALEN") {
+    if (tokens.size() == 1) {
+      std::cout << "Length of the array: " << array_.length() << std::endl;
+    } else {
+      std::cout << "Error: ALEN command requires 0 arguments." << std::endl;
+    }
   } else {
     std::cout << "Unknown command: " << cmd << std::endl;
   }
