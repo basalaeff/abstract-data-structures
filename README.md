@@ -36,3 +36,7 @@
 ```bash
 ./dbms --file data/Adata.txt --query 'AGET 2'
 ```
+- A4 Удаление элемента (по индексу): `ADEL index`
+```bash
+./dbms --file data/Adata.txt --query 'ADEL 2'
+```

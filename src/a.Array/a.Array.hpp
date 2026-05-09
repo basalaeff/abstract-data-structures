@@ -34,6 +34,11 @@ class Array {
   // ============================================================================
   std::string get(int index) const;
 
+  // ============================================================================
+  // A4 Удаление элемента(по индексу): ADEL index
+  // ============================================================================
+  void removeByIndex(int index);
+
   void saveToFile(const std::string &filename) const;
   void loadFromFile(const std::string &filename);
 };
