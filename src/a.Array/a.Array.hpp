@@ -29,6 +29,11 @@ class Array {
   // ============================================================================
   void addToTheIndex(int index, const std::string &value);
 
+  // ============================================================================
+  // A3 Получение элемента(по индексу): AGET index
+  // ============================================================================
+  std::string get(int index) const;
+
   void saveToFile(const std::string &filename) const;
   void loadFromFile(const std::string &filename);
 };

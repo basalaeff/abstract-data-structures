@@ -51,8 +51,18 @@ void ConsoleUI::processQuery(const std::string& query) {
     } else {
       std::cout << "Error: AINSERT command requires 2 arguments." << std::endl;
     }
-  }
-  else {
+    // ============================================================================
+    // A3 Получение элемента(по индексу): AGET index
+    // ============================================================================
+  } else if (cmd == "AGET") {
+    if (tokens.size() == 2) {
+      int index = stoi(tokens[1]);
+      std::string item = array_.get(index);
+      std::cout << "Item by index " << index << ": " << item << std::endl;
+    } else {
+      std::cout << "Error: AGET command requires 1 arguments." << std::endl;
+    }
+  } else {
     std::cout << "Unknown command: " << cmd << std::endl;
   }
 }

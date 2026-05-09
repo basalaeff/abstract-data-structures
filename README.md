@@ -32,3 +32,7 @@
 ```bash
 ./dbms --file data/Adata.txt --query 'AINSERT 2 Yellow'
 ```
+- A3 Получение элемента (по индексу): `AGET index`
+```bash
+./dbms --file data/Adata.txt --query 'AGET 2'
+```
