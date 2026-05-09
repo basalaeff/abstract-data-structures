@@ -24,6 +24,11 @@ class Array {
   // ============================================================================
   void addToTheEnd(const std::string &value);
 
+  // ============================================================================
+  // A2 Добавление элемента(по индексу): AINSERT index value
+  // ============================================================================
+  void addToTheIndex(int index, const std::string &value);
+
   void saveToFile(const std::string &filename) const;
   void loadFromFile(const std::string &filename);
 };

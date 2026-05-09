@@ -28,3 +28,7 @@
 ./dbms --file data/Adata.txt --query 'AADD Green'
 ./dbms --file data/Adata.txt --query 'AADD Blue'
 ```
+- A2 Добавление элемента (по индексу): `AINSERT index value`
+```bash
+./dbms --file data/Adata.txt --query 'AINSERT 2 Yellow'
+```

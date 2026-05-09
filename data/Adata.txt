@@ -1,5 +1,6 @@
 Black
 White
+Yellow
 Red
 Green
 Blue
