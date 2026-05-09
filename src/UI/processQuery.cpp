@@ -65,12 +65,23 @@ void ConsoleUI::processQuery(const std::string& query) {
     // ============================================================================
     // A4 Удаление элемента(по индексу): ADEL index
     // ============================================================================
-  } else if (tokens[0] == "ADEL") {
+  } else if (cmd == "ADEL") {
     if (tokens.size() == 2) {
       int index = stoi(tokens[1]);
       array_.removeByIndex(index);
     } else {
       std::cout << "Error: ADEL command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
+    // A5 Замена элемента(по индексу): ASET index value
+    // ============================================================================
+  } else if (cmd == "AREPLACE") {
+    if (tokens.size() == 3) {
+      int index = stoi(tokens[1]);
+      std::string value = tokens[2];
+      array_.replaceByIndex(index, value);
+    } else {
+      std::cout << "Error: AREPLACE command requires 2 arguments." << std::endl;
     }
   } else {
     std::cout << "Unknown command: " << cmd << std::endl;

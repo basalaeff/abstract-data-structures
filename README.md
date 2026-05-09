@@ -40,3 +40,7 @@
 ```bash
 ./dbms --file data/Adata.txt --query 'ADEL 2'
 ```
+- A5 Замена элемента (по индексу): `AREPLACE index value`
+```bash
+./dbms --file data/Adata.txt --query 'AREPLACE 2 Grey'
+```

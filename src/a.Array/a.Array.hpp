@@ -39,6 +39,11 @@ class Array {
   // ============================================================================
   void removeByIndex(int index);
 
+  // ============================================================================
+  // A5 Замена элемента(по индексу): ASET index value
+  // ============================================================================
+  void replaceByIndex(int index, const std::string &value);
+
   void saveToFile(const std::string &filename) const;
   void loadFromFile(const std::string &filename);
 };
