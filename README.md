@@ -48,3 +48,7 @@
 ```bash
 ./dbms --file data/Adata.txt --query 'ALEN'
 ```
+- A7 Чтение: `PRINT`
+```bash
+./dbms --file data/Adata.txt --query 'PRINT'
+```

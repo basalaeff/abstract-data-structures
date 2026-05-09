@@ -17,9 +17,20 @@ void ConsoleUI::loadData(const std::string& filename,
       // Проверка команд для массива
       if (command[0] == 'A') {
         array_.loadFromFile(filename);
+      } else if (command == "PRINT") {
+        std::ifstream file(filename);
+        if (!file.is_open()) {
+          std::cerr << "Error: could not open file " << filename << std::endl;
+          return;
+        }
+        std::string line;
+        while (std::getline(file, line)) {
+          std::cout << line << std::endl;
+        }
+        file.close();  // Закрытие файла
+      } else {
+        std::cout << "Error: unrecognized command type." << std::endl;
       }
-    } else {
-      std::cout << "Error: unrecognized command type." << std::endl;
     }
   } catch (const std::exception& e) {
     std::cerr << "Load error: " << e.what() << std::endl;

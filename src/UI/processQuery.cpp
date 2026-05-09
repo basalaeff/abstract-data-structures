@@ -86,12 +86,17 @@ void ConsoleUI::processQuery(const std::string& query) {
     // ============================================================================
     // A6 Получение длины массива: ALENGTH
     // ============================================================================
-  } else if (tokens[0] == "ALEN") {
+  } else if (cmd == "ALEN") {
     if (tokens.size() == 1) {
       std::cout << "Length of the array: " << array_.length() << std::endl;
     } else {
       std::cout << "Error: ALEN command requires 0 arguments." << std::endl;
     }
+  } else if (cmd == "PRINT") {
+    // ============================================================================
+    // A7 Печать массива: APRINT
+    // ============================================================================
+    array_.print();
   } else {
     std::cout << "Unknown command: " << cmd << std::endl;
   }
