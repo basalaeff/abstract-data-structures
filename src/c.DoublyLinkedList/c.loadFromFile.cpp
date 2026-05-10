@@ -1,6 +1,7 @@
-#include "c.DoublyLinkedList.hpp"
 #include <fstream>
 #include <iostream>
+
+#include "c.DoublyLinkedList.hpp"
 
 // ============================================================================
 // ЗАГРУЗКА ИЗ ФАЙЛА
@@ -8,7 +9,7 @@
 void DoublyLinkedList::loadFromFile(const std::string& filename) {
   // Очищаем текущий список
   while (head_ != nullptr) {
-    removeHead();
+    removeFromHead();
   }
 
   std::ifstream file(filename);

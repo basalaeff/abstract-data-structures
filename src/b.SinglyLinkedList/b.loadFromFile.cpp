@@ -12,7 +12,7 @@ void SinglyLinkedList::loadFromFile(const std::string& filename) {
   }
   // Очищаем текущий список
   while (head_ != nullptr) {
-    removeHead();
+    removeFromHead();
   }
   // Загружаем новые элементы
   std::string value;

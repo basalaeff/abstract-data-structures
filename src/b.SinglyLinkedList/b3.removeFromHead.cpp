@@ -10,7 +10,7 @@
 // Сложность: O(1) - удаление из головы односвязного списка выполняется за
 // константное время.
 
-void SinglyLinkedList::removeHead() {
+void SinglyLinkedList::removeFromHead() {
   if (head_ == nullptr) {
     throw std::runtime_error("Cannot remove head: list is empty");
   }

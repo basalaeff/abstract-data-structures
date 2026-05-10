@@ -13,7 +13,7 @@
 // Сложность: O(n) - требуется пройти почти весь список для нахождения
 // предпоследнего элемента.
 
-void SinglyLinkedList::removeTail() {
+void SinglyLinkedList::removeFromTail() {
   if (head_ == nullptr) {
     throw std::runtime_error("Cannot remove tail: list is empty");
   }

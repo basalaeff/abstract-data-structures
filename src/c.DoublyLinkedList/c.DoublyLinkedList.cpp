@@ -11,6 +11,6 @@ DoublyLinkedList::DoublyLinkedList()
 // ============================================================================
 DoublyLinkedList::~DoublyLinkedList() {
   while (head_ != nullptr) {
-    removeHead();  // используем существующий метод
+    removeFromHead();  // используем существующий метод
   }
 }

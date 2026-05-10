@@ -11,9 +11,9 @@
 // 5) Если список стал пустым — tail_ также устанавливается в nullptr.
 // 6) Освобождается память удалённого узла.
 // 7) Уменьшается размер списка (size_--).
-// Сложность: O(1) 
+// Сложность: O(1)
 
-void DoublyLinkedList::removeHead() {
+void DoublyLinkedList::removeFromHead() {
   if (head_ == nullptr) {
     return;
   }

@@ -13,7 +13,7 @@
 // 7) Уменьшается размер списка.
 // Сложность: O(1) — выполняется за константное время.
 
-void DoublyLinkedList::removeTail() {
+void DoublyLinkedList::removeFromTail() {
   if (tail_ == nullptr) {
     return;
   }

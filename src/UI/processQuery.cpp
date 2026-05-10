@@ -117,7 +117,7 @@ void ConsoleUI::processQuery(const std::string& query) {
     // ============================================================================
   } else if (cmd == "BDELHEAD") {
     if (tokens.size() == 1) {
-      singlyList_.removeHead();
+      singlyList_.removeFromHead();
     } else {
       std::cout << "Error: BDELHEAD command requires 0 arguments." << std::endl;
     }
@@ -126,7 +126,7 @@ void ConsoleUI::processQuery(const std::string& query) {
     // ============================================================================
   } else if (cmd == "BDELTAIL") {
     if (tokens.size() == 1) {
-      singlyList_.removeTail();
+      singlyList_.removeFromTail();
     } else {
       std::cout << "Error: BDELTAIL command requires 0 arguments." << std::endl;
     }
@@ -155,7 +155,7 @@ void ConsoleUI::processQuery(const std::string& query) {
     // ============================================================================
   } else if (cmd == "CDELHEAD") {
     if (tokens.size() == 1) {
-      doublyList_.removeHead();
+      doublyList_.removeFromHead();
     } else {
       std::cout << "Error: CDELHEAD command requires 0 arguments." << std::endl;
     }
@@ -164,7 +164,7 @@ void ConsoleUI::processQuery(const std::string& query) {
     // ============================================================================
   } else if (cmd == "CDELTAIL") {
     if (tokens.size() == 1) {
-      doublyList_.removeTail();
+      doublyList_.removeFromTail();
     } else {
       std::cout << "Error: CDELTAIL command requires 0 arguments." << std::endl;
     }

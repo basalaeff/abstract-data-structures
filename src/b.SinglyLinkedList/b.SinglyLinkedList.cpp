@@ -10,6 +10,6 @@ SinglyLinkedList::SinglyLinkedList() : head_(nullptr), size_(0) {}
 // ============================================================================
 SinglyLinkedList::~SinglyLinkedList() {
   while (head_ != nullptr) {
-    removeHead();  // переиспользуем существующий метод
+    removeFromHead();  // переиспользуем существующий метод
   }
 }
