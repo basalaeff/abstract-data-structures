@@ -52,3 +52,36 @@
 ```bash
 ./dbms --file data/Adata.txt --query 'PRINT'
 ```
+
+**Односвязный список (B)**:
+
+- B1 Добавление элемента (в голову): `BADDHEAD value`
+```bash
+./dbms --file data/Bdata.txt --query 'BADDHEAD Omsk'
+```
+Тестовые данные
+```bash
+./dbms --file data/Bdata.txt --query 'BADDHEAD Omsk'
+./dbms --file data/Bdata.txt --query 'BADDHEAD Podolsk'
+./dbms --file data/Bdata.txt --query 'BADDHEAD Novokuznetsk'
+./dbms --file data/Bdata.txt --query 'BADDHEAD Norilsk'
+```
+- B2 Добавление элемента (в хвост): `BADDTAIL value`
+```bash
+./dbms --file data/Bdata.txt --query 'BADDTAIL Kemerovo'
+```
+Тестовые данные
+```bash
+./dbms --file data/Bdata.txt --query 'BADDTAIL Kemerovo'
+./dbms --file data/Bdata.txt --query 'BADDTAIL Moscow'
+./dbms --file data/Bdata.txt --query 'BADDTAIL Tomsk'
+./dbms --file data/Bdata.txt --query 'BADDTAIL Voronezh'
+```
+- B3 Удаление элемента (из головы): `BDELHEAD`
+```bash
+./dbms --file data/Bdata.txt --query 'BDELHEAD'
+```
+- B4 Удаление элемента (из хвоста): `BDELTAIL`
+```bash
+./dbms --file data/Bdata.txt --query 'BDELTAIL'
+```

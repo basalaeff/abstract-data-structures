@@ -9,7 +9,8 @@ int main(int argc, char *argv[]) {
   std::string query;
   std::string filename;
   Array array(10);  // Массив
-  ConsoleUI ui(array);
+  SinglyLinkedList singlyList;  // Односвязный список
+  ConsoleUI ui(array, singlyList);
 
   // Чтение аргументов командной строки
   for (int i = 1; i < argc; i++) {
