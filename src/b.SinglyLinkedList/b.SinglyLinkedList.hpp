@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-#include "b.Node.hpp"
+#include "../Node/Node.hpp"
 
 class SinglyLinkedList {
  private:

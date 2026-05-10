@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-#include "c.Node.hpp"  // Должен содержать struct DoublyNode
+#include "../Node/DoublyNode.hpp"  // Должен содержать struct DoublyNode
 
 class DoublyLinkedList {
  private:
