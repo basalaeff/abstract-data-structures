@@ -19,6 +19,8 @@ void ConsoleUI::loadData(const std::string& filename,
         array_.loadFromFile(filename);
       } else if (command[0] == 'B') {
         singlyList_.loadFromFile(filename);
+      } else if (command[0] == 'C') {
+        doublyList_.loadFromFile(filename);
       } else if (command == "PRINT") {
         std::ifstream file(filename);
         if (!file.is_open()) {

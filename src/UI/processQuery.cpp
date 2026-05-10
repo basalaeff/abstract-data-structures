@@ -130,6 +130,44 @@ void ConsoleUI::processQuery(const std::string& query) {
     } else {
       std::cout << "Error: BDELTAIL command requires 0 arguments." << std::endl;
     }
+    // ============================================================================
+    // C1 Добавление элемента (в голову): CADDHEAD value
+    // ============================================================================
+  } else if (cmd == "CADDHEAD") {
+    if (tokens.size() == 2) {
+      std::string value = tokens[1];
+      doublyList_.addToHead(value);
+    } else {
+      std::cout << "Error: CADDHEAD command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
+    // C2 Добавление элемента (в хвост): CADDTAIL value
+    // ============================================================================
+  } else if (cmd == "CADDTAIL") {
+    if (tokens.size() == 2) {
+      std::string value = tokens[1];
+      doublyList_.addToTail(value);
+    } else {
+      std::cout << "Error: CADDTAIL command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
+    // C3 Удаление элемента (из головы): CDELHEAD
+    // ============================================================================
+  } else if (cmd == "CDELHEAD") {
+    if (tokens.size() == 1) {
+      doublyList_.removeHead();
+    } else {
+      std::cout << "Error: CDELHEAD command requires 0 arguments." << std::endl;
+    }
+    // ============================================================================
+    // C4 Удаление элемента (из хвоста): CDELTAIL
+    // ============================================================================
+  } else if (cmd == "CDELTAIL") {
+    if (tokens.size() == 1) {
+      doublyList_.removeTail();
+    } else {
+      std::cout << "Error: CDELTAIL command requires 0 arguments." << std::endl;
+    }
   } else if (cmd == "PRINT") {
     // ============================================================================
     // A7 Печать массива: APRINT

@@ -10,7 +10,9 @@ int main(int argc, char *argv[]) {
   std::string filename;
   Array array(10);  // Массив
   SinglyLinkedList singlyList;  // Односвязный список
-  ConsoleUI ui(array, singlyList);
+  DoublyLinkedList doublyList;  // Двусвязный список
+
+  ConsoleUI ui(array, singlyList, doublyList);
 
   // Чтение аргументов командной строки
   for (int i = 1; i < argc; i++) {

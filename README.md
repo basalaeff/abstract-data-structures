@@ -85,3 +85,36 @@
 ```bash
 ./dbms --file data/Bdata.txt --query 'BDELTAIL'
 ```
+
+**Двусвязный список (C)**:
+
+- C1 Добавление элемента (в голову): `CADDHEAD value`
+```bash
+./dbms --file data/Cdata.txt --query 'CADDHEAD Australia '
+```
+Тестовые данные
+```bash
+./dbms --file data/Cdata.txt --query 'CADDHEAD Australia'
+./dbms --file data/Cdata.txt --query 'CADDHEAD Armenia'
+./dbms --file data/Cdata.txt --query 'CADDHEAD Albania'
+./dbms --file data/Cdata.txt --query 'CADDHEAD Japan'
+```
+- C2 Добавление элемента (в хвост): `CADDTAIL value`
+```bash
+./dbms --file data/Cdata.txt --query 'CADDTAIL UK'
+```
+Тестовые данные
+```bash
+./dbms --file data/Cdata.txt --query 'CADDTAIL UK'
+./dbms --file data/Cdata.txt --query 'CADDTAIL Russia'
+./dbms --file data/Cdata.txt --query 'CADDTAIL USA'
+./dbms --file data/Cdata.txt --query 'CADDTAIL France'
+```
+- C3 Удаление элемента (из головы): `CDELHEAD`
+```bash
+./dbms --file data/Cdata.txt --query 'CDELHEAD'
+```
+- C4 Удаление элемента (из хвоста): `CDELTAIL`
+```bash
+./dbms --file data/Cdata.txt --query 'CDELTAIL'
+```
