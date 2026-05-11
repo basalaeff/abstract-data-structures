@@ -22,6 +22,8 @@ void ConsoleUI::saveData(const std::string& filename,
         doublyList_.saveToFile(filename);
       } else if (command[0] == 'D') {
         stack_.saveToFile(filename);
+      } else if (command[0] == 'E') {
+        queue_.saveToFile(filename);
       } else {
         std::cout << "Error: unrecognized command type." << std::endl;
       }

@@ -23,6 +23,8 @@ void ConsoleUI::loadData(const std::string& filename,
         doublyList_.loadFromFile(filename);
       } else if (command[0] == 'D') {
         stack_.loadFromFile(filename);
+      } else if (command[0] == 'E') {
+        queue_.loadFromFile(filename);
       } else if (command == "PRINT") {
         std::ifstream file(filename);
         if (!file.is_open()) {

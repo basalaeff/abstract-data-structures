@@ -12,8 +12,9 @@ int main(int argc, char *argv[]) {
   SinglyLinkedList singlyList;  // Односвязный список
   DoublyLinkedList doublyList;  // Двусвязный список
   Stack stack;  // Стек
+  Queue queue; // Очередь
 
-  ConsoleUI ui(array, singlyList, doublyList, stack);
+  ConsoleUI ui(array, singlyList, doublyList, stack, queue);
 
   // Чтение аргументов командной строки
   for (int i = 1; i < argc; i++) {

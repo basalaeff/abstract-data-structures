@@ -140,3 +140,25 @@
 ```bash
 ./dbms --file data/Ddata.txt --query 'PRINT'
 ```
+
+**Очередь (E)**:
+
+- E1 Добавление элемента: `EPUSH value`
+```bash
+./dbms --file data/Edata.txt --query 'EPUSH E001'
+```
+Тестовые данные
+```bash
+./dbms --file data/Edata.txt --query 'EPUSH E001'
+./dbms --file data/Edata.txt --query 'EPUSH E002'
+./dbms --file data/Edata.txt --query 'EPUSH E003'
+./dbms --file data/Edata.txt --query 'EPUSH E004'
+```
+- E2 Удаление элемента: `EPOP`
+```bash
+./dbms --file data/Edata.txt --query 'EPOP'
+```
+- E3 Чтение: `PRINT`
+```bash
+./dbms --file data/Edata.txt --query 'PRINT'
+```

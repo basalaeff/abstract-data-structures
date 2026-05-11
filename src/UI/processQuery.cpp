@@ -187,6 +187,25 @@ void ConsoleUI::processQuery(const std::string& query) {
     } else {
       std::cout << "Error: DPOP command requires 0 arguments." << std::endl;
     }
+    // ============================================================================
+    // E1 Добавление элемента: EPUSH value
+    // ============================================================================
+  } else if (tokens[0] == "EPUSH") {
+    if (tokens.size() == 2) {
+      std::string value = tokens[1];
+      queue_.push(value);
+    } else {
+      std::cout << "Error: EPUSH command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
+    // E2 Удаление элемента: EPOP
+    // ============================================================================
+  } else if (tokens[0] == "EPOP") {
+    if (tokens.size() == 1) {
+      queue_.pop();
+    } else {
+      std::cout << "Error: EPOP command requires 0 arguments." << std::endl;
+    }
   } else if (cmd == "PRINT") {
     // ============================================================================
     // A7 Печать массива: PRINT
@@ -196,6 +215,10 @@ void ConsoleUI::processQuery(const std::string& query) {
     // D3 Печать стека: PRINT
     // ============================================================================
     stack_.print();
+    // ============================================================================
+    // E3 Печать очереди: PRINT
+    // ============================================================================
+    queue_.print();
   } else {
     std::cout << "Unknown command: " << cmd << std::endl;
   }
