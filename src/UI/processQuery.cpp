@@ -168,11 +168,34 @@ void ConsoleUI::processQuery(const std::string& query) {
     } else {
       std::cout << "Error: CDELTAIL command requires 0 arguments." << std::endl;
     }
+    // ============================================================================
+    // D1 Добавление элемента: DPUSH value
+    // ============================================================================
+  } else if (tokens[0] == "DPUSH") {
+    if (tokens.size() == 2) {
+      std::string value = tokens[1];
+      stack_.push(value);
+    } else {
+      std::cout << "Error: DPUSH command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
+    // D2 Удаление элемента: DPOP
+    // ============================================================================
+  } else if (tokens[0] == "DPOP") {
+    if (tokens.size() == 1) {
+      stack_.pop();
+    } else {
+      std::cout << "Error: DPOP command requires 0 arguments." << std::endl;
+    }
   } else if (cmd == "PRINT") {
     // ============================================================================
-    // A7 Печать массива: APRINT
+    // A7 Печать массива: PRINT
     // ============================================================================
     array_.print();
+    // ============================================================================
+    // D3 Печать стека: PRINT
+    // ============================================================================
+    stack_.print();
   } else {
     std::cout << "Unknown command: " << cmd << std::endl;
   }

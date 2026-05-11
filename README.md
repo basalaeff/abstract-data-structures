@@ -118,3 +118,25 @@
 ```bash
 ./dbms --file data/Cdata.txt --query 'CDELTAIL'
 ```
+
+**Стек (D)**:
+
+- D1 Добавление элемента: `DPUSH value`
+```bash
+./dbms --file data/Ddata.txt --query 'DPUSH Cherry'
+```
+Тестовые данные
+```bash
+./dbms --file data/Ddata.txt --query 'DPUSH Cherry'
+./dbms --file data/Ddata.txt --query 'DPUSH Lemon'
+./dbms --file data/Ddata.txt --query 'DPUSH Watermelon'
+./dbms --file data/Ddata.txt --query 'DPUSH Rasberry'
+```
+- D2 Удаление элемента: `DPOP`
+```bash
+./dbms --file data/Ddata.txt --query 'DPOP'
+```
+- D3 Чтение: `PRINT`
+```bash
+./dbms --file data/Ddata.txt --query 'PRINT'
+```

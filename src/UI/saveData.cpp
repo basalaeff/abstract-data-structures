@@ -20,6 +20,8 @@ void ConsoleUI::saveData(const std::string& filename,
         singlyList_.saveToFile(filename);
       } else if (command[0] == 'C') {
         doublyList_.saveToFile(filename);
+      } else if (command[0] == 'D') {
+        stack_.saveToFile(filename);
       } else {
         std::cout << "Error: unrecognized command type." << std::endl;
       }
