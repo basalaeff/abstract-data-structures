@@ -92,11 +92,133 @@ void ConsoleUI::processQuery(const std::string& query) {
     } else {
       std::cout << "Error: ALEN command requires 0 arguments." << std::endl;
     }
+    // ============================================================================
+    // B1 Добавление элемента (в голову): BADDHEAD value
+    // ============================================================================
+  } else if (cmd == "BADDHEAD") {
+    if (tokens.size() == 2) {
+      std::string value = tokens[1];
+      singlyList_.addToHead(value);
+    } else {
+      std::cout << "Error: BADDHEAD command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
+    // B2 Добавление элемента (в хвост): BADDTAIL value
+    // ============================================================================
+  } else if (cmd == "BADDTAIL") {
+    if (tokens.size() == 2) {
+      std::string value = tokens[1];
+      singlyList_.addToTail(value);
+    } else {
+      std::cout << "Error: BADDTAIL command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
+    // B3 Удаление элемента (из головы): BDELHEAD
+    // ============================================================================
+  } else if (cmd == "BDELHEAD") {
+    if (tokens.size() == 1) {
+      singlyList_.removeFromHead();
+    } else {
+      std::cout << "Error: BDELHEAD command requires 0 arguments." << std::endl;
+    }
+    // ============================================================================
+    // B4 Удаление элемента (из хвоста): BDELTAIL
+    // ============================================================================
+  } else if (cmd == "BDELTAIL") {
+    if (tokens.size() == 1) {
+      singlyList_.removeFromTail();
+    } else {
+      std::cout << "Error: BDELTAIL command requires 0 arguments." << std::endl;
+    }
+    // ============================================================================
+    // C1 Добавление элемента (в голову): CADDHEAD value
+    // ============================================================================
+  } else if (cmd == "CADDHEAD") {
+    if (tokens.size() == 2) {
+      std::string value = tokens[1];
+      doublyList_.addToHead(value);
+    } else {
+      std::cout << "Error: CADDHEAD command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
+    // C2 Добавление элемента (в хвост): CADDTAIL value
+    // ============================================================================
+  } else if (cmd == "CADDTAIL") {
+    if (tokens.size() == 2) {
+      std::string value = tokens[1];
+      doublyList_.addToTail(value);
+    } else {
+      std::cout << "Error: CADDTAIL command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
+    // C3 Удаление элемента (из головы): CDELHEAD
+    // ============================================================================
+  } else if (cmd == "CDELHEAD") {
+    if (tokens.size() == 1) {
+      doublyList_.removeFromHead();
+    } else {
+      std::cout << "Error: CDELHEAD command requires 0 arguments." << std::endl;
+    }
+    // ============================================================================
+    // C4 Удаление элемента (из хвоста): CDELTAIL
+    // ============================================================================
+  } else if (cmd == "CDELTAIL") {
+    if (tokens.size() == 1) {
+      doublyList_.removeFromTail();
+    } else {
+      std::cout << "Error: CDELTAIL command requires 0 arguments." << std::endl;
+    }
+    // ============================================================================
+    // D1 Добавление элемента: DPUSH value
+    // ============================================================================
+  } else if (tokens[0] == "DPUSH") {
+    if (tokens.size() == 2) {
+      std::string value = tokens[1];
+      stack_.push(value);
+    } else {
+      std::cout << "Error: DPUSH command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
+    // D2 Удаление элемента: DPOP
+    // ============================================================================
+  } else if (tokens[0] == "DPOP") {
+    if (tokens.size() == 1) {
+      stack_.pop();
+    } else {
+      std::cout << "Error: DPOP command requires 0 arguments." << std::endl;
+    }
+    // ============================================================================
+    // E1 Добавление элемента: EPUSH value
+    // ============================================================================
+  } else if (tokens[0] == "EPUSH") {
+    if (tokens.size() == 2) {
+      std::string value = tokens[1];
+      queue_.push(value);
+    } else {
+      std::cout << "Error: EPUSH command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
+    // E2 Удаление элемента: EPOP
+    // ============================================================================
+  } else if (tokens[0] == "EPOP") {
+    if (tokens.size() == 1) {
+      queue_.pop();
+    } else {
+      std::cout << "Error: EPOP command requires 0 arguments." << std::endl;
+    }
   } else if (cmd == "PRINT") {
     // ============================================================================
-    // A7 Печать массива: APRINT
+    // A7 Печать массива: PRINT
     // ============================================================================
     array_.print();
+    // ============================================================================
+    // D3 Печать стека: PRINT
+    // ============================================================================
+    stack_.print();
+    // ============================================================================
+    // E3 Печать очереди: PRINT
+    // ============================================================================
+    queue_.print();
   } else {
     std::cout << "Unknown command: " << cmd << std::endl;
   }

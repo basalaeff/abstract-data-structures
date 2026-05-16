@@ -17,6 +17,14 @@ void ConsoleUI::loadData(const std::string& filename,
       // Проверка команд для массива
       if (command[0] == 'A') {
         array_.loadFromFile(filename);
+      } else if (command[0] == 'B') {
+        singlyList_.loadFromFile(filename);
+      } else if (command[0] == 'C') {
+        doublyList_.loadFromFile(filename);
+      } else if (command[0] == 'D') {
+        stack_.loadFromFile(filename);
+      } else if (command[0] == 'E') {
+        queue_.loadFromFile(filename);
       } else if (command == "PRINT") {
         std::ifstream file(filename);
         if (!file.is_open()) {

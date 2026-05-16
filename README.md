@@ -52,3 +52,113 @@
 ```bash
 ./dbms --file data/Adata.txt --query 'PRINT'
 ```
+
+**Односвязный список (B)**:
+
+- B1 Добавление элемента (в голову): `BADDHEAD value`
+```bash
+./dbms --file data/Bdata.txt --query 'BADDHEAD Omsk'
+```
+Тестовые данные
+```bash
+./dbms --file data/Bdata.txt --query 'BADDHEAD Omsk'
+./dbms --file data/Bdata.txt --query 'BADDHEAD Podolsk'
+./dbms --file data/Bdata.txt --query 'BADDHEAD Novokuznetsk'
+./dbms --file data/Bdata.txt --query 'BADDHEAD Norilsk'
+```
+- B2 Добавление элемента (в хвост): `BADDTAIL value`
+```bash
+./dbms --file data/Bdata.txt --query 'BADDTAIL Kemerovo'
+```
+Тестовые данные
+```bash
+./dbms --file data/Bdata.txt --query 'BADDTAIL Kemerovo'
+./dbms --file data/Bdata.txt --query 'BADDTAIL Moscow'
+./dbms --file data/Bdata.txt --query 'BADDTAIL Tomsk'
+./dbms --file data/Bdata.txt --query 'BADDTAIL Voronezh'
+```
+- B3 Удаление элемента (из головы): `BDELHEAD`
+```bash
+./dbms --file data/Bdata.txt --query 'BDELHEAD'
+```
+- B4 Удаление элемента (из хвоста): `BDELTAIL`
+```bash
+./dbms --file data/Bdata.txt --query 'BDELTAIL'
+```
+
+**Двусвязный список (C)**:
+
+- C1 Добавление элемента (в голову): `CADDHEAD value`
+```bash
+./dbms --file data/Cdata.txt --query 'CADDHEAD Australia '
+```
+Тестовые данные
+```bash
+./dbms --file data/Cdata.txt --query 'CADDHEAD Australia'
+./dbms --file data/Cdata.txt --query 'CADDHEAD Armenia'
+./dbms --file data/Cdata.txt --query 'CADDHEAD Albania'
+./dbms --file data/Cdata.txt --query 'CADDHEAD Japan'
+```
+- C2 Добавление элемента (в хвост): `CADDTAIL value`
+```bash
+./dbms --file data/Cdata.txt --query 'CADDTAIL UK'
+```
+Тестовые данные
+```bash
+./dbms --file data/Cdata.txt --query 'CADDTAIL UK'
+./dbms --file data/Cdata.txt --query 'CADDTAIL Russia'
+./dbms --file data/Cdata.txt --query 'CADDTAIL USA'
+./dbms --file data/Cdata.txt --query 'CADDTAIL France'
+```
+- C3 Удаление элемента (из головы): `CDELHEAD`
+```bash
+./dbms --file data/Cdata.txt --query 'CDELHEAD'
+```
+- C4 Удаление элемента (из хвоста): `CDELTAIL`
+```bash
+./dbms --file data/Cdata.txt --query 'CDELTAIL'
+```
+
+**Стек (D)**:
+
+- D1 Добавление элемента: `DPUSH value`
+```bash
+./dbms --file data/Ddata.txt --query 'DPUSH Cherry'
+```
+Тестовые данные
+```bash
+./dbms --file data/Ddata.txt --query 'DPUSH Cherry'
+./dbms --file data/Ddata.txt --query 'DPUSH Lemon'
+./dbms --file data/Ddata.txt --query 'DPUSH Watermelon'
+./dbms --file data/Ddata.txt --query 'DPUSH Rasberry'
+```
+- D2 Удаление элемента: `DPOP`
+```bash
+./dbms --file data/Ddata.txt --query 'DPOP'
+```
+- D3 Чтение: `PRINT`
+```bash
+./dbms --file data/Ddata.txt --query 'PRINT'
+```
+
+**Очередь (E)**:
+
+- E1 Добавление элемента: `EPUSH value`
+```bash
+./dbms --file data/Edata.txt --query 'EPUSH E001'
+```
+Тестовые данные
+```bash
+./dbms --file data/Edata.txt --query 'EPUSH E001'
+./dbms --file data/Edata.txt --query 'EPUSH E002'
+./dbms --file data/Edata.txt --query 'EPUSH E003'
+./dbms --file data/Edata.txt --query 'EPUSH E004'
+```
+- E2 Удаление элемента: `EPOP`
+```bash
+./dbms --file data/Edata.txt --query 'EPOP'
+```
+- E3 Чтение: `PRINT`
+```bash
+./dbms --file data/Edata.txt --query 'PRINT'
+```
