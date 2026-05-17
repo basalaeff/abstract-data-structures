@@ -3,16 +3,21 @@
 #include <sstream>
 #include <vector>
 
+#include "a.Array/a.Array.hpp"
+#include "b.SinglyLinkedList/b.SinglyLinkedList.hpp"
+#include "c.DoublyLinkedList/c.DoublyLinkedList.hpp"
+#include "d.Stack/d.Stack.hpp"
+#include "e.Queue/e.Queue.hpp"
 #include "UI/consoleUI.hpp"
 
 int main(int argc, char *argv[]) {
   std::string query;
   std::string filename;
-  Array array(10);  // Массив
-  SinglyLinkedList singlyList;  // Односвязный список
-  DoublyLinkedList doublyList;  // Двусвязный список
-  Stack stack;  // Стек
-  Queue queue; // Очередь
+  Array<std::string> array(10);              // Массив
+  SinglyLinkedList<std::string> singlyList;  // Односвязный список
+  DoublyLinkedList<std::string> doublyList;  // Двусвязный список
+  Stack<std::string> stack;                  // Стек
+  Queue<std::string> queue;                  // Очередь
 
   ConsoleUI ui(array, singlyList, doublyList, stack, queue);
 
@@ -36,7 +41,7 @@ int main(int argc, char *argv[]) {
   // Выполнение запроса
   // ================================================
   if (!query.empty()) {
-  ui.processQuery(query);
+    ui.processQuery(query);
   } else {
     std::cout << "Error: query not specified." << std::endl;
     return 1;
