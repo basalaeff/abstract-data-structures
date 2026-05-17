@@ -1,12 +1,15 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <stdexcept>
 
 #include "../Node/Node.hpp"
 
+template <typename T>
 class Stack {
  private:
-  Node* top_;
+  Node<T>* top_;
   int size_;
 
  public:
@@ -27,7 +30,7 @@ class Stack {
   // ============================================================================
   // D1 Добавление элемента: DPUSH value
   // ============================================================================
-  void push(const std::string& value);
+  void push(const T& value);
 
   // ============================================================================
   // D2 Удаление элемента: DPOP
@@ -49,3 +52,9 @@ class Stack {
   // ============================================================================
   void loadFromFile(const std::string& filename);
 };
+#include "d.Stack.tpp"
+#include "d1.push.tpp"
+#include "d2.pop.tpp"
+#include "d3.print.tpp"
+#include "d.saveToFile.tpp"
+#include "d.loadFromFile.tpp"

@@ -1,13 +1,16 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <iostream>
 
 #include "../Node/DoublyNode.hpp"  // Должен содержать struct DoublyNode
 
+template <typename T>
 class DoublyLinkedList {
  private:
-  DoublyNode* head_;
-  DoublyNode* tail_;
+  DoublyNode<T>* head_;
+  DoublyNode<T>* tail_;
   int size_;
 
  public:
@@ -30,12 +33,12 @@ class DoublyLinkedList {
   // ============================================================================
   // C1 Добавление элемента (в голову): BADDHEAD value
   // ============================================================================
-  void addToHead(const std::string& value);
+  void addToHead(const T& value);
 
   // ============================================================================
   // C2 Добавление элемента (в хвост): BADDTAIL value
   // ============================================================================
-  void addToTail(const std::string& value);
+  void addToTail(const T& value);
 
   // ============================================================================
   // C3 Удаление элемента (из головы): BDELHEAD
@@ -57,3 +60,10 @@ class DoublyLinkedList {
   // ============================================================================
   void loadFromFile(const std::string& filename);
 };
+#include "c.DoublyLinkedList.tpp"
+#include "c1.addToHead.tpp"
+#include "c2.addToTail.tpp"
+#include "c3.removeFromHead.tpp"
+#include "c4.removeFromTail.tpp"
+#include "c.saveToFile.tpp"
+#include "c.loadFromFile.tpp"
