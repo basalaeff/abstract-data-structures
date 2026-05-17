@@ -1,23 +1,22 @@
 #pragma once
 #include <string>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <iostream>
 
-#include "../a.Array/a.Array.hpp"
-#include "../b.SinglyLinkedList/b.SinglyLinkedList.hpp"
-#include "../c.DoublyLinkedList/c.DoublyLinkedList.hpp"
-#include "../d.Stack/d.Stack.hpp"
-#include "../e.Queue/e.Queue.hpp"
-
+template <typename T>
 class ConsoleUI {
  private:
-  Array& array_;
-  SinglyLinkedList& singlyList_;
-  DoublyLinkedList& doublyList_;
-  Stack& stack_;
-  Queue& queue_;
+  Array<T>& array_;
+  SinglyLinkedList<T>& singlyList_;
+  DoublyLinkedList<T>& doublyList_;
+  Stack<T>& stack_;
+  Queue<T>& queue_;
 
  public:
   // Конструктор принимает ссылки на структуру данных
-  ConsoleUI(Array& a, SinglyLinkedList& sl, DoublyLinkedList& dl, Stack& s, Queue& q)
+  ConsoleUI(Array<T>& a, SinglyLinkedList<T>& sl, DoublyLinkedList<T>& dl, Stack<T>& s, Queue<T>& q)
       : array_(a), singlyList_(sl), doublyList_(dl), stack_(s), queue_(q) {};
 
   // Основной метод обработки запроса
@@ -29,3 +28,7 @@ class ConsoleUI {
   // Сохранение данных в файл
   void saveData(const std::string& filename, const std::string& query);
 };
+
+#include "loadData.tpp"
+#include "saveData.tpp"
+#include "processQuery.tpp"
