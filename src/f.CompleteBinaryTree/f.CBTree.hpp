@@ -34,7 +34,14 @@ class CBTree {
   void saveToFile(const std::string& file) const;
 
   void clear(TreeNode<T>*& node);
+
+  // ============================================================================
+  // F1 Добавление элемента
+  // ============================================================================
+  void insert(T value);
 };
+
 #include "f.CBTree.tpp"
 #include "f.loadFromFile.tpp"
 #include "f.saveToFile.tpp"
+#include "f1.insert.tpp"
