@@ -8,6 +8,7 @@
 #include "c.DoublyLinkedList/c.DoublyLinkedList.hpp"
 #include "d.Stack/d.Stack.hpp"
 #include "e.Queue/e.Queue.hpp"
+#include "f.CompleteBinaryTree/f.CBTree.hpp"
 #include "UI/consoleUI.hpp"
 
 int main(int argc, char *argv[]) {
@@ -17,9 +18,10 @@ int main(int argc, char *argv[]) {
   SinglyLinkedList<std::string> singlyList;  // Односвязный список
   DoublyLinkedList<std::string> doublyList;  // Двусвязный список
   Stack<std::string> stack;                  // Стек
-  Queue<std::string> queue;                  // Очередь
+  Queue<std::string> queue;                  //
+  CBTree<std::string> cbtree;                // Дерево
 
-  ConsoleUI ui(array, singlyList, doublyList, stack, queue);
+  ConsoleUI ui(array, singlyList, doublyList, stack, queue, cbtree);
 
   // Чтение аргументов командной строки
   for (int i = 1; i < argc; i++) {

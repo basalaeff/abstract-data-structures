@@ -3,24 +3,26 @@
 // ================================================
 template <typename T>
 void ConsoleUI<T>::loadData(const std::string& filename,
-                         const std::string& query) {
+                            const std::string& query) {
   try {
     if (!filename.empty() && !query.empty()) {
       std::stringstream ss(query);
       std::string command;
       ss >> command;
-
+      char cmd = command[0];
       // Проверка команд для массива
-      if (command[0] == 'A') {
+      if (cmd == 'A') {
         array_.loadFromFile(filename);
-      } else if (command[0] == 'B') {
+      } else if (cmd == 'B') {
         singlyList_.loadFromFile(filename);
-      } else if (command[0] == 'C') {
+      } else if (cmd == 'C') {
         doublyList_.loadFromFile(filename);
-      } else if (command[0] == 'D') {
+      } else if (cmd == 'D') {
         stack_.loadFromFile(filename);
-      } else if (command[0] == 'E') {
+      } else if (cmd == 'E') {
         queue_.loadFromFile(filename);
+      } else if (cmd == 'F') {
+        cbtree_.loadFromFile(filename);
       } else if (command == "PRINT") {
         std::ifstream file(filename);
         if (!file.is_open()) {

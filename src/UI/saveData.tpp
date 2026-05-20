@@ -9,18 +9,21 @@ void ConsoleUI<T>::saveData(const std::string& filename,
     std::stringstream ss(query);
     std::string command;
     ss >> command;
+    char cmd = command[0];
     try {
       // Проверка команд для массива и списка
-      if (command[0] == 'A') {
+      if (cmd == 'A') {
         array_.saveToFile(filename);
-      } else if (command[0] == 'B') {
+      } else if (cmd == 'B') {
         singlyList_.saveToFile(filename);
-      } else if (command[0] == 'C') {
+      } else if (cmd == 'C') {
         doublyList_.saveToFile(filename);
-      } else if (command[0] == 'D') {
+      } else if (cmd == 'D') {
         stack_.saveToFile(filename);
-      } else if (command[0] == 'E') {
+      } else if (cmd == 'E') {
         queue_.saveToFile(filename);
+      } else if (cmd == 'F') {
+        cbtree_.saveToFile(filename);
       } else {
         std::cout << "Error: unrecognized command type." << std::endl;
       }

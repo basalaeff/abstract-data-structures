@@ -165,7 +165,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     // ============================================================================
     // D1 Добавление элемента: DPUSH value
     // ============================================================================
-  } else if (tokens[0] == "DPUSH") {
+  } else if (cmd == "DPUSH") {
     if (tokens.size() == 2) {
       T value = tokens[1];
       stack_.push(value);
@@ -175,7 +175,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     // ============================================================================
     // D2 Удаление элемента: DPOP
     // ============================================================================
-  } else if (tokens[0] == "DPOP") {
+  } else if (cmd == "DPOP") {
     if (tokens.size() == 1) {
       stack_.pop();
     } else {
@@ -184,7 +184,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     // ============================================================================
     // E1 Добавление элемента: EPUSH value
     // ============================================================================
-  } else if (tokens[0] == "EPUSH") {
+  } else if (cmd == "EPUSH") {
     if (tokens.size() == 2) {
       T value = tokens[1];
       queue_.push(value);
@@ -194,25 +194,64 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     // ============================================================================
     // E2 Удаление элемента: EPOP
     // ============================================================================
-  } else if (tokens[0] == "EPOP") {
+  } else if (cmd == "EPOP") {
     if (tokens.size() == 1) {
       queue_.pop();
     } else {
       std::cout << "Error: EPOP command requires 0 arguments." << std::endl;
     }
+    // ============================================================================
+    // F1 Добавление элемента: FINSERT digit
+    // ============================================================================
+  } else if (cmd == "FINSERT") {
+    if (tokens.size() == 2) {
+      T value = tokens[1];
+      cbtree_.insert(value);
+    } else {
+      std::cout << "Error: FINSERT command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
+    // F2 Поиск элемента(по значению): FFIND value
+    // ============================================================================
+  } else if (cmd == "FFIND") {
+    if (tokens.size() == 2) {
+      T value = tokens[1];
+      if (cbtree_.get_value(value)) {
+        std::cout << "Value " << value << " found in the tree." << std::endl;
+      } else {
+        std::cout << "Value " << value << " not found in the tree."
+                  << std::endl;
+      }
+    } else {
+      std::cout << "Error: FFIND command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
+    // F3 Проверка дерева на завершённость: FISCBT
+    // ============================================================================
+  } else if (cmd == "FISCBT") {
+    if (tokens.size() == 1) {
+      if (cbtree_.is_CBT()) {
+        std::cout << "The tree is a complete binary tree." << std::endl;
+      } else {
+        std::cout << "The tree is not a complete binary tree." << std::endl;
+      }
+    } else {
+      std::cout << "Error: FISCBT command requires 0 arguments." << std::endl;
+    }
+  } else if (cmd == "FPRINT") {
+    if (tokens.size() == 1) {
+      cbtree_.display();
+    } else {
+      std::cout << "Error: FPRINT command requires 0 arguments." << std::endl;
+    }
   } else if (cmd == "PRINT") {
-    // ============================================================================
-    // A7 Печать массива: PRINT
-    // ============================================================================
-    array_.print();
-    // ============================================================================
-    // D3 Печать стека: PRINT
-    // ============================================================================
-    stack_.print();
-    // ============================================================================
-    // E3 Печать очереди: PRINT
-    // ============================================================================
-    queue_.print();
+    if (tokens.size() == 1) {
+      array_.print();
+      stack_.print();
+      queue_.print();
+    } else {
+      std::cout << "Error: PRINT command requires 0 arguments." << std::endl;
+    }
   } else {
     std::cout << "Unknown command: " << cmd << std::endl;
   }

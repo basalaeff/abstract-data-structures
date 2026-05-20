@@ -1,9 +1,11 @@
 #pragma once
-#include <string>
 #include <fstream>
-#include <sstream>
-#include <vector>
 #include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <string>
+#include <stdexcept>
 
 template <typename T>
 class ConsoleUI {
@@ -13,11 +15,18 @@ class ConsoleUI {
   DoublyLinkedList<T>& doublyList_;
   Stack<T>& stack_;
   Queue<T>& queue_;
+  CBTree<T>& cbtree_;
 
  public:
-  // Конструктор принимает ссылки на структуру данных
-  ConsoleUI(Array<T>& a, SinglyLinkedList<T>& sl, DoublyLinkedList<T>& dl, Stack<T>& s, Queue<T>& q)
-      : array_(a), singlyList_(sl), doublyList_(dl), stack_(s), queue_(q) {};
+  // Конструктор принимает ссылки на структуры данных
+  ConsoleUI(Array<T>& a, SinglyLinkedList<T>& sl, DoublyLinkedList<T>& dl,
+            Stack<T>& s, Queue<T>& q, CBTree<T>& cbt)
+      : array_(a),
+        singlyList_(sl),
+        doublyList_(dl),
+        stack_(s),
+        queue_(q),
+        cbtree_(cbt) {};
 
   // Основной метод обработки запроса
   void processQuery(const std::string& query);
@@ -30,5 +39,5 @@ class ConsoleUI {
 };
 
 #include "loadData.tpp"
-#include "saveData.tpp"
 #include "processQuery.tpp"
+#include "saveData.tpp"
