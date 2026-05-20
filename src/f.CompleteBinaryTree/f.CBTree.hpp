@@ -39,9 +39,17 @@ class CBTree {
   // F1 Добавление элемента
   // ============================================================================
   void insert(T value);
+
+  // ============================================================================
+  // F2 Поиск элемента
+  // ============================================================================
+  bool get_value(T value) const;
+  void find_index(int index) const;
+  bool find_value(TreeNode<T>* current, T value) const;
 };
 
 #include "f.CBTree.tpp"
 #include "f.loadFromFile.tpp"
 #include "f.saveToFile.tpp"
 #include "f1.insert.tpp"
+#include "f2.findValue.tpp"
