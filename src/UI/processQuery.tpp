@@ -230,7 +230,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     // ============================================================================
   } else if (cmd == "FISCBT") {
     if (tokens.size() == 1) {
-      if (cbtree_.is_CBT()) {
+      if (cbtree_.isCBT()) {
         std::cout << "The tree is a complete binary tree." << std::endl;
       } else {
         std::cout << "The tree is not a complete binary tree." << std::endl;
