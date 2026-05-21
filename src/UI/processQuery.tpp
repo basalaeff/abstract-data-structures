@@ -240,7 +240,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     }
   } else if (cmd == "FPRINT") {
     if (tokens.size() == 1) {
-      cbtree_.display();
+      cbtree_.print();
     } else {
       std::cout << "Error: FPRINT command requires 0 arguments." << std::endl;
     }
