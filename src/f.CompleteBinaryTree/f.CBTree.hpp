@@ -46,6 +46,11 @@ class CBTree {
   bool get_value(T value) const;
   void find_index(int index) const;
   bool find_value(TreeNode<T>* current, T value) const;
+
+  // ============================================================================
+  // F3 Проверка дерева на завершенность (Complete Binary Tree)
+  // ============================================================================
+  bool isCBT() const;
 };
 
 #include "f.CBTree.tpp"
@@ -53,3 +58,4 @@ class CBTree {
 #include "f.saveToFile.tpp"
 #include "f1.insert.tpp"
 #include "f2.findValue.tpp"
+#include "f3.isCBT.tpp"
