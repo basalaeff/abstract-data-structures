@@ -51,6 +51,14 @@ class CBTree {
   // F3 Проверка дерева на завершенность (Complete Binary Tree)
   // ============================================================================
   bool isCBT() const;
+
+  // ============================================================================
+  // F4 Вывод дерева
+  // ============================================================================
+  // Вывод дерева (вертикальный обход)
+  void print_CBT(TreeNode<T>* current, int level) const;
+  // Вывод в консоль (основная)
+  void print() const;
 };
 
 #include "f.CBTree.tpp"
@@ -59,3 +67,4 @@ class CBTree {
 #include "f1.insert.tpp"
 #include "f2.findValue.tpp"
 #include "f3.isCBT.tpp"
+#include "f4.print.tpp"

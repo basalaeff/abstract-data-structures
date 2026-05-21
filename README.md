@@ -189,7 +189,7 @@
 ```bash
 ./dbms --file data/Fdata.txt --query 'FISCBT'
 ```
-- F4 Чтение: `FDISPLAY`
+- F4 Чтение: `FPRINT`
 ```bash
-./dbms --file data/Fdata.txt --query 'FDISPLAY'
+./dbms --file data/Fdata.txt --query 'FPRINT'
 ```
