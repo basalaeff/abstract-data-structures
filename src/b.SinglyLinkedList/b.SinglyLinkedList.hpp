@@ -1,7 +1,7 @@
 #pragma once
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
 
 #include "../Node/Node.hpp"
 
@@ -29,6 +29,16 @@ class SinglyLinkedList {
   SinglyLinkedList& operator=(const SinglyLinkedList&) = delete;
 
   // ============================================================================
+  // СОХРАНЕНИЕ В ФАЙЛ
+  // ============================================================================
+  void saveToFile(const std::string& filename) const;
+
+  // ============================================================================
+  // ЗАГРУЗКА ИЗ ФАЙЛА
+  // ============================================================================
+  void loadFromFile(const std::string& filename);
+
+  // ============================================================================
   // B1 Добавление элемента (в голову): BADDHEAD value
   // ============================================================================
   void addToHead(const T& value);
@@ -49,19 +59,53 @@ class SinglyLinkedList {
   void removeFromTail();  // удаление хвоста
 
   // ============================================================================
-  // СОХРАНЕНИЕ В ФАЙЛ
+  // B5 Вставка элемента перед указанным значением: BINSERTBEFORE targetValue
+  // newValue
   // ============================================================================
-  void saveToFile(const std::string& filename) const;
+  void insertBefore(const T& targetValue, const T& newValue);
 
   // ============================================================================
-  // ЗАГРУЗКА ИЗ ФАЙЛА
+  // B6 Вставка элемента после указанного значения: BINSERTAFTER targetValue
+  // newValue
   // ============================================================================
-  void loadFromFile(const std::string& filename);
+  void insertAfter(const T& targetValue, const T& newValue);
+
+  // ============================================================================
+  // B7 Удаление элемента перед указанным значением: BDELBEFORE targetValue
+  // ============================================================================
+  void removeBefore(const T& targetValue);
+
+  // ============================================================================
+  // B8 Удаление элемента после указанного значения: BDELAFTER targetValue
+  // ============================================================================
+  void removeAfter(const T& targetValue);
+
+  // ============================================================================
+  // B9 Поиск элемента по значению: BSEARCH value
+  // ============================================================================
+  Node<T>* search(const T& value) const;
+
+  // ============================================================================
+  // B10 Удаление элемента по значению: BREMOVE value
+  // ============================================================================
+  void removeByValue(const T& value);
+
+  // ============================================================================
+  // B11 Вывод списка: PRINT
+  // ============================================================================
+  void print() const;
 };
 #include "b.SinglyLinkedList.tpp"
+#include "b.loadFromFile.tpp"
+#include "b.saveToFile.tpp"
 #include "b1.addToHead.tpp"
+#include "b10.removeByValue.tpp"
 #include "b2.addToTail.tpp"
 #include "b3.removeFromHead.tpp"
 #include "b4.removeFromTail.tpp"
-#include "b.saveToFile.tpp"
-#include "b.loadFromFile.tpp"
+#include "b5.insertBefore.tpp"
+#include "b6.insertAfter.tpp"
+#include "b7.removeBefore.tpp"
+#include "b8.removeAfter.tpp"
+#include "b9.searchByValue.tpp"
+#include "b11.print.tpp"

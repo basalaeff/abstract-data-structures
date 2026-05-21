@@ -1,5 +1,6 @@
 {
   "words": [
+    "Линковка",
     "AADD",
     "Adata",
     "ADEL",
@@ -10,8 +11,14 @@
     "BADDHEAD",
     "BADDTAIL",
     "Bdata",
+    "BDEL",
+    "BDELAFTER",
+    "BDELBEFORE",
     "BDELHEAD",
     "BDELTAIL",
+    "BINSERTAFTER",
+    "BINSERTBEFORE",
+    "BSEARCH",
     "CADDHEAD",
     "CADDTAIL",
     "cbtree",
@@ -26,10 +33,12 @@
     "EPOP",
     "EPUSH",
     "Fdata",
-    "FPRINT",
     "FFIND",
     "FINSERT",
     "FISCBT",
-    "Norilsk"
+    "FPRINT",
+    "Norilsk",
+    "pthread",
+    "Wextra"
   ]
 }

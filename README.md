@@ -85,6 +85,54 @@
 ```bash
 ./dbms --file data/Bdata.txt --query 'BDELTAIL'
 ```
+- B5 Вставка элемента перед указанным значением: `BINSERTBEFORE targetValue newValue`
+```bash
+./dbms --file data/Bdata.txt --query 'BINSERTBEFORE Moscow Novosibirsk'
+```
+- B6 Вставка элемента после указанного значения: `BINSERTAFTER targetValue newValue`
+```bash
+./dbms --file data/Bdata.txt --query 'BINSERTAFTER Moscow Kazan'
+```
+- B7 Удаление элемента перед указанным значением: `BDELBEFORE targetValue`
+```bash
+./dbms --file data/Bdata.txt --query 'BDELBEFORE Moscow'
+```
+- B8 Удаление элемента после указанного значения: `BDELAFTER targetValue`
+```bash
+./dbms --file data/Bdata.txt --query 'BDELAFTER Moscow'
+```
+- B9 Поиск элемента: `BSEARCH value`
+```bash
+./dbms --file data/Bdata.txt --query 'BSEARCH Omsk'
+```
+Тестовые данные
+```bash
+./dbms --file data/Bdata.txt --query 'BSEARCH Omsk'
+./dbms --file data/Bdata.txt --query 'BSEARCH Podolsk'
+./dbms --file data/Bdata.txt --query 'BSEARCH Novokuznetsk'
+./dbms --file data/Bdata.txt --query 'BSEARCH Norilsk'
+./dbms --file data/Bdata.txt --query 'BSEARCH Kemerovo'
+./dbms --file data/Bdata.txt --query 'BSEARCH Moscow'
+./dbms --file data/Bdata.txt --query 'BSEARCH Tomsk'
+./dbms --file data/Bdata.txt --query 'BSEARCH Voronezh'
+./dbms --file data/Bdata.txt --query 'BSEARCH Novosibirsk'
+./dbms --file data/Bdata.txt --query 'BSEARCH Kazan'
+```
+- B10 Удаление элемента по значению: `BDEL value`
+```bash
+./dbms --file data/Bdata.txt --query 'BDEL Omsk'
+```
+Тестовые данные
+```bash
+./dbms --file data/Bdata.txt --query 'BDEL Omsk'
+./dbms --file data/Bdata.txt --query 'BDEL Moscow'
+./dbms --file data/Bdata.txt --query 'BDEL Novosibirsk'
+./dbms --file data/Bdata.txt --query 'BDEL Kazan'
+```
+- B11 Вывод списка: `PRINT`
+```bash
+./dbms --file data/Bdata.txt --query 'PRINT'
+```
 
 **Двусвязный список (C)**:
 

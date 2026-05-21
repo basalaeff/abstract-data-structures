@@ -24,8 +24,6 @@ void ConsoleUI<T>::saveData(const std::string& filename,
         queue_.saveToFile(filename);
       } else if (cmd == 'F') {
         cbtree_.saveToFile(filename);
-      } else {
-        std::cout << "Error: unrecognized command type." << std::endl;
       }
     } catch (const std::exception& e) {
       std::cerr << "Save error: " << e.what() << std::endl;

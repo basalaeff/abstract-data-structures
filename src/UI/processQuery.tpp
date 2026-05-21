@@ -125,6 +125,80 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
       std::cout << "Error: BDELTAIL command requires 0 arguments." << std::endl;
     }
     // ============================================================================
+    // B5 Вставка элемента перед указанным значением: BINSERTBEFORE targetValue
+    // newValue
+    // ============================================================================
+  } else if (cmd == "BINSERTBEFORE") {
+    if (tokens.size() == 3) {
+      std::string targetValue = tokens[1];
+      std::string newValue = tokens[2];
+      singlyList_.insertBefore(targetValue, newValue);
+    } else {
+      std::cout << "Error: BINSERTBEFORE command requires 2 arguments."
+                << std::endl;
+    }
+    // ============================================================================
+    // B6 Вставка элемента после указанного значения: BINSERTAFTER targetValue
+    // newValue
+    // ============================================================================
+  } else if (cmd == "BINSERTAFTER") {
+    if (tokens.size() == 3) {
+      std::string targetValue = tokens[1];
+      std::string newValue = tokens[2];
+      singlyList_.insertAfter(targetValue, newValue);
+    } else {
+      std::cout << "Error: BINSERTAFTER command requires 2 arguments."
+                << std::endl;
+    }
+    // ============================================================================
+    // B7 Удаление элемента перед указанным значением: BDELBEFORE targetValue
+    // ============================================================================
+  } else if (cmd == "BDELBEFORE") {
+    if (tokens.size() == 2) {
+      std::string targetValue = tokens[1];
+      singlyList_.removeBefore(targetValue);
+    } else {
+      std::cout << "Error: BDELBEFORE command requires 1 arguments."
+                << std::endl;
+    }
+    // ============================================================================
+    // B8 Удаление элемента после указанного значения: BDELAFTER targetValue
+    // ============================================================================
+  } else if (cmd == "BDELAFTER") {
+    if (tokens.size() == 2) {
+      std::string targetValue = tokens[1];
+      singlyList_.removeAfter(targetValue);
+    } else {
+      std::cout << "Error: BDELAFTER command requires 1 arguments."
+                << std::endl;
+    }
+    // ============================================================================
+    // B9 Поиск элемента по значению: BSEARCH value
+    // ============================================================================
+  } else if (cmd == "BSEARCH") {
+    if (tokens.size() == 2) {
+      std::string value = tokens[1];
+      Node<T>* result = singlyList_.search(value);
+      if (result != nullptr) {
+        std::cout << "Value " << value << " found in the list." << std::endl;
+      } else {
+        std::cout << "Value " << value << " not found in the list."
+                  << std::endl;
+      }
+    } else {
+      std::cout << "Error: BSEARCH command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
+    // B10 Удаление элемента по значению: BDEL value
+    // ============================================================================
+  } else if (cmd == "BDEL") {
+    if (tokens.size() == 2) {
+      std::string value = tokens[1];
+      singlyList_.removeByValue(value);
+    } else {
+      std::cout << "Error: BDEL command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
     // C1 Добавление элемента (в голову): CADDHEAD value
     // ============================================================================
   } else if (cmd == "CADDHEAD") {
@@ -247,6 +321,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
   } else if (cmd == "PRINT") {
     if (tokens.size() == 1) {
       array_.print();
+      singlyList_.print();
       stack_.print();
       queue_.print();
     } else {
