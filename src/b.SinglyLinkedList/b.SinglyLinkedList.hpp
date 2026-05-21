@@ -63,6 +63,12 @@ class SinglyLinkedList {
   // newValue
   // ============================================================================
   void insertBefore(const T& targetValue, const T& newValue);
+
+  // ============================================================================
+  // B6 Вставка элемента после указанного значения: BINSERTAFTER targetValue
+  // newValue
+  // ============================================================================
+  void insertAfter(const T& targetValue, const T& newValue);
 };
 #include "b.SinglyLinkedList.tpp"
 #include "b.loadFromFile.tpp"
@@ -72,3 +78,4 @@ class SinglyLinkedList {
 #include "b3.removeFromHead.tpp"
 #include "b4.removeFromTail.tpp"
 #include "b5.insertBefore.tpp"
+#include "b6.insertAfter.tpp"

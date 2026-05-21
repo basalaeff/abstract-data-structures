@@ -89,6 +89,10 @@
 ```bash
 ./dbms --file data/Bdata.txt --query 'BINSERTBEFORE Moscow Novosibirsk'
 ```
+- B6 Вставка элемента после указанного значения: `BINSERTAFTER targetValue newValue`
+```bash
+./dbms --file data/Bdata.txt --query 'BINSERTAFTER Moscow Kazan'
+```
 
 **Двусвязный список (C)**:
 

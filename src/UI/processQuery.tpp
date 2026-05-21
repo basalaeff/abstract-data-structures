@@ -138,6 +138,19 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
                 << std::endl;
     }
     // ============================================================================
+    // B6 Вставка элемента после указанного значения: BINSERTAFTER targetValue
+    // newValue
+    // ============================================================================
+  } else if (cmd == "BINSERTAFTER") {
+    if (tokens.size() == 3) {
+      std::string targetValue = tokens[1];
+      std::string newValue = tokens[2];
+      singlyList_.insertAfter(targetValue, newValue);
+    } else {
+      std::cout << "Error: BINSERTAFTER command requires 2 arguments."
+                << std::endl;
+    }
+    // ============================================================================
     // C1 Добавление элемента (в голову): CADDHEAD value
     // ============================================================================
   } else if (cmd == "CADDHEAD") {

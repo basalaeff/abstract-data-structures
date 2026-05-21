@@ -4,4 +4,5 @@ Omsk
 Kemerovo
 Novosibirsk
 Moscow
+Kazan
 Tomsk

@@ -12,6 +12,7 @@
     "Bdata",
     "BDELHEAD",
     "BDELTAIL",
+    "BINSERTAFTER",
     "BINSERTBEFORE",
     "CADDHEAD",
     "CADDTAIL",
