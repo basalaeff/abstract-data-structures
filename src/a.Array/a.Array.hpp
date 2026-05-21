@@ -1,12 +1,15 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <stdexcept>
+#include <fstream>
 
+template <typename T>
 class Array {
  private:
   int maxCapacity_;    // Максимальная вместимость массива
   int size_;           // Текущий размер массива (количество элементов)
-  std::string *data_;  // Указатель на динамический массив строк
+  T *data_;  // Указатель на динамический массив строк
  public:
   // ============================================================================
   // КОНСТРУКТОР
@@ -22,17 +25,17 @@ class Array {
   // ============================================================================
   // A1 Добавление элемента(в конец массива): AADD value
   // ============================================================================
-  void addToTheEnd(const std::string &value);
+  void addToTheEnd(const T &value);
 
   // ============================================================================
   // A2 Добавление элемента(по индексу): AINSERT index value
   // ============================================================================
-  void addToTheIndex(int index, const std::string &value);
+  void addToTheIndex(int index, const T &value);
 
   // ============================================================================
   // A3 Получение элемента(по индексу): AGET index
   // ============================================================================
-  std::string get(int index) const;
+  T get(int index) const;
 
   // ============================================================================
   // A4 Удаление элемента(по индексу): ADEL index
@@ -42,7 +45,7 @@ class Array {
   // ============================================================================
   // A5 Замена элемента(по индексу): ASET index value
   // ============================================================================
-  void replaceByIndex(int index, const std::string &value);
+  void replaceByIndex(int index, const T &value);
 
   // ============================================================================
   // A6 Получение длины массива: ALENGTH
@@ -57,3 +60,13 @@ class Array {
   void saveToFile(const std::string &filename) const;
   void loadFromFile(const std::string &filename);
 };
+#include "a.Array.tpp"
+#include "a1.addToTheEnd.tpp"
+#include "a2.addToTheIndex.tpp"
+#include "a3.get.tpp"
+#include "a4.removeByIndex.tpp"
+#include "a5.replaceByIndex.tpp"
+#include "a6.length.tpp"
+#include "a7.print.tpp"
+#include "a.saveToFile.tpp"
+#include "a.loadFromFile.tpp"

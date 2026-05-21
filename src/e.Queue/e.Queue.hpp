@@ -1,13 +1,15 @@
 #pragma once
 #include <iostream>
 #include <string>
-
+#include <fstream>
+#include <stdexcept>
 #include "../Node/Node.hpp"
 
+template <typename T>
 class Queue {
  private:
-  Node* front_;
-  Node* end_;
+  Node<T>* front_;
+  Node<T>* end_;
   int size_;
 
  public:
@@ -26,7 +28,7 @@ class Queue {
   // ============================================================================
   // E1 Добавление элемента: EPUSH value
   // ============================================================================
-  void push(const std::string& value);
+  void push(const T& value);
 
   // ============================================================================
   // E2 Удаление элемента: EPOP
@@ -47,4 +49,23 @@ class Queue {
   // ЗАГРУЗКА ИЗ ФАЙЛА
   // ============================================================================
   void loadFromFile(const std::string& filename);
+
+  // Вспомогательные методы для дерева
+  // ============================================================================
+  // Получение первого элемента без удаления
+  // ============================================================================
+  T front();
+
+  // ============================================================================
+  // ПРОВЕРКА НА ПУСТОТУ
+  // ============================================================================
+  bool isEmpty() const;
 };
+#include "e.Queue.tpp"
+#include "e1.push.tpp"
+#include "e2.pop.tpp"
+#include "e3.print.tpp"
+#include "e.saveToFile.tpp"
+#include "e.loadFromFile.tpp"
+#include "e.isEmpty.tpp"
+#include "e.front.tpp"

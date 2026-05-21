@@ -1,12 +1,14 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <fstream>
 
 #include "../Node/Node.hpp"
 
+template <typename T>
 class SinglyLinkedList {
  private:
-  Node* head_;
+  Node<T>* head_;
   int size_;
 
  public:
@@ -29,12 +31,12 @@ class SinglyLinkedList {
   // ============================================================================
   // B1 Добавление элемента (в голову): BADDHEAD value
   // ============================================================================
-  void addToHead(const std::string& value);
+  void addToHead(const T& value);
 
   // ============================================================================
   // B2 Добавление элемента (в хвост): BADDTAIL value
   // ============================================================================
-  void addToTail(const std::string& value);
+  void addToTail(const T& value);
 
   // ============================================================================
   // B3 Удаление элемента (из головы): BDELHEAD
@@ -56,3 +58,10 @@ class SinglyLinkedList {
   // ============================================================================
   void loadFromFile(const std::string& filename);
 };
+#include "b.SinglyLinkedList.tpp"
+#include "b1.addToHead.tpp"
+#include "b2.addToTail.tpp"
+#include "b3.removeFromHead.tpp"
+#include "b4.removeFromTail.tpp"
+#include "b.saveToFile.tpp"
+#include "b.loadFromFile.tpp"

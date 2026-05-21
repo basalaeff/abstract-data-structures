@@ -4,12 +4,13 @@
 // ============================================================================
 // УЗЕЛ ОДНОСВЯЗНОГО СПИСКА
 // ============================================================================
-// Класс Node - узел. Он содержит строковое значение и указатель на следующий узел.
+// Класс Node - узел. Он содержит значение и указатель на следующий узел.
+template <typename T>
 class Node {
  public:
-  std::string data_;
+  T data_;
   Node* next_;
 
-  Node(const std::string& value, Node* nextNode = nullptr)
+  Node(const T& value, Node* nextNode = nullptr)
       : data_(value), next_(nextNode) {}
 };

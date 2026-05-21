@@ -130,7 +130,7 @@
 ./dbms --file data/Ddata.txt --query 'DPUSH Cherry'
 ./dbms --file data/Ddata.txt --query 'DPUSH Lemon'
 ./dbms --file data/Ddata.txt --query 'DPUSH Watermelon'
-./dbms --file data/Ddata.txt --query 'DPUSH Rasberry'
+./dbms --file data/Ddata.txt --query 'DPUSH Raspberry'
 ```
 - D2 Удаление элемента: `DPOP`
 ```bash
@@ -161,4 +161,35 @@
 - E3 Чтение: `PRINT`
 ```bash
 ./dbms --file data/Edata.txt --query 'PRINT'
+```
+
+**Бинарное дерево (F)**:
+
+- F1 Добавление элемента: `FINSERT value`
+```bash
+./dbms --file data/Fdata.txt --query 'FINSERT 10'
+```
+Тестовые данные
+```bash
+./dbms --file data/Fdata.txt --query 'FINSERT F1'
+./dbms --file data/Fdata.txt --query 'FINSERT F2'
+./dbms --file data/Fdata.txt --query 'FINSERT F3'
+./dbms --file data/Fdata.txt --query 'FINSERT F4'
+./dbms --file data/Fdata.txt --query 'FINSERT F5'
+```
+- F2 Поиск элемента (по значению): `FFIND value`
+```bash
+./dbms --file data/Fdata.txt --query 'FINSERT F1'
+./dbms --file data/Fdata.txt --query 'FINSERT F2'
+./dbms --file data/Fdata.txt --query 'FINSERT F3'
+./dbms --file data/Fdata.txt --query 'FINSERT F4'
+./dbms --file data/Fdata.txt --query 'FINSERT F5'
+```
+- F3 Проверка дерева на завершённость (complete): `FISCBT`
+```bash
+./dbms --file data/Fdata.txt --query 'FISCBT'
+```
+- F4 Чтение: `FPRINT`
+```bash
+./dbms --file data/Fdata.txt --query 'FPRINT'
 ```
