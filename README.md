@@ -97,6 +97,10 @@
 ```bash
 ./dbms --file data/Bdata.txt --query 'BDELBEFORE Moscow'
 ```
+- B8 Удаление элемента после указанного значения: `BDELAFTER targetValue`
+```bash
+./dbms --file data/Bdata.txt --query 'BDELAFTER Moscow'
+```
 
 **Двусвязный список (C)**:
 

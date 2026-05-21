@@ -162,6 +162,16 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
                 << std::endl;
     }
     // ============================================================================
+    // B8 Удаление элемента после указанного значения: BDELAFTER targetValue
+    // ============================================================================
+  } else if (cmd == "BDELAFTER") {
+    if (tokens.size() == 2) {
+      std::string targetValue = tokens[1];
+      singlyList_.removeAfter(targetValue);
+    } else {
+      std::cout << "Error: BDELAFTER command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
     // C1 Добавление элемента (в голову): CADDHEAD value
     // ============================================================================
   } else if (cmd == "CADDHEAD") {

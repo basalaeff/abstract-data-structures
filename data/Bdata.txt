@@ -3,5 +3,4 @@ Podolsk
 Omsk
 Kemerovo
 Moscow
-Kazan
 Tomsk
