@@ -169,7 +169,24 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
       std::string targetValue = tokens[1];
       singlyList_.removeAfter(targetValue);
     } else {
-      std::cout << "Error: BDELAFTER command requires 1 arguments." << std::endl;
+      std::cout << "Error: BDELAFTER command requires 1 arguments."
+                << std::endl;
+    }
+    // ============================================================================
+    // B9 Поиск элемента по значению: BSEARCH value
+    // ============================================================================
+  } else if (cmd == "BSEARCH") {
+    if (tokens.size() == 2) {
+      std::string value = tokens[1];
+      Node<T>* result = singlyList_.search(value);
+      if (result != nullptr) {
+        std::cout << "Value " << value << " found in the list." << std::endl;
+      } else {
+        std::cout << "Value " << value << " not found in the list."
+                  << std::endl;
+      }
+    } else {
+      std::cout << "Error: BSEARCH command requires 1 arguments." << std::endl;
     }
     // ============================================================================
     // C1 Добавление элемента (в голову): CADDHEAD value

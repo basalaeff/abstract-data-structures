@@ -16,6 +16,7 @@
     "BDELTAIL",
     "BINSERTAFTER",
     "BINSERTBEFORE",
+    "BSEARCH",
     "CADDHEAD",
     "CADDTAIL",
     "cbtree",

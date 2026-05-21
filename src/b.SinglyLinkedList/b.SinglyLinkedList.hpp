@@ -79,6 +79,11 @@ class SinglyLinkedList {
   // B8 Удаление элемента после указанного значения: BDELAFTER targetValue
   // ============================================================================
   void removeAfter(const T& targetValue);
+
+  // ============================================================================
+  // B9 Поиск элемента по значению: BSEARCH value
+  // ============================================================================
+  Node<T>* search(const T& value) const;
 };
 #include "b.SinglyLinkedList.tpp"
 #include "b.loadFromFile.tpp"
@@ -91,3 +96,4 @@ class SinglyLinkedList {
 #include "b6.insertAfter.tpp"
 #include "b7.removeBefore.tpp"
 #include "b8.removeAfter.tpp"
+#include "b9.searchByValue.tpp"

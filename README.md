@@ -101,6 +101,19 @@
 ```bash
 ./dbms --file data/Bdata.txt --query 'BDELAFTER Moscow'
 ```
+- B9 Поиск элемента: `BSEARCH value`
+```bash
+./dbms --file data/Bdata.txt --query 'BSEARCH Omsk'
+./dbms --file data/Bdata.txt --query 'BSEARCH Podolsk'
+./dbms --file data/Bdata.txt --query 'BSEARCH Novokuznetsk'
+./dbms --file data/Bdata.txt --query 'BSEARCH Norilsk'
+./dbms --file data/Bdata.txt --query 'BSEARCH Kemerovo'
+./dbms --file data/Bdata.txt --query 'BSEARCH Moscow'
+./dbms --file data/Bdata.txt --query 'BSEARCH Tomsk'
+./dbms --file data/Bdata.txt --query 'BSEARCH Voronezh'
+./dbms --file data/Bdata.txt --query 'BSEARCH Novosibirsk'
+./dbms --file data/Bdata.txt --query 'BSEARCH Kazan'
+```
 
 **Двусвязный список (C)**:
 
