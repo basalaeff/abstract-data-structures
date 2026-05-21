@@ -34,8 +34,6 @@ void ConsoleUI<T>::loadData(const std::string& filename,
           std::cout << line << std::endl;
         }
         file.close();  // Закрытие файла
-      } else {
-        std::cout << "Error: unrecognized command type." << std::endl;
       }
     }
   } catch (const std::exception& e) {
