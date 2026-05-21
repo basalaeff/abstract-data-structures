@@ -89,6 +89,11 @@ class SinglyLinkedList {
   // B10 Удаление элемента по значению: BREMOVE value
   // ============================================================================
   void removeByValue(const T& value);
+
+  // ============================================================================
+  // B11 Вывод списка: PRINT
+  // ============================================================================
+  void print() const;
 };
 #include "b.SinglyLinkedList.tpp"
 #include "b.loadFromFile.tpp"
@@ -103,3 +108,4 @@ class SinglyLinkedList {
 #include "b7.removeBefore.tpp"
 #include "b8.removeAfter.tpp"
 #include "b9.searchByValue.tpp"
+#include "b11.print.tpp"

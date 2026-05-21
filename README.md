@@ -129,6 +129,10 @@
 ./dbms --file data/Bdata.txt --query 'BDEL Novosibirsk'
 ./dbms --file data/Bdata.txt --query 'BDEL Kazan'
 ```
+- B11 Вывод списка: `PRINT`
+```bash
+./dbms --file data/Bdata.txt --query 'PRINT'
+```
 
 **Двусвязный список (C)**:
 

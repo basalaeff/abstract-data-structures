@@ -321,6 +321,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
   } else if (cmd == "PRINT") {
     if (tokens.size() == 1) {
       array_.print();
+      singlyList_.print();
       stack_.print();
       queue_.print();
     } else {
