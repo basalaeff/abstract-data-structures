@@ -151,6 +151,17 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
                 << std::endl;
     }
     // ============================================================================
+    // B7 Удаление элемента перед указанным значением: BDELBEFORE targetValue
+    // ============================================================================
+  } else if (cmd == "BDELBEFORE") {
+    if (tokens.size() == 2) {
+      std::string targetValue = tokens[1];
+      singlyList_.removeBefore(targetValue);
+    } else {
+      std::cout << "Error: BDELBEFORE command requires 1 arguments."
+                << std::endl;
+    }
+    // ============================================================================
     // C1 Добавление элемента (в голову): CADDHEAD value
     // ============================================================================
   } else if (cmd == "CADDHEAD") {

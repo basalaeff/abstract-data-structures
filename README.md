@@ -93,6 +93,10 @@
 ```bash
 ./dbms --file data/Bdata.txt --query 'BINSERTAFTER Moscow Kazan'
 ```
+- B7 Удаление элемента перед указанным значением: `BDELBEFORE targetValue`
+```bash
+./dbms --file data/Bdata.txt --query 'BDELBEFORE Moscow'
+```
 
 **Двусвязный список (C)**:
 

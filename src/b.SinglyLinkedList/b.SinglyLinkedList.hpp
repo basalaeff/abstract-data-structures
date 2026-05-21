@@ -69,6 +69,11 @@ class SinglyLinkedList {
   // newValue
   // ============================================================================
   void insertAfter(const T& targetValue, const T& newValue);
+
+  // ============================================================================
+  // B7 Удаление элемента перед указанным значением: BDELBEFORE targetValue
+  // ============================================================================
+  void removeBefore(const T& targetValue);
 };
 #include "b.SinglyLinkedList.tpp"
 #include "b.loadFromFile.tpp"
@@ -79,3 +84,4 @@ class SinglyLinkedList {
 #include "b4.removeFromTail.tpp"
 #include "b5.insertBefore.tpp"
 #include "b6.insertAfter.tpp"
+#include "b7.removeBefore.tpp"
