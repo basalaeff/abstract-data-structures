@@ -189,6 +189,16 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
       std::cout << "Error: BSEARCH command requires 1 arguments." << std::endl;
     }
     // ============================================================================
+    // B10 Удаление элемента по значению: BDEL value
+    // ============================================================================
+  } else if (cmd == "BDEL") {
+    if (tokens.size() == 2) {
+      std::string value = tokens[1];
+      singlyList_.removeByValue(value);
+    } else {
+      std::cout << "Error: BDEL command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
     // C1 Добавление элемента (в голову): CADDHEAD value
     // ============================================================================
   } else if (cmd == "CADDHEAD") {

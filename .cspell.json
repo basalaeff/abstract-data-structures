@@ -10,6 +10,7 @@
     "BADDHEAD",
     "BADDTAIL",
     "Bdata",
+    "BDEL",
     "BDELAFTER",
     "BDELBEFORE",
     "BDELHEAD",

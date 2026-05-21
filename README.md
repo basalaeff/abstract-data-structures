@@ -104,6 +104,10 @@
 - B9 Поиск элемента: `BSEARCH value`
 ```bash
 ./dbms --file data/Bdata.txt --query 'BSEARCH Omsk'
+```
+Тестовые данные
+```bash
+./dbms --file data/Bdata.txt --query 'BSEARCH Omsk'
 ./dbms --file data/Bdata.txt --query 'BSEARCH Podolsk'
 ./dbms --file data/Bdata.txt --query 'BSEARCH Novokuznetsk'
 ./dbms --file data/Bdata.txt --query 'BSEARCH Norilsk'
@@ -113,6 +117,17 @@
 ./dbms --file data/Bdata.txt --query 'BSEARCH Voronezh'
 ./dbms --file data/Bdata.txt --query 'BSEARCH Novosibirsk'
 ./dbms --file data/Bdata.txt --query 'BSEARCH Kazan'
+```
+- B10 Удаление элемента по значению: `BDEL value`
+```bash
+./dbms --file data/Bdata.txt --query 'BDEL Omsk'
+```
+Тестовые данные
+```bash
+./dbms --file data/Bdata.txt --query 'BDEL Omsk'
+./dbms --file data/Bdata.txt --query 'BDEL Moscow'
+./dbms --file data/Bdata.txt --query 'BDEL Novosibirsk'
+./dbms --file data/Bdata.txt --query 'BDEL Kazan'
 ```
 
 **Двусвязный список (C)**:

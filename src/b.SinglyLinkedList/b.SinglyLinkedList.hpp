@@ -84,11 +84,17 @@ class SinglyLinkedList {
   // B9 Поиск элемента по значению: BSEARCH value
   // ============================================================================
   Node<T>* search(const T& value) const;
+
+  // ============================================================================
+  // B10 Удаление элемента по значению: BREMOVE value
+  // ============================================================================
+  void removeByValue(const T& value);
 };
 #include "b.SinglyLinkedList.tpp"
 #include "b.loadFromFile.tpp"
 #include "b.saveToFile.tpp"
 #include "b1.addToHead.tpp"
+#include "b10.removeByValue.tpp"
 #include "b2.addToTail.tpp"
 #include "b3.removeFromHead.tpp"
 #include "b4.removeFromTail.tpp"
