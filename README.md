@@ -85,6 +85,10 @@
 ```bash
 ./dbms --file data/Bdata.txt --query 'BDELTAIL'
 ```
+- B5 Вставка элемента перед указанным значением: `BINSERTBEFORE targetValue newValue`
+```bash
+./dbms --file data/Bdata.txt --query 'BINSERTBEFORE Moscow Novosibirsk'
+```
 
 **Двусвязный список (C)**:
 

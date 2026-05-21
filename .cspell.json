@@ -12,6 +12,7 @@
     "Bdata",
     "BDELHEAD",
     "BDELTAIL",
+    "BINSERTBEFORE",
     "CADDHEAD",
     "CADDTAIL",
     "cbtree",
@@ -26,10 +27,10 @@
     "EPOP",
     "EPUSH",
     "Fdata",
-    "FPRINT",
     "FFIND",
     "FINSERT",
     "FISCBT",
+    "FPRINT",
     "Norilsk"
   ]
 }

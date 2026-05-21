@@ -1,7 +1,7 @@
 #pragma once
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
 
 #include "../Node/Node.hpp"
 
@@ -29,6 +29,16 @@ class SinglyLinkedList {
   SinglyLinkedList& operator=(const SinglyLinkedList&) = delete;
 
   // ============================================================================
+  // СОХРАНЕНИЕ В ФАЙЛ
+  // ============================================================================
+  void saveToFile(const std::string& filename) const;
+
+  // ============================================================================
+  // ЗАГРУЗКА ИЗ ФАЙЛА
+  // ============================================================================
+  void loadFromFile(const std::string& filename);
+
+  // ============================================================================
   // B1 Добавление элемента (в голову): BADDHEAD value
   // ============================================================================
   void addToHead(const T& value);
@@ -49,19 +59,16 @@ class SinglyLinkedList {
   void removeFromTail();  // удаление хвоста
 
   // ============================================================================
-  // СОХРАНЕНИЕ В ФАЙЛ
+  // B5 Вставка элемента перед указанным значением: BINSERTBEFORE targetValue
+  // newValue
   // ============================================================================
-  void saveToFile(const std::string& filename) const;
-
-  // ============================================================================
-  // ЗАГРУЗКА ИЗ ФАЙЛА
-  // ============================================================================
-  void loadFromFile(const std::string& filename);
+  void insertBefore(const T& targetValue, const T& newValue);
 };
 #include "b.SinglyLinkedList.tpp"
+#include "b.loadFromFile.tpp"
+#include "b.saveToFile.tpp"
 #include "b1.addToHead.tpp"
 #include "b2.addToTail.tpp"
 #include "b3.removeFromHead.tpp"
 #include "b4.removeFromTail.tpp"
-#include "b.saveToFile.tpp"
-#include "b.loadFromFile.tpp"
+#include "b5.insertBefore.tpp"

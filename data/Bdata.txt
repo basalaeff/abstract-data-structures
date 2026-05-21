@@ -2,5 +2,6 @@ Novokuznetsk
 Podolsk
 Omsk
 Kemerovo
+Novosibirsk
 Moscow
 Tomsk

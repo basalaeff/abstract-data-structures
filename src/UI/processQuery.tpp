@@ -125,6 +125,19 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
       std::cout << "Error: BDELTAIL command requires 0 arguments." << std::endl;
     }
     // ============================================================================
+    // B5 Вставка элемента перед указанным значением: BINSERTBEFORE targetValue
+    // newValue
+    // ============================================================================
+  } else if (cmd == "BINSERTBEFORE") {
+    if (tokens.size() == 3) {
+      std::string targetValue = tokens[1];
+      std::string newValue = tokens[2];
+      singlyList_.insertBefore(targetValue, newValue);
+    } else {
+      std::cout << "Error: BINSERTBEFORE command requires 2 arguments."
+                << std::endl;
+    }
+    // ============================================================================
     // C1 Добавление элемента (в голову): CADDHEAD value
     // ============================================================================
   } else if (cmd == "CADDHEAD") {
