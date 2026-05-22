@@ -176,11 +176,11 @@
 ```
 - C7 Удаление элемента перед указанным значением: `CDELBEFORE targetValue`
 ```bash
-./dbms --file data/Cdata.txt --query 'CDELBEFORE Moscow'
+./dbms --file data/Cdata.txt --query 'CDELBEFORE Russia'
 ```
 - C8 Удаление элемента после указанного значения: `CDELAFTER targetValue`
 ```bash
-./dbms --file data/Cdata.txt --query 'CDELAFTER Moscow'
+./dbms --file data/Cdata.txt --query 'CDELAFTER Russia'
 ```
 - C9 Поиск элемента по значению: `CSEARCH value`
 ```bash
