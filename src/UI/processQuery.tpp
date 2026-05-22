@@ -268,7 +268,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
   } else if (cmd == "CDELBEFORE") {
     if (tokens.size() == 2) {
       T targetValue = tokens[1];
-      // doublyList_.removeBefore(targetValue);
+      doublyList_.removeBefore(targetValue);
     } else {
       std::cout << "Error: CDELBEFORE command requires 1 arguments."
                 << std::endl;
