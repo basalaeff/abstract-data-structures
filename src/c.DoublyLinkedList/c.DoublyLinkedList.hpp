@@ -1,8 +1,7 @@
 #pragma once
-#include <iostream>
-#include <string>
 #include <fstream>
 #include <iostream>
+#include <string>
 
 #include "../Node/DoublyNode.hpp"  // Должен содержать struct DoublyNode
 
@@ -31,6 +30,16 @@ class DoublyLinkedList {
   DoublyLinkedList& operator=(const DoublyLinkedList&) = delete;
 
   // ============================================================================
+  // СОХРАНЕНИЕ В ФАЙЛ
+  // ============================================================================
+  void saveToFile(const std::string& filename) const;
+
+  // ============================================================================
+  // ЗАГРУЗКА ИЗ ФАЙЛА
+  // ============================================================================
+  void loadFromFile(const std::string& filename);
+
+  // ============================================================================
   // C1 Добавление элемента (в голову): BADDHEAD value
   // ============================================================================
   void addToHead(const T& value);
@@ -51,19 +60,15 @@ class DoublyLinkedList {
   void removeFromTail();  // удаление хвоста
 
   // ============================================================================
-  // СОХРАНЕНИЕ В ФАЙЛ
+  // C9 Поиск элемента по значению: BSEARCH value
   // ============================================================================
-  void saveToFile(const std::string& filename) const;
-
-  // ============================================================================
-  // ЗАГРУЗКА ИЗ ФАЙЛА
-  // ============================================================================
-  void loadFromFile(const std::string& filename);
+  DoublyNode<T>* searchByValue(const T& value) const;
 };
 #include "c.DoublyLinkedList.tpp"
+#include "c.loadFromFile.tpp"
+#include "c.saveToFile.tpp"
 #include "c1.addToHead.tpp"
 #include "c2.addToTail.tpp"
 #include "c3.removeFromHead.tpp"
 #include "c4.removeFromTail.tpp"
-#include "c.saveToFile.tpp"
-#include "c.loadFromFile.tpp"
+#include "c9.searchByValue.tpp"

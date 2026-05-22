@@ -290,7 +290,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
   } else if (cmd == "CSEARCH") {
     if (tokens.size() == 2) {
       T value = tokens[1];
-      // Node<T>* result = doublyList_.searchByValue(value);
+      DoublyNode<T>* result = doublyList_.searchByValue(value);
       if (result != nullptr) {
         std::cout << "Value " << value << " found in the list." << std::endl;
       } else {
