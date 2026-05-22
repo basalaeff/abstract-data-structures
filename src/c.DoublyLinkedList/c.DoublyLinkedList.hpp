@@ -90,6 +90,11 @@ class DoublyLinkedList {
   // C10 Удаление элемента по значению: BREMOVE value
   // ============================================================================
   void removeByValue(const T& value);
+
+  // ============================================================================
+  // C11 Вывод списка: PRINT
+  // ============================================================================
+  void print() const;
 };
 #include "c.DoublyLinkedList.tpp"
 #include "c.loadFromFile.tpp"
@@ -104,4 +109,5 @@ class DoublyLinkedList {
 #include "c8.removeAfter.tpp"
 #include "c9.searchByValue.tpp"
 #include "c10.removeByValue.tpp"
+#include "c11.print.tpp"
 
