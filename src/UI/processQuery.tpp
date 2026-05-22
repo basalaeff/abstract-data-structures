@@ -244,7 +244,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     if (tokens.size() == 3) {
       T targetValue = tokens[1];
       T newValue = tokens[2];
-      // doublyList_.insertBefore(targetValue, newValue);
+      doublyList_.insertBefore(targetValue, newValue);
     } else {
       std::cout << "Error: CINSERTBEFORE command requires 2 arguments."
                 << std::endl;

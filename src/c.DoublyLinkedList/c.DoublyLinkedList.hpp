@@ -60,6 +60,11 @@ class DoublyLinkedList {
   void removeFromTail();  // удаление хвоста
 
   // ============================================================================
+  // C5 Вставка элемента перед указанным значением: BINSERTBEFORE targetValue newValue
+  // ============================================================================
+  void insertBefore(const T& targetValue, const T& newValue);
+
+  // ============================================================================
   // C9 Поиск элемента по значению: BSEARCH value
   // ============================================================================
   DoublyNode<T>* searchByValue(const T& value) const;
@@ -71,4 +76,5 @@ class DoublyLinkedList {
 #include "c2.addToTail.tpp"
 #include "c3.removeFromHead.tpp"
 #include "c4.removeFromTail.tpp"
+#include "c5.insertBefore.tpp"
 #include "c9.searchByValue.tpp"

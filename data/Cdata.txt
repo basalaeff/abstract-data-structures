@@ -2,5 +2,6 @@ Albania
 Armenia
 Australia
 UK
+Belarus
 Russia
 USA
