@@ -166,6 +166,55 @@
 ```bash
 ./dbms --file data/Cdata.txt --query 'CDELTAIL'
 ```
+- C5 Вставка элемента перед указанным значением: `CINSERTBEFORE targetValue newValue`
+```bash
+./dbms --file data/Cdata.txt --query 'CINSERTBEFORE Russia Belarus'
+```
+- C6 Вставка элемента после указанного значения: `CINSERTAFTER targetValue newValue`
+```bash
+./dbms --file data/Cdata.txt --query 'CINSERTAFTER Russia China'
+```
+- C7 Удаление элемента перед указанным значением: `CDELBEFORE targetValue`
+```bash
+./dbms --file data/Cdata.txt --query 'CDELBEFORE Russia'
+```
+- C8 Удаление элемента после указанного значения: `CDELAFTER targetValue`
+```bash
+./dbms --file data/Cdata.txt --query 'CDELAFTER Russia'
+```
+- C9 Поиск элемента по значению: `CSEARCH value`
+```bash
+./dbms --file data/Cdata.txt --query 'CSEARCH Australia'
+```
+Тестовые данные
+```bash
+./dbms --file data/Cdata.txt --query 'CSEARCH Australia'
+./dbms --file data/Cdata.txt --query 'CSEARCH Armenia'
+./dbms --file data/Cdata.txt --query 'CSEARCH Albania'
+./dbms --file data/Cdata.txt --query 'CSEARCH Japan'
+./dbms --file data/Cdata.txt --query 'CSEARCH UK'
+./dbms --file data/Cdata.txt --query 'CSEARCH Russia'
+./dbms --file data/Cdata.txt --query 'CSEARCH USA'
+./dbms --file data/Cdata.txt --query 'CSEARCH France'
+./dbms --file data/Cdata.txt --query 'CSEARCH Belarus'
+./dbms --file data/Cdata.txt --query 'CSEARCH China'
+```
+- C10 Удаление элемента по значению: `CDEL value`
+```bash
+./dbms --file data/Cdata.txt --query 'CDEL value'
+```
+Тестовые данные
+```bash
+./dbms --file data/Cdata.txt --query 'CDEL Japan'
+./dbms --file data/Cdata.txt --query 'CDEL UK'
+./dbms --file data/Cdata.txt --query 'CDEL Russia'
+./dbms --file data/Cdata.txt --query 'CDEL USA'
+./dbms --file data/Cdata.txt --query 'CDEL France'
+```
+- C11 Чтение: `PRINT`
+```bash
+./dbms --file data/Cdata.txt --query 'PRINT'
+```
 
 **Стек (D)**:
 

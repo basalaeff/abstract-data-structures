@@ -130,8 +130,8 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     // ============================================================================
   } else if (cmd == "BINSERTBEFORE") {
     if (tokens.size() == 3) {
-      std::string targetValue = tokens[1];
-      std::string newValue = tokens[2];
+      T targetValue = tokens[1];
+      T newValue = tokens[2];
       singlyList_.insertBefore(targetValue, newValue);
     } else {
       std::cout << "Error: BINSERTBEFORE command requires 2 arguments."
@@ -143,8 +143,8 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     // ============================================================================
   } else if (cmd == "BINSERTAFTER") {
     if (tokens.size() == 3) {
-      std::string targetValue = tokens[1];
-      std::string newValue = tokens[2];
+      T targetValue = tokens[1];
+      T newValue = tokens[2];
       singlyList_.insertAfter(targetValue, newValue);
     } else {
       std::cout << "Error: BINSERTAFTER command requires 2 arguments."
@@ -155,7 +155,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     // ============================================================================
   } else if (cmd == "BDELBEFORE") {
     if (tokens.size() == 2) {
-      std::string targetValue = tokens[1];
+      T targetValue = tokens[1];
       singlyList_.removeBefore(targetValue);
     } else {
       std::cout << "Error: BDELBEFORE command requires 1 arguments."
@@ -166,7 +166,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     // ============================================================================
   } else if (cmd == "BDELAFTER") {
     if (tokens.size() == 2) {
-      std::string targetValue = tokens[1];
+      T targetValue = tokens[1];
       singlyList_.removeAfter(targetValue);
     } else {
       std::cout << "Error: BDELAFTER command requires 1 arguments."
@@ -177,7 +177,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     // ============================================================================
   } else if (cmd == "BSEARCH") {
     if (tokens.size() == 2) {
-      std::string value = tokens[1];
+      T value = tokens[1];
       Node<T>* result = singlyList_.search(value);
       if (result != nullptr) {
         std::cout << "Value " << value << " found in the list." << std::endl;
@@ -193,7 +193,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     // ============================================================================
   } else if (cmd == "BDEL") {
     if (tokens.size() == 2) {
-      std::string value = tokens[1];
+      T value = tokens[1];
       singlyList_.removeByValue(value);
     } else {
       std::cout << "Error: BDEL command requires 1 arguments." << std::endl;
@@ -235,6 +235,80 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
       doublyList_.removeFromTail();
     } else {
       std::cout << "Error: CDELTAIL command requires 0 arguments." << std::endl;
+    }
+    // ============================================================================
+    // C5 Вставка элемента перед указанным значением: CINSERTBEFORE targetValue
+    // newValue
+    // ============================================================================
+  } else if (cmd == "CINSERTBEFORE") {
+    if (tokens.size() == 3) {
+      T targetValue = tokens[1];
+      T newValue = tokens[2];
+      doublyList_.insertBefore(targetValue, newValue);
+    } else {
+      std::cout << "Error: CINSERTBEFORE command requires 2 arguments."
+                << std::endl;
+    }
+    // ============================================================================
+    // C6 Вставка элемента после указанного значения: CINSERTAFTER targetValue
+    // newValue
+    // ============================================================================
+  } else if (cmd == "CINSERTAFTER") {
+    if (tokens.size() == 3) {
+      T targetValue = tokens[1];
+      T newValue = tokens[2];
+      doublyList_.insertAfter(targetValue, newValue);
+    } else {
+      std::cout << "Error: CINSERTAFTER command requires 2 arguments."
+                << std::endl;
+    }
+    // ============================================================================
+    // C7 Удаление элемента перед указанным значением: CDELBEFORE targetValue
+    // ============================================================================
+  } else if (cmd == "CDELBEFORE") {
+    if (tokens.size() == 2) {
+      T targetValue = tokens[1];
+      doublyList_.removeBefore(targetValue);
+    } else {
+      std::cout << "Error: CDELBEFORE command requires 1 arguments."
+                << std::endl;
+    }
+    // ============================================================================
+    // C8 Удаление элемента после указанного значения: CDELAFTER targetValue
+    // ============================================================================
+  } else if (cmd == "CDELAFTER") {
+    if (tokens.size() == 2) {
+      T targetValue = tokens[1];
+      doublyList_.removeAfter(targetValue);
+    } else {
+      std::cout << "Error: CDELAFTER command requires 1 arguments."
+                << std::endl;
+    }
+    // ============================================================================
+    // C9 Поиск элемента по значению: CSEARCH value
+    // ============================================================================
+  } else if (cmd == "CSEARCH") {
+    if (tokens.size() == 2) {
+      T value = tokens[1];
+      DoublyNode<T>* result = doublyList_.searchByValue(value);
+      if (result != nullptr) {
+        std::cout << "Value " << value << " found in the list." << std::endl;
+      } else {
+        std::cout << "Value " << value << " not found in the list."
+                  << std::endl;
+      }
+    } else {
+      std::cout << "Error: CSEARCH command requires 1 arguments." << std::endl;
+    }
+    // ============================================================================
+    // C10 Удаление элемента по значению: CDEL value
+    // ============================================================================
+  } else if (cmd == "CDEL") {
+    if (tokens.size() == 2) {
+      T value = tokens[1];
+      doublyList_.removeByValue(value);
+    } else {
+      std::cout << "Error: CDEL command requires 1 arguments." << std::endl;
     }
     // ============================================================================
     // D1 Добавление элемента: DPUSH value
@@ -322,6 +396,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     if (tokens.size() == 1) {
       array_.print();
       singlyList_.print();
+      doublyList_.print();
       stack_.print();
       queue_.print();
     } else {

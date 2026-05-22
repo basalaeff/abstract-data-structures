@@ -1,8 +1,7 @@
 #pragma once
-#include <iostream>
-#include <string>
 #include <fstream>
 #include <iostream>
+#include <string>
 
 #include "../Node/DoublyNode.hpp"  // Должен содержать struct DoublyNode
 
@@ -31,6 +30,16 @@ class DoublyLinkedList {
   DoublyLinkedList& operator=(const DoublyLinkedList&) = delete;
 
   // ============================================================================
+  // СОХРАНЕНИЕ В ФАЙЛ
+  // ============================================================================
+  void saveToFile(const std::string& filename) const;
+
+  // ============================================================================
+  // ЗАГРУЗКА ИЗ ФАЙЛА
+  // ============================================================================
+  void loadFromFile(const std::string& filename);
+
+  // ============================================================================
   // C1 Добавление элемента (в голову): BADDHEAD value
   // ============================================================================
   void addToHead(const T& value);
@@ -51,19 +60,54 @@ class DoublyLinkedList {
   void removeFromTail();  // удаление хвоста
 
   // ============================================================================
-  // СОХРАНЕНИЕ В ФАЙЛ
+  // C5 Вставка элемента перед указанным значением: BINSERTBEFORE targetValue
+  // newValue
   // ============================================================================
-  void saveToFile(const std::string& filename) const;
+  void insertBefore(const T& targetValue, const T& newValue);
 
   // ============================================================================
-  // ЗАГРУЗКА ИЗ ФАЙЛА
+  // C6 Вставка элемента после указанного значения: BINSERTAFTER targetValue
+  // newValue
   // ============================================================================
-  void loadFromFile(const std::string& filename);
+  void insertAfter(const T& targetValue, const T& newValue);
+
+  // ============================================================================
+  // C7 Удаление элемента перед указанным значением: BDELBEFORE targetValue
+  // ============================================================================
+  void removeBefore(const T& targetValue);
+
+  // ============================================================================
+  // C8 Удаление элемента после указанного значения: BDELAFTER targetValue
+  // ============================================================================
+  void removeAfter(const T& targetValue);
+
+  // ============================================================================
+  // C9 Поиск элемента по значению: BSEARCH value
+  // ============================================================================
+  DoublyNode<T>* searchByValue(const T& value) const;
+
+  // ============================================================================
+  // C10 Удаление элемента по значению: BREMOVE value
+  // ============================================================================
+  void removeByValue(const T& value);
+
+  // ============================================================================
+  // C11 Вывод списка: PRINT
+  // ============================================================================
+  void print() const;
 };
 #include "c.DoublyLinkedList.tpp"
+#include "c.loadFromFile.tpp"
+#include "c.saveToFile.tpp"
 #include "c1.addToHead.tpp"
 #include "c2.addToTail.tpp"
 #include "c3.removeFromHead.tpp"
 #include "c4.removeFromTail.tpp"
-#include "c.saveToFile.tpp"
-#include "c.loadFromFile.tpp"
+#include "c5.insertBefore.tpp"
+#include "c6.insertAfter.tpp"
+#include "c7.removeBefore.tpp"
+#include "c8.removeAfter.tpp"
+#include "c9.searchByValue.tpp"
+#include "c10.removeByValue.tpp"
+#include "c11.print.tpp"
+
