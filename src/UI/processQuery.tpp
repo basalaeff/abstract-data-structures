@@ -244,7 +244,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     if (tokens.size() == 3) {
       T targetValue = tokens[1];
       T newValue = tokens[2];
-      // singlyList_.insertBefore(targetValue, newValue);
+      // doublyList_.insertBefore(targetValue, newValue);
     } else {
       std::cout << "Error: CINSERTBEFORE command requires 2 arguments."
                 << std::endl;
@@ -257,7 +257,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     if (tokens.size() == 3) {
       T targetValue = tokens[1];
       T newValue = tokens[2];
-      // singlyList_.insertAfter(targetValue, newValue);
+      // doublyList_.insertAfter(targetValue, newValue);
     } else {
       std::cout << "Error: CINSERTAFTER command requires 2 arguments."
                 << std::endl;
@@ -268,7 +268,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
   } else if (cmd == "CDELBEFORE") {
     if (tokens.size() == 2) {
       T targetValue = tokens[1];
-      // singlyList_.removeBefore(targetValue);
+      // doublyList_.removeBefore(targetValue);
     } else {
       std::cout << "Error: CDELBEFORE command requires 1 arguments."
                 << std::endl;
@@ -279,7 +279,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
   } else if (cmd == "CDELAFTER") {
     if (tokens.size() == 2) {
       T targetValue = tokens[1];
-      // singlyList_.removeAfter(targetValue);
+      // doublyList_.removeAfter(targetValue);
     } else {
       std::cout << "Error: CDELAFTER command requires 1 arguments."
                 << std::endl;
@@ -290,7 +290,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
   } else if (cmd == "CSEARCH") {
     if (tokens.size() == 2) {
       T value = tokens[1];
-      Node<T>* result = singlyList_.search(value);
+      // Node<T>* result = doublyList_.searchByValue(value);
       if (result != nullptr) {
         std::cout << "Value " << value << " found in the list." << std::endl;
       } else {
@@ -306,7 +306,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
   } else if (cmd == "CDEL") {
     if (tokens.size() == 2) {
       T value = tokens[1];
-      // singlyList_.removeByValue(value);
+      // doublyList_.removeByValue(value);
     } else {
       std::cout << "Error: CDEL command requires 1 arguments." << std::endl;
     }
