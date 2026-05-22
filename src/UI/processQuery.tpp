@@ -257,7 +257,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
     if (tokens.size() == 3) {
       T targetValue = tokens[1];
       T newValue = tokens[2];
-      // doublyList_.insertAfter(targetValue, newValue);
+      doublyList_.insertAfter(targetValue, newValue);
     } else {
       std::cout << "Error: CINSERTAFTER command requires 2 arguments."
                 << std::endl;
