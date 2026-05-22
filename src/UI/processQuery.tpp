@@ -279,7 +279,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
   } else if (cmd == "CDELAFTER") {
     if (tokens.size() == 2) {
       T targetValue = tokens[1];
-      // doublyList_.removeAfter(targetValue);
+      doublyList_.removeAfter(targetValue);
     } else {
       std::cout << "Error: CDELAFTER command requires 1 arguments."
                 << std::endl;
