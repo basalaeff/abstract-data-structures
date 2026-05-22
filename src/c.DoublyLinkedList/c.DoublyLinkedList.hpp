@@ -85,6 +85,11 @@ class DoublyLinkedList {
   // C9 Поиск элемента по значению: BSEARCH value
   // ============================================================================
   DoublyNode<T>* searchByValue(const T& value) const;
+
+  // ============================================================================
+  // C10 Удаление элемента по значению: BREMOVE value
+  // ============================================================================
+  void removeByValue(const T& value);
 };
 #include "c.DoublyLinkedList.tpp"
 #include "c.loadFromFile.tpp"
@@ -98,3 +103,5 @@ class DoublyLinkedList {
 #include "c7.removeBefore.tpp"
 #include "c8.removeAfter.tpp"
 #include "c9.searchByValue.tpp"
+#include "c10.removeByValue.tpp"
+

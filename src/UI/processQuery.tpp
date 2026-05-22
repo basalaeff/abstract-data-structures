@@ -306,7 +306,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
   } else if (cmd == "CDEL") {
     if (tokens.size() == 2) {
       T value = tokens[1];
-      // doublyList_.removeByValue(value);
+      doublyList_.removeByValue(value);
     } else {
       std::cout << "Error: CDEL command requires 1 arguments." << std::endl;
     }
