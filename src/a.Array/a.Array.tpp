@@ -11,4 +11,6 @@ Array<T>::Array(int capacity)
 // Освобождает память
 
 template <typename T>
-Array<T>::~Array() { delete[] data_; }
+Array<T>::~Array() {
+  delete[] data_;
+}

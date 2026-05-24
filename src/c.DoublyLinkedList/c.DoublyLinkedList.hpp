@@ -100,6 +100,8 @@ class DoublyLinkedList {
 #include "c.loadFromFile.tpp"
 #include "c.saveToFile.tpp"
 #include "c1.addToHead.tpp"
+#include "c10.removeByValue.tpp"
+#include "c11.print.tpp"
 #include "c2.addToTail.tpp"
 #include "c3.removeFromHead.tpp"
 #include "c4.removeFromTail.tpp"
@@ -108,6 +110,3 @@ class DoublyLinkedList {
 #include "c7.removeBefore.tpp"
 #include "c8.removeAfter.tpp"
 #include "c9.searchByValue.tpp"
-#include "c10.removeByValue.tpp"
-#include "c11.print.tpp"
-

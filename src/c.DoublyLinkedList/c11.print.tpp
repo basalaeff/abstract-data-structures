@@ -2,7 +2,7 @@
 // B11 Вывод списка: PRINT
 // ============================================================================
 // Сложность: O(n)
-template<typename T>
+template <typename T>
 void DoublyLinkedList<T>::print() const {
   DoublyNode<T>* current = head_;
   while (current != nullptr) {

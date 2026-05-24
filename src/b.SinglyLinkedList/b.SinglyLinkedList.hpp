@@ -100,6 +100,7 @@ class SinglyLinkedList {
 #include "b.saveToFile.tpp"
 #include "b1.addToHead.tpp"
 #include "b10.removeByValue.tpp"
+#include "b11.print.tpp"
 #include "b2.addToTail.tpp"
 #include "b3.removeFromHead.tpp"
 #include "b4.removeFromTail.tpp"
@@ -108,4 +109,3 @@ class SinglyLinkedList {
 #include "b7.removeBefore.tpp"
 #include "b8.removeAfter.tpp"
 #include "b9.searchByValue.tpp"
-#include "b11.print.tpp"

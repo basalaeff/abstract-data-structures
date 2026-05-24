@@ -15,4 +15,3 @@ void Queue<T>::print() const {
   }
   std::cout << std::endl;
 }
-

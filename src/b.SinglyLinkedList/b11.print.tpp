@@ -2,7 +2,7 @@
 // B11 Вывод списка: PRINT
 // ============================================================================
 // Сложность: O(n)
-template<typename T>
+template <typename T>
 void SinglyLinkedList<T>::print() const {
   if (head_ == nullptr) {
     return;
