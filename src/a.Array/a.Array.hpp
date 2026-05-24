@@ -1,14 +1,14 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include <stdexcept>
 #include <fstream>
+#include <iostream>
+#include <stdexcept>
+#include <string>
 
 template <typename T>
 class Array {
  private:
-  int maxCapacity_;    // Максимальная вместимость массива
-  int size_;           // Текущий размер массива (количество элементов)
+  int maxCapacity_;  // Максимальная вместимость массива
+  int size_;  // Текущий размер массива (количество элементов)
   T *data_;  // Указатель на динамический массив строк
  public:
   // ============================================================================
@@ -61,6 +61,8 @@ class Array {
   void loadFromFile(const std::string &filename);
 };
 #include "a.Array.tpp"
+#include "a.loadFromFile.tpp"
+#include "a.saveToFile.tpp"
 #include "a1.addToTheEnd.tpp"
 #include "a2.addToTheIndex.tpp"
 #include "a3.get.tpp"
@@ -68,5 +70,3 @@ class Array {
 #include "a5.replaceByIndex.tpp"
 #include "a6.length.tpp"
 #include "a7.print.tpp"
-#include "a.saveToFile.tpp"
-#include "a.loadFromFile.tpp"

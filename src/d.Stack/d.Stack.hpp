@@ -1,8 +1,8 @@
 #pragma once
-#include <iostream>
-#include <string>
 #include <fstream>
+#include <iostream>
 #include <stdexcept>
+#include <string>
 
 #include "../Node/Node.hpp"
 
@@ -53,8 +53,8 @@ class Stack {
   void loadFromFile(const std::string& filename);
 };
 #include "d.Stack.tpp"
+#include "d.loadFromFile.tpp"
+#include "d.saveToFile.tpp"
 #include "d1.push.tpp"
 #include "d2.pop.tpp"
 #include "d3.print.tpp"
-#include "d.saveToFile.tpp"
-#include "d.loadFromFile.tpp"

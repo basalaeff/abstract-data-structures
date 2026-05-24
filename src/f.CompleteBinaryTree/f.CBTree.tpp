@@ -4,7 +4,9 @@ CBTree<T>::CBTree() : root_(nullptr) {}
 
 // Деструктор
 template <typename T>
-CBTree<T>::~CBTree() { clear(root_); }
+CBTree<T>::~CBTree() {
+  clear(root_);
+}
 
 // Очистка дерева (рекурсивное удаление)
 template <typename T>

@@ -1,15 +1,16 @@
 // ============================================================================
-// B11 Вывод списка: PRINT
+// B9 Поиск элемента по значению: BSEARCH value
 // ============================================================================
 // Сложность: O(n)
+
 template <typename T>
-void SinglyLinkedList<T>::print() const {
-  if (head_ == nullptr) {
-    return;
-  }
-  Node<T>* current = head_;
+DoublyNode<T>* DoublyLinkedList<T>::searchByValue(const T& value) const {
+  DoublyNode<T>* current = head_;
   while (current != nullptr) {
-    std::cout << current->data_ << " ";
+    if (current->data_ == value) {
+      return current;
+    }
     current = current->next_;
   }
+  return nullptr;
 }

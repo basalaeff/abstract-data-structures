@@ -11,7 +11,7 @@
 //   3. Рекурсивно обходим левое поддерево
 // Сложность: O(n)
 
-template<typename T>
+template <typename T>
 void CBTree<T>::print_CBT(TreeNode<T>* current, int level) const {
   if (current) {
     print_CBT(current->right_, level + 1);
@@ -24,7 +24,7 @@ void CBTree<T>::print_CBT(TreeNode<T>* current, int level) const {
 }
 // Вывод в консоль
 // Сложность: O(n)
-template<typename T>
+template <typename T>
 void CBTree<T>::print() const {
   if (root_ == nullptr) {
     throw std::out_of_range("Tree is empty.");

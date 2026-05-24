@@ -14,7 +14,8 @@ bool CBTree<T>::find_value(TreeNode<T>* current, T value) const {
   if (current->data_ == value) {
     return true;
   }
-  return find_value(current->left_, value) || find_value(current->right_, value);
+  return find_value(current->left_, value) ||
+         find_value(current->right_, value);
 }
 
 // Поиск элемента по значению (публичный метод)

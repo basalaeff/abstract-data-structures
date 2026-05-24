@@ -4,4 +4,6 @@
 // Возвращает текущий размер массива (количество элементов).
 // Сложность: O(1) - константная, так как размер массива возвращается напрямую.
 template <typename T>
-int Array<T>::length() const { return size_; }
+int Array<T>::length() const {
+  return size_;
+}

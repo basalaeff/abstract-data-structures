@@ -1,8 +1,9 @@
 #pragma once
-#include <iostream>
-#include <string>
 #include <fstream>
+#include <iostream>
 #include <stdexcept>
+#include <string>
+
 #include "../Node/Node.hpp"
 
 template <typename T>
@@ -62,10 +63,10 @@ class Queue {
   bool isEmpty() const;
 };
 #include "e.Queue.tpp"
+#include "e.front.tpp"
+#include "e.isEmpty.tpp"
+#include "e.loadFromFile.tpp"
+#include "e.saveToFile.tpp"
 #include "e1.push.tpp"
 #include "e2.pop.tpp"
 #include "e3.print.tpp"
-#include "e.saveToFile.tpp"
-#include "e.loadFromFile.tpp"
-#include "e.isEmpty.tpp"
-#include "e.front.tpp"
