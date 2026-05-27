@@ -233,3 +233,14 @@ TEST(ArrayTest, RemoveAndShiftElements) {
   // Assert
   EXPECT_EQ(arr.get(1), "Red");
 }
+
+// Тест для ошибки при сохранении в файл
+TEST(ArrayTest, SaveToFileError) {
+  // Arrange
+  Array<std::string> arr(5);
+  arr.addToTheEnd("White");
+  arr.addToTheEnd("Black");
+
+  // Act & Assert
+  EXPECT_THROW(arr.saveToFile("/invalid/path/test.txt"), std::exception);
+}
