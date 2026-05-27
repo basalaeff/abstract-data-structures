@@ -30,6 +30,13 @@ class DoublyLinkedList {
   DoublyLinkedList& operator=(const DoublyLinkedList&) = delete;
 
   // ============================================================================
+  // ГЕТТЕРЫ
+  // ============================================================================
+  int getSize() const { return size_; }
+  DoublyNode<T>* getHead() const { return head_; }
+  DoublyNode<T>* getTail() const { return tail_; }
+
+  // ============================================================================
   // СОХРАНЕНИЕ В ФАЙЛ
   // ============================================================================
   void saveToFile(const std::string& filename) const;
