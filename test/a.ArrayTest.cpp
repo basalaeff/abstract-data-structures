@@ -126,3 +126,16 @@ TEST(ArrayTest, ReplaceElementByIndex) {
   EXPECT_EQ(arr.get(0), "Black");
   EXPECT_EQ(arr.get(1), "White");
 }
+
+// Тест для функции length
+TEST(ArrayTest, LengthCheck) {
+  // Arrange (подготовка исходных данных)
+  Array<std::string> arr(10);
+
+  // Act (запуск метода/функции)
+  arr.addToTheEnd("White");
+  arr.addToTheEnd("Black");
+
+  // Assert (проверка результата)
+  EXPECT_EQ(arr.length(), 2);
+}
