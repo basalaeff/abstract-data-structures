@@ -12,18 +12,18 @@ TEST(ArrayTest, AddToTheEndWords) {
                                           "Blue"};
   // capcity: size_t -> int
   const int capacity = static_cast<int>(words.size());
-  Array<std::string> array(capacity);
+  Array<std::string> arr(capacity);
 
   // Assert (проверка результата)
-  EXPECT_EQ(array.length(), 0);
+  EXPECT_EQ(arr.length(), 0);
 
   // Act (запуск метода/функции)
   for (int i = 0; i < capacity; ++i) {
-    array.addToTheEnd(words[i]);
+    arr.addToTheEnd(words[i]);
 
     // Assert (проверка результата)
-    EXPECT_EQ(array.length(), i + 1);
-    EXPECT_EQ(array.get(i), words[i]);
+    EXPECT_EQ(arr.length(), i + 1);
+    EXPECT_EQ(arr.get(i), words[i]);
   }
 }
 
@@ -41,25 +41,25 @@ TEST(ArrayTest, AddToTheEndResize) {
                                           "Blue"};
   // capcity: size_t -> int
   const int capacity = static_cast<int>(words.size());
-  Array<std::string> array(capacity);
+  Array<std::string> arr(capacity);
 
   // Assert (проверка результата)
-  EXPECT_EQ(array.length(), 0);
+  EXPECT_EQ(arr.length(), 0);
 
   // Act (запуск метода/функции)
   for (int i = 0; i < capacity; ++i) {
-    array.addToTheEnd(words[i]);
+    arr.addToTheEnd(words[i]);
 
     // Assert (проверка результата)
-    EXPECT_EQ(array.length(), i + 1);
-    EXPECT_EQ(array.get(i), words[i]);
+    EXPECT_EQ(arr.length(), i + 1);
+    EXPECT_EQ(arr.get(i), words[i]);
   }
 
   // Act (запуск метода/функции)
-  array.addToTheEnd("Yellow");
+  arr.addToTheEnd("Yellow");
   const int index = capacity;
-  EXPECT_EQ(array.get(index), "Yellow");
-  EXPECT_EQ(array.getSize(), capacity + 1);
+  EXPECT_EQ(arr.get(index), "Yellow");
+  EXPECT_EQ(arr.getSize(), capacity + 1);
 }
 
 // Тест для добавления элемента по индексу
@@ -69,18 +69,31 @@ TEST(ArrayTest, AddToTheIndex) {
                                           "Blue"};
   // capcity: size_t -> int
   const int capacity = static_cast<int>(words.size());
-  Array<std::string> array(capacity);
+  Array<std::string> arr(capacity);
 
   // Assert (проверка результата)
-  EXPECT_EQ(array.length(), 0);
+  EXPECT_EQ(arr.length(), 0);
 
   // Act (запуск метода/функции)
   for (int i = 0; i < capacity; ++i) {
-    array.addToTheIndex(i, words[i]);
+    arr.addToTheIndex(i, words[i]);
 
     // Assert (проверка результата)
-    EXPECT_EQ(array.length(), i + 1);
-    EXPECT_EQ(array.get(i), words[i]);
+    EXPECT_EQ(arr.length(), i + 1);
+    EXPECT_EQ(arr.get(i), words[i]);
   }
 }
 
+// Тест для получения элемента по индексу
+TEST(ArrayTest, GetElement) {
+  // Arrange (подготовка исходных данных)
+  Array<std::string> arr(10);
+
+  // Act (запуск метода/функции)
+  arr.addToTheIndex(0, "White");
+  arr.addToTheIndex(1, "Black");
+
+  // Assert (проверка результата)
+  EXPECT_EQ(arr.get(0), "White");
+  EXPECT_EQ(arr.get(1), "Black");
+}
