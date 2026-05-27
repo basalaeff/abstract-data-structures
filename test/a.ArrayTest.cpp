@@ -97,3 +97,16 @@ TEST(ArrayTest, GetElement) {
   EXPECT_EQ(arr.get(0), "White");
   EXPECT_EQ(arr.get(1), "Black");
 }
+
+// Тест для удаления элемента по индексу
+TEST(ArrayTest, RemoveElementByIndex) {
+  // Arrange (подготовка исходных данных)
+  Array<std::string> arr(10);
+
+  // Act (запуск метода/функции)
+  arr.addToTheEnd("White");
+  arr.removeByIndex(0);
+
+  // Assert (проверка результата)
+  EXPECT_EQ(arr.length(), 0);
+}
