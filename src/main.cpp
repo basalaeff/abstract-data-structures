@@ -1,15 +1,4 @@
-#include <fstream>
-#include <iostream>
-#include <sstream>
-#include <vector>
-
-#include "UI/consoleUI.hpp"
-#include "a.Array/a.Array.hpp"
-#include "b.SinglyLinkedList/b.SinglyLinkedList.hpp"
-#include "c.DoublyLinkedList/c.DoublyLinkedList.hpp"
-#include "d.Stack/d.Stack.hpp"
-#include "e.Queue/e.Queue.hpp"
-#include "f.CompleteBinaryTree/f.CBTree.hpp"
+#include "UI/ConsoleUI.hpp"
 
 int main(int argc, char *argv[]) {
   std::string query;

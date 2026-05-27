@@ -2,10 +2,16 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <stdexcept>
 #include <string>
 #include <vector>
-#include <string>
-#include <stdexcept>
+
+#include "a.Array/a.Array.hpp"
+#include "b.SinglyLinkedList/b.SinglyLinkedList.hpp"
+#include "c.DoublyLinkedList/c.DoublyLinkedList.hpp"
+#include "d.Stack/d.Stack.hpp"
+#include "e.Queue/e.Queue.hpp"
+#include "f.CompleteBinaryTree/f.CBTree.hpp"
 
 template <typename T>
 class ConsoleUI {
@@ -26,7 +32,7 @@ class ConsoleUI {
         doublyList_(dl),
         stack_(s),
         queue_(q),
-        cbtree_(cbt) {};
+        cbtree_(cbt){};
 
   // Основной метод обработки запроса
   void processQuery(const std::string& query);

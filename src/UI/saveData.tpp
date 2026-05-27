@@ -2,9 +2,9 @@
 // Сохранение данных
 // ================================================
 
-template<typename T>
+template <typename T>
 void ConsoleUI<T>::saveData(const std::string& filename,
-                         const std::string& query) {
+                            const std::string& query) {
   if (!filename.empty() && !query.empty()) {
     std::stringstream ss(query);
     std::string command;
