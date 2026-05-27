@@ -59,6 +59,18 @@ TEST(SLListTest, RemoveFromTail) {
   EXPECT_EQ(sll.getSize(), 2);
 }
 
+TEST(SLListTest, RemoveFromTailSingleElement) {
+  // Arrange
+  SinglyLinkedList<std::string> sll;
+  sll.addToTail("Moscow");
+
+  // Act
+  sll.removeFromTail();
+
+  // Assert
+  EXPECT_EQ(sll.getSize(), 0);
+}
+
 // Тест ошибки при удалении из пустого списка
 TEST(SLListTest, RemoveFromEmptyList) {
   // Arrange
@@ -68,3 +80,4 @@ TEST(SLListTest, RemoveFromEmptyList) {
   EXPECT_THROW(sll.removeFromHead(), std::runtime_error);
   EXPECT_THROW(sll.removeFromTail(), std::runtime_error);
 }
+
