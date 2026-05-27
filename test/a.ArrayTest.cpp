@@ -207,3 +207,14 @@ TEST(ArrayTest, InvalidIndexForAdd) {
   // Act & Assert
   EXPECT_THROW(arr.addToTheIndex(10, "Red"), std::out_of_range);
 }
+
+// Тест для проверки попытки удалить элемент с неверным индексом
+TEST(ArrayTest, RemoveInvalidIndex) {
+  // Arrange
+  Array<std::string> arr(5);
+  arr.addToTheEnd("White");
+  arr.addToTheEnd("Black");
+
+  // Act & Assert
+  EXPECT_THROW(arr.removeByIndex(10), std::out_of_range);
+}
