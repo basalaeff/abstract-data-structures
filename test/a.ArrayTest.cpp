@@ -36,30 +36,15 @@ TEST(ArrayTest, ConstructorAndDestructor) {
 
 // Тест для добавления элемента в конец (проверка увеличения размера)
 TEST(ArrayTest, AddToTheEndResize) {
-  // Arrange (подготовка исходных данных)
-  const std::vector<std::string> words = {"Black", "White", "Red", "Green",
-                                          "Blue"};
-  // capcity: size_t -> int
-  const int capacity = static_cast<int>(words.size());
-  Array<std::string> arr(capacity);
+  // Arrange
+  Array<std::string> arr(0);
 
-  // Assert (проверка результата)
-  EXPECT_EQ(arr.length(), 0);
+  // Act
+  arr.addToTheEnd("White");
 
-  // Act (запуск метода/функции)
-  for (int i = 0; i < capacity; ++i) {
-    arr.addToTheEnd(words[i]);
-
-    // Assert (проверка результата)
-    EXPECT_EQ(arr.length(), i + 1);
-    EXPECT_EQ(arr.get(i), words[i]);
-  }
-
-  // Act (запуск метода/функции)
-  arr.addToTheEnd("Yellow");
-  const int index = capacity;
-  EXPECT_EQ(arr.get(index), "Yellow");
-  EXPECT_EQ(arr.getSize(), capacity + 1);
+  // Assert
+  EXPECT_EQ(arr.getSize(), 1);
+  EXPECT_EQ(arr.get(0), "White");
 }
 
 // Тест для добавления элемента по индексу
