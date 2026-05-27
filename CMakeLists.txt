@@ -44,18 +44,28 @@ add_executable(ArrayTests
     test/a.ArrayTest.cpp
 )
 
+add_executable(SLListTests
+    test/b.SLListTest.cpp
+)
+
 target_include_directories(ArrayTests PRIVATE src)
+target_include_directories(SLListTests PRIVATE src)
 
 target_link_libraries(ArrayTests
     GTest::gtest
     GTest::gtest_main
 )
+target_link_libraries(SLListTests
+    GTest::gtest
+    GTest::gtest_main
+)
 
 add_test(NAME ArrayTests COMMAND ArrayTests)
+add_test(NAME SLListTests COMMAND SLListTests)
 
 add_custom_target(tests
     COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure
-    DEPENDS ArrayTests
+    DEPENDS ArrayTests SLListTests
 )
 
 # ====================== Coverage ======================
