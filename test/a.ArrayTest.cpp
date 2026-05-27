@@ -196,3 +196,14 @@ TEST(ArrayTest, InvalidIndexForGet) {
   // Act & Assert
   EXPECT_THROW(arr.get(10), std::out_of_range);
 }
+
+// Тест для проверки попытки добавить элемент с неверным индексом
+TEST(ArrayTest, InvalidIndexForAdd) {
+  // Arrange
+  Array<std::string> arr(5);
+  arr.addToTheEnd("White");
+  arr.addToTheEnd("Black");
+
+  // Act & Assert
+  EXPECT_THROW(arr.addToTheIndex(10, "Red"), std::out_of_range);
+}
