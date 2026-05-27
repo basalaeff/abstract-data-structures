@@ -110,3 +110,19 @@ TEST(ArrayTest, RemoveElementByIndex) {
   // Assert (проверка результата)
   EXPECT_EQ(arr.length(), 0);
 }
+
+// Тест для замены элемента по индексу
+TEST(ArrayTest, ReplaceElementByIndex) {
+  // Arrange (подготовка исходных данных)
+  Array<std::string> arr(10);
+
+  // Act (запуск метода/функции)
+  arr.addToTheIndex(0, "White");
+  arr.addToTheIndex(1, "Black");
+  arr.replaceByIndex(0, "Black");
+  arr.replaceByIndex(1, "White");
+
+  // Assert (проверка результата)
+  EXPECT_EQ(arr.get(0), "Black");
+  EXPECT_EQ(arr.get(1), "White");
+}
