@@ -23,23 +23,10 @@ endif()
 add_executable(dbms src/main.cpp)
 target_include_directories(dbms PRIVATE src)
 
-# ====================== Formatting (ВАШИ ПУТИ 1:1) ======================
+# ====================== Formatting ======================
 
 file(GLOB_RECURSE FORMAT_FILES
-    src/main.cpp
-    src/UI/*.hpp
-    src/UI/*.tpp
-    src/a.Array/*.hpp
-    src/a.Array/*.tpp
-    src/b.SinglyLinkedList/*.hpp
-    src/b.SinglyLinkedList/*.tpp
-    src/c.DoublyLinkedList/*.hpp
-    src/c.DoublyLinkedList/*.tpp
-    src/d.Stack/*.hpp
-    src/d.Stack/*.tpp
-    src/e.Queue/*.hpp
-    src/e.Queue/*.tpp
-    src/f.CompleteBinaryTree/*.tpp
+    "src/*.cpp" "src/*.hpp" "src/*.tpp" "test/*.cpp"
 )
 
 add_custom_target(format
