@@ -162,3 +162,24 @@ TEST(ArrayTest, SaveAndLoadFromFile) {
 
   remove(filename.c_str());
 }
+
+// Тест для метода print
+TEST(ArrayTest, Print) {
+  // Arrange (подготовка исходных данных)
+  Array<std::string> arr(10);
+
+  // Act (запуск метода/функции)
+  arr.addToTheEnd("White");
+  arr.addToTheEnd("Black");
+
+  std::stringstream buffer;
+  std::streambuf* old =
+      std::cout.rdbuf(buffer.rdbuf());  // Перенаправляем std::cout
+
+  arr.print();
+  std::string output = buffer.str();
+  EXPECT_NE(output.find("White"), std::string::npos);
+  EXPECT_NE(output.find("Black"), std::string::npos);
+
+  std::cout.rdbuf(old);  // Восстанавливаем std::cout
+}
