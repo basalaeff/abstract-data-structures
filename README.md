@@ -12,6 +12,15 @@
 3. Протестировать программу на различных исходных данных.
 4. Модифицировать программу по запросу преподавателя и добавить новые операции с данными.
 
+## Установка и сборка
+```bash
+git clone https://github.com/basalaeff/abstract-data-structures.git
+```
+```bash
+cmake -S . -B build -G Ninja
+cmake --build build
+```
+
 ## Реализованные структуры данных и операции над ними
 
 **Массив (A)**:
@@ -166,7 +175,7 @@
 ```bash
 ./dbms --file data/Cdata.txt --query 'CDELTAIL'
 ```
-- C5 Вставка элемента перед указанным значением: `CINSERTBEFORE targetValue newValue`
+- C5 Вставка элемента перед указанным значением: `BINSERTBEFORE targetValue newValue`
 ```bash
 ./dbms --file data/Cdata.txt --query 'CINSERTBEFORE Russia Belarus'
 ```
