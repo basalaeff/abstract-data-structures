@@ -168,7 +168,6 @@ TEST(ArrayTest, Print) {
   // Arrange (подготовка исходных данных)
   Array<std::string> arr(10);
 
-  // Act (запуск метода/функции)
   arr.addToTheEnd("White");
   arr.addToTheEnd("Black");
 
@@ -176,10 +175,24 @@ TEST(ArrayTest, Print) {
   std::streambuf* old =
       std::cout.rdbuf(buffer.rdbuf());  // Перенаправляем std::cout
 
+  // Act (запуск метода/функции)
   arr.print();
   std::string output = buffer.str();
+
+  // Assert (проверка результата)
   EXPECT_NE(output.find("White"), std::string::npos);
   EXPECT_NE(output.find("Black"), std::string::npos);
 
   std::cout.rdbuf(old);  // Восстанавливаем std::cout
+}
+
+// Тест для проверки ошибок при доступе по неверному индексу
+TEST(ArrayTest, InvalidIndexForGet) {
+  // Arrange
+  Array<std::string> arr(5);
+  arr.addToTheEnd("White");
+  arr.addToTheEnd("Black");
+
+  // Act & Assert
+  EXPECT_THROW(arr.get(10), std::out_of_range);
 }
