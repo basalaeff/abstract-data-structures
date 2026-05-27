@@ -139,3 +139,26 @@ TEST(ArrayTest, LengthCheck) {
   // Assert (проверка результата)
   EXPECT_EQ(arr.length(), 2);
 }
+
+// Тест для записи и загрузки данных в/из файла
+TEST(ArrayTest, SaveAndLoadFromFile) {
+  // Arrange (подготовка исходных данных)
+  Array<std::string> arr(10);
+
+  // Act (запуск метода/функции)
+  arr.addToTheEnd("White");
+  arr.addToTheEnd("Black");
+
+  std::string filename = "testfile.txt";
+  arr.saveToFile(filename);
+
+  // Act (запуск метода/функции)
+  Array<std::string> loadedArr(10);
+  loadedArr.loadFromFile(filename);
+
+  // Assert (проверка результата)
+  EXPECT_EQ(loadedArr.get(0), "White");
+  EXPECT_EQ(loadedArr.get(1), "Black");
+
+  remove(filename.c_str());
+}
