@@ -47,6 +47,19 @@ TEST(ArrayTest, AddToTheEndResize) {
   EXPECT_EQ(arr.get(0), "White");
 }
 
+// Тест для добавления элемента по индексу (проверка увеличения размера)
+TEST(ArrayTest, AddToTheIndexResize) {
+  // Arrange
+  Array<std::string> arr(0);
+
+  // Act
+  arr.addToTheIndex(0, "White");
+
+  // Assert
+  EXPECT_EQ(arr.getSize(), 1);
+  EXPECT_EQ(arr.get(0), "White");
+}
+
 // Тест для добавления элемента по индексу
 TEST(ArrayTest, AddToTheIndex) {
   // Arrange (подготовка исходных данных)
@@ -89,11 +102,11 @@ TEST(ArrayTest, RemoveElementByIndex) {
   Array<std::string> arr(10);
 
   // Act (запуск метода/функции)
-  arr.addToTheEnd("White");
+  arr.addToTheIndex(0, "White");
   arr.removeByIndex(0);
 
   // Assert (проверка результата)
-  EXPECT_EQ(arr.length(), 0);
+  EXPECT_EQ(arr.getSize(), 0);
 }
 
 // Тест для замены элемента по индексу
