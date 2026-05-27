@@ -217,6 +217,17 @@ TEST(ArrayTest, RemoveInvalidIndex) {
   EXPECT_THROW(arr.removeByIndex(10), std::out_of_range);
 }
 
+// Тест для проверки попытки заменить элемент с неверным индексом
+TEST(ArrayTest, ReplaceInvalidIndex) {
+  // Arrange
+  Array<std::string> arr(5);
+  arr.addToTheEnd("White");
+  arr.addToTheEnd("Black");
+
+  // Act & Assert
+  EXPECT_THROW(arr.replaceByIndex(10, "Red"), std::out_of_range);
+}
+
 // Тест для удаления элемента сдвигом элементов
 TEST(ArrayTest, RemoveAndShiftElements) {
   // Arrange
