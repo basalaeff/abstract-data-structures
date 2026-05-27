@@ -8,7 +8,7 @@
 template <typename T>
 void Array<T>::addToTheEnd(const T& value) {
   if (size_ >= maxCapacity_) {
-    throw std::out_of_range("Array is full");
+    resize(maxCapacity_ == 0 ? 1 : maxCapacity_ * 2);
   }
   data_[size_] = value;  // Вставляем элемент в конец
   size_++;
