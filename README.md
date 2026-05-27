@@ -175,7 +175,7 @@ cmake --build build
 ```bash
 ./dbms --file data/Cdata.txt --query 'CDELTAIL'
 ```
-- C5 Вставка элемента перед указанным значением: `BINSERTBEFORE targetValue newValue`
+- C5 Вставка элемента перед указанным значением: `CINSERTBEFORE targetValue newValue`
 ```bash
 ./dbms --file data/Cdata.txt --query 'CINSERTBEFORE Russia Belarus'
 ```
