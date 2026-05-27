@@ -218,3 +218,18 @@ TEST(ArrayTest, RemoveInvalidIndex) {
   // Act & Assert
   EXPECT_THROW(arr.removeByIndex(10), std::out_of_range);
 }
+
+// Тест для удаления элемента сдвигом элементов
+TEST(ArrayTest, RemoveAndShiftElements) {
+  // Arrange
+  Array<std::string> arr(5);
+  arr.addToTheEnd("White");
+  arr.addToTheEnd("Black");
+  arr.addToTheEnd("Red");
+
+  // Act
+  arr.removeByIndex(1);
+
+  // Assert
+  EXPECT_EQ(arr.get(1), "Red");
+}
