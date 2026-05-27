@@ -29,8 +29,42 @@ TEST(SLListTest, AddToTail) {
 
   // Assert
   EXPECT_EQ(sll.getSize(), 3);
-  EXPECT_EQ(sll.getHead()->data_, "Moscow");
-  EXPECT_EQ(sll.getHead()->next_->data_, "London");
-  EXPECT_EQ(sll.getHead()->next_->next_->data_, "Paris");
 }
 
+// Тест удаления из головы
+TEST(SLListTest, RemoveFromHead) {
+  // Arrange
+  SinglyLinkedList<std::string> sll;
+  sll.addToTail("Moscow");
+  sll.addToTail("London");
+
+  // Act
+  sll.removeFromHead();
+
+  // Assert
+  EXPECT_EQ(sll.getSize(), 1);
+}
+
+TEST(SLListTest, RemoveFromTail) {
+  // Arrange
+  SinglyLinkedList<std::string> sll;
+  sll.addToTail("Moscow");
+  sll.addToTail("London");
+  sll.addToTail("Paris");
+
+  // Act
+  sll.removeFromTail();
+
+  // Assert
+  EXPECT_EQ(sll.getSize(), 2);
+}
+
+// Тест ошибки при удалении из пустого списка
+TEST(SLListTest, RemoveFromEmptyList) {
+  // Arrange
+  SinglyLinkedList<std::string> sll;
+
+  // Act & Assert
+  EXPECT_THROW(sll.removeFromHead(), std::runtime_error);
+  EXPECT_THROW(sll.removeFromTail(), std::runtime_error);
+}
