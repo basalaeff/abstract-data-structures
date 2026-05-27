@@ -244,3 +244,14 @@ TEST(ArrayTest, SaveToFileError) {
   // Act & Assert
   EXPECT_THROW(arr.saveToFile("/invalid/path/test.txt"), std::exception);
 }
+
+// Тест для ошибки при загрузке из файла
+TEST(ArrayTest, LoadFromFileError) {
+  // Arrange
+  Array<std::string> arr(5);
+  arr.addToTheEnd("White");
+  arr.addToTheEnd("Black");
+
+  // Act & Assert
+  EXPECT_THROW(arr.loadFromFile("/invalid/path/test.txt"), std::exception);
+}
