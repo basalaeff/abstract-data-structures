@@ -5,6 +5,7 @@
 
 #include "../src/a.Array/a.Array.hpp"
 
+// Тест добавления элемента в конец
 TEST(ArrayTest, AddToTheEndWords) {
   // Arrange (подготовка исходных данных)
   const std::vector<std::string> words = {"Black", "White", "Red", "Green",
@@ -24,4 +25,11 @@ TEST(ArrayTest, AddToTheEndWords) {
     EXPECT_EQ(array.length(), i + 1);
     EXPECT_EQ(array.get(i), words[i]);
   }
+}
+
+// Тест для конструктора и деструктора
+TEST(ArrayTest, ConstructorAndDestructor) {
+    Array<int> arr(10);
+    EXPECT_EQ(arr.getSize(), 0);
+    EXPECT_EQ(arr.getMaxCapacity(), 10);
 }
