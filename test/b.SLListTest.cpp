@@ -81,6 +81,8 @@ TEST(SLListTest, RemoveFromEmptyList) {
   EXPECT_THROW(sll.removeFromTail(), std::runtime_error);
   EXPECT_THROW(sll.insertBefore("Moscow", "London"), std::runtime_error);
   EXPECT_THROW(sll.insertAfter("Moscow", "London"), std::runtime_error);
+  EXPECT_THROW(sll.removeBefore("Moscow"), std::runtime_error);
+  EXPECT_THROW(sll.removeAfter("Moscow"), std::runtime_error);
 }
 
 // Тест вставки перед указанным значением
@@ -150,3 +152,88 @@ TEST(SLListTest, InsertBeforeHead) {
   // Assert
   EXPECT_EQ(sll.getSize(), 4);
 }
+
+// Тест удаления элемента перед целевым значением
+TEST(SLListTest, RemoveBefore) {
+  // Arrange
+  SinglyLinkedList<std::string> sll;
+  sll.addToTail("Moscow");
+  sll.addToTail("London");
+  sll.addToTail("Paris");
+  sll.addToTail("Berlin");
+
+  // Act
+  sll.removeBefore("Paris");
+
+  // Assert
+  EXPECT_EQ(sll.getSize(), 3);
+}
+
+// Тест удаления элемента после целевого значения
+TEST(SLListTest, RemoveAfter) {
+  // Arrange
+  SinglyLinkedList<std::string> sll;
+  sll.addToTail("Moscow");
+  sll.addToTail("London");
+  sll.addToTail("Paris");
+  sll.addToTail("Berlin");
+
+  // Act
+  sll.removeAfter("London");
+
+  // Assert
+  EXPECT_EQ(sll.getSize(), 3);
+}
+
+// Тест удаления элемента (головы)
+TEST(SLListTest, RemoveBeforeHead) {
+  // Arrange
+  SinglyLinkedList<std::string> sll;
+  sll.addToTail("Moscow");
+  sll.addToTail("London");
+  sll.addToTail("Paris");
+  sll.addToTail("Berlin");
+
+  // Act
+  sll.removeBefore("London");
+
+  // Assert
+  EXPECT_EQ(sll.getSize(), 3);
+}
+
+// Тест удаления элемента с ошибкой (значение не найдено)
+TEST(SLListTest, RemoveBeforeNotFound) {
+  // Arrange
+  SinglyLinkedList<std::string> sll;
+  sll.addToTail("Moscow");
+  sll.addToTail("London");
+  sll.addToTail("Paris");
+
+  // Act & Assert
+  EXPECT_THROW(sll.removeBefore("Berlin"), std::runtime_error);
+}
+
+// Тест удаления элемента с ошибкой (значение не найдено)
+TEST(SLListTest, RemoveAfterNotFound) {
+  // Arrange
+  SinglyLinkedList<std::string> sll;
+  sll.addToTail("Moscow");
+  sll.addToTail("London");
+  sll.addToTail("Paris");
+
+  // Act & Assert
+  EXPECT_THROW(sll.removeAfter("Berlin"), std::runtime_error);
+}
+
+// Тест удаления элемента после хвоста
+TEST(SLListTest, RemoveAfterTail) {
+  // Arrange
+  SinglyLinkedList<std::string> sll;
+  sll.addToTail("Moscow");
+  sll.addToTail("London");
+  sll.addToTail("Paris");
+
+  // Act & Assert
+  EXPECT_THROW(sll.removeAfter("Paris"), std::runtime_error);
+}
+
