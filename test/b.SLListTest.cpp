@@ -299,7 +299,98 @@ TEST(SLListTest, RemoveByValueFromHead) {
 TEST(SLListTest, RemoveByValueNotFound) {
   // Arrange
   SinglyLinkedList<std::string> sll;
+  sll.addToTail("Moscow");
+  sll.addToTail("London");
+  sll.addToTail("Paris");
 
   // Act & Assert
-  EXPECT_THROW(sll.removeByValue("Moscow"), std::runtime_error);
+  EXPECT_THROW(sll.removeByValue("Berlin"), std::runtime_error);
+}
+
+// Тест для записи и загрузки данных в/из файла
+TEST(SLListTest, SaveAndLoadFromFile) {
+  // Arrange (подготовка исходных данных)
+  SinglyLinkedList<std::string> sll;
+
+  // Act (запуск метода/функции)
+  sll.addToTail("White");
+  sll.addToTail("Black");
+
+  std::string filename = "testfile.txt";
+  sll.saveToFile(filename);
+
+  // Act (запуск метода/функции)
+  SinglyLinkedList<std::string> loadedSll;
+  loadedSll.addToTail("Red");
+  loadedSll.loadFromFile(filename);
+
+  // Assert (проверка результата)
+  EXPECT_EQ(loadedSll.getSize(), 2);
+  EXPECT_EQ(loadedSll.searchByValue("White")->data_, "White");
+  EXPECT_EQ(loadedSll.searchByValue("Black")->data_, "Black");
+
+  remove(filename.c_str());
+}
+
+// Тест для метода print
+TEST(SLListTest, Print) {
+  // Arrange (подготовка исходных данных)
+  SinglyLinkedList<std::string> sll;
+
+  sll.addToTail("White");
+  sll.addToTail("Black");
+
+  std::stringstream buffer;
+  std::streambuf* old =
+      std::cout.rdbuf(buffer.rdbuf());  // Перенаправляем std::cout
+
+  // Act (запуск метода/функции)
+  sll.print();
+  std::string output = buffer.str();
+
+  // Assert (проверка результата)
+  EXPECT_NE(output.find("White"), std::string::npos);
+  EXPECT_NE(output.find("Black"), std::string::npos);
+
+  std::cout.rdbuf(old);  // Восстанавливаем std::cout
+}
+
+// Тест для метода print с пустым списком
+TEST(SLListTest, PrintEmptyList) {
+  // Arrange (подготовка исходных данных)
+  SinglyLinkedList<std::string> sll;
+
+  std::stringstream buffer;
+  std::streambuf* old =
+      std::cout.rdbuf(buffer.rdbuf());  // Перенаправляем std::cout
+
+  // Act (запуск метода/функции)
+  sll.print();
+  std::string output = buffer.str();
+
+  // Assert (проверка результата)
+  EXPECT_TRUE(output.empty());
+  std::cout.rdbuf(old);  // Восстанавливаем std::cout
+}
+
+// Тест для ошибки при сохранении в файл
+TEST(SLListTest, SaveToFileError) {
+  // Arrange
+  SinglyLinkedList<std::string> sll;
+  sll.addToTail("White");
+  sll.addToTail("Black");
+
+  // Act & Assert
+  EXPECT_THROW(sll.saveToFile("/invalid/path/test.txt"), std::exception);
+}
+
+// Тест для ошибки при загрузке из файла
+TEST(SLListTest, LoadFromFileError) {
+  // Arrange
+  SinglyLinkedList<std::string> sll;
+  sll.addToTail("White");
+  sll.addToTail("Black");
+
+  // Act & Assert
+  EXPECT_THROW(sll.loadFromFile("/invalid/path/test.txt"), std::exception);
 }
