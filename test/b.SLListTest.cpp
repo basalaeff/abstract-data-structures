@@ -71,7 +71,7 @@ TEST(SLListTest, RemoveFromTailSingleElement) {
   EXPECT_EQ(sll.getSize(), 0);
 }
 
-// Тест ошибки при удалении из пустого списка
+// Тест ошибки операции при пустом списке
 TEST(SLListTest, RemoveFromEmptyList) {
   // Arrange
   SinglyLinkedList<std::string> sll;
@@ -83,6 +83,7 @@ TEST(SLListTest, RemoveFromEmptyList) {
   EXPECT_THROW(sll.insertAfter("Moscow", "London"), std::runtime_error);
   EXPECT_THROW(sll.removeBefore("Moscow"), std::runtime_error);
   EXPECT_THROW(sll.removeAfter("Moscow"), std::runtime_error);
+  EXPECT_THROW(sll.removeByValue("Moscow"), std::runtime_error);
 }
 
 // Тест вставки перед указанным значением
@@ -249,14 +250,14 @@ TEST(SLListTest, SearchByValue) {
   Node<std::string>* res1 = sll.searchByValue("Moscow");
   Node<std::string>* res2 = sll.searchByValue("London");
   Node<std::string>* res3 = sll.searchByValue("Paris");
-  Node<std::string>* res4 = sll.searchByValue("Berlin"); // Для проверки отсутствующего
+  Node<std::string>* res4 = sll.searchByValue("Berlin");
 
   // Assert
   // Проверка, что элементы существуют (указатели не равны nullptr)
   ASSERT_NE(res1, nullptr);
   ASSERT_NE(res2, nullptr);
   ASSERT_NE(res3, nullptr);
-  EXPECT_EQ(res4, nullptr); // Berlin не должен найтись
+  EXPECT_EQ(res4, nullptr);  // Berlin не должен найтись
 
   // Проверка, что узлы содержат правильные данные
   EXPECT_EQ(res1->data_, "Moscow");
@@ -264,3 +265,41 @@ TEST(SLListTest, SearchByValue) {
   EXPECT_EQ(res3->data_, "Paris");
 }
 
+// Тест удаления по значению
+TEST(SLListTest, RemoveByValue) {
+  // Arrange
+  SinglyLinkedList<std::string> sll;
+  sll.addToTail("Moscow");
+  sll.addToTail("London");
+  sll.addToTail("Paris");
+
+  // Act
+  sll.removeByValue("London");
+
+  // Assert
+  EXPECT_EQ(sll.getSize(), 2);
+  EXPECT_EQ(sll.searchByValue("London"), nullptr);
+}
+
+// Тест удаления по значению, когда элемент - голова
+TEST(SLListTest, RemoveByValueFromHead) {
+  // Arrange
+  SinglyLinkedList<std::string> sll;
+  sll.addToTail("Moscow");
+
+  // Act
+  sll.removeByValue("Moscow");
+
+  // Assert
+  EXPECT_EQ(sll.getSize(), 0);
+  EXPECT_EQ(sll.searchByValue("Moscow"), nullptr);
+}
+
+// Тест удаления по значению, когда не существует
+TEST(SLListTest, RemoveByValueNotFound) {
+  // Arrange
+  SinglyLinkedList<std::string> sll;
+
+  // Act & Assert
+  EXPECT_THROW(sll.removeByValue("Moscow"), std::runtime_error);
+}
