@@ -237,3 +237,30 @@ TEST(SLListTest, RemoveAfterTail) {
   EXPECT_THROW(sll.removeAfter("Paris"), std::runtime_error);
 }
 
+// Тест поиска по значению
+TEST(SLListTest, SearchByValue) {
+  // Arrange
+  SinglyLinkedList<std::string> sll;
+  sll.addToTail("Moscow");
+  sll.addToTail("London");
+  sll.addToTail("Paris");
+
+  // Act
+  Node<std::string>* res1 = sll.searchByValue("Moscow");
+  Node<std::string>* res2 = sll.searchByValue("London");
+  Node<std::string>* res3 = sll.searchByValue("Paris");
+  Node<std::string>* res4 = sll.searchByValue("Berlin"); // Для проверки отсутствующего
+
+  // Assert
+  // Проверка, что элементы существуют (указатели не равны nullptr)
+  ASSERT_NE(res1, nullptr);
+  ASSERT_NE(res2, nullptr);
+  ASSERT_NE(res3, nullptr);
+  EXPECT_EQ(res4, nullptr); // Berlin не должен найтись
+
+  // Проверка, что узлы содержат правильные данные
+  EXPECT_EQ(res1->data_, "Moscow");
+  EXPECT_EQ(res2->data_, "London");
+  EXPECT_EQ(res3->data_, "Paris");
+}
+
