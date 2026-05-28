@@ -4,7 +4,7 @@
 // Сложность: O(n)
 
 template <typename T>
-Node<T>* SinglyLinkedList<T>::search(const T& value) const {
+Node<T>* SinglyLinkedList<T>::searchByValue(const T& value) const {
   Node<T>* current = head_;
   while (current != nullptr) {
     if (current->data_ == value) {
