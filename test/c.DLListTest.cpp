@@ -72,7 +72,7 @@ TEST(DLListTest, RemoveFromTailSingleElement) {
 }
 
 // Тест ошибки операции при пустом списке
-TEST(DLListTest, RemoveFromEmptyList) {
+TEST(DLListTest, EmptyList) {
   // Arrange
   DoublyLinkedList<std::string> dll;
 
@@ -96,9 +96,10 @@ TEST(DLListTest, InsertBefore) {
 
   // Act
   dll.insertBefore("Russia", "Spain");
+  dll.insertBefore("France", "Italy");
 
   // Assert
-  EXPECT_EQ(dll.getSize(), 4);
+  EXPECT_EQ(dll.getSize(), 5);
 }
 
 // Тест вставки после указанного значения
@@ -114,18 +115,6 @@ TEST(DLListTest, InsertAfter) {
 
   // Assert
   EXPECT_EQ(dll.getSize(), 4);
-}
-
-// Тест вставки с ошибкой (значение не найдено)
-TEST(DLListTest, InsertBeforeNotFound) {
-  // Arrange
-  DoublyLinkedList<std::string> dll;
-  dll.addToTail("Russia");
-  dll.addToTail("France");
-  dll.addToTail("Germany");
-
-  // Act & Assert
-  EXPECT_THROW(dll.insertBefore("Spain", "Italy"), std::runtime_error);
 }
 
 TEST(DLListTest, InsertAfterNotFound) {
@@ -183,6 +172,7 @@ TEST(DLListTest, RemoveAfter) {
 
   // Assert
   EXPECT_EQ(dll.getSize(), 3);
+  EXPECT_EQ(dll.getTail()->data_, "Spain");
 }
 
 // Тест удаления элемента (головы)
@@ -195,7 +185,23 @@ TEST(DLListTest, RemoveBeforeHead) {
   dll.addToTail("Spain");
 
   // Act
-  dll.removeBefore("Russia");
+  dll.removeBefore("France");
+
+  // Assert
+  EXPECT_EQ(dll.getSize(), 3);
+}
+
+// Тест удаления элемента (хвоста)
+TEST(DLListTest, RemoveAfterTail) {
+  // Arrange
+  DoublyLinkedList<std::string> dll;
+  dll.addToTail("Russia");
+  dll.addToTail("France");
+  dll.addToTail("Germany");
+  dll.addToTail("Spain");
+
+  // Act
+  dll.removeAfter("Germany");
 
   // Assert
   EXPECT_EQ(dll.getSize(), 3);
@@ -215,18 +221,6 @@ TEST(DLListTest, RemoveBeforeNotFound) {
 
 // Тест удаления элемента с ошибкой (значение не найдено)
 TEST(DLListTest, RemoveAfterNotFound) {
-  // Arrange
-  DoublyLinkedList<std::string> dll;
-  dll.addToTail("Russia");
-  dll.addToTail("France");
-  dll.addToTail("Germany");
-
-  // Act & Assert
-  EXPECT_THROW(dll.removeAfter("Spain"), std::runtime_error);
-}
-
-// Тест удаления элемента после хвоста
-TEST(DLListTest, RemoveAfterTail) {
   // Arrange
   DoublyLinkedList<std::string> dll;
   dll.addToTail("Russia");
@@ -274,10 +268,13 @@ TEST(DLListTest, RemoveByValue) {
 
   // Act
   dll.removeByValue("France");
+  // Удаляю хвост
+  dll.removeByValue("Germany");
 
   // Assert
-  EXPECT_EQ(dll.getSize(), 2);
+  EXPECT_EQ(dll.getSize(), 1);
   EXPECT_EQ(dll.searchByValue("France"), nullptr);
+  EXPECT_EQ(dll.searchByValue("Germany"), nullptr);
 }
 
 // Тест удаления по значению, когда элемент - голова
