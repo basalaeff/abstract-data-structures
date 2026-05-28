@@ -14,7 +14,7 @@
 template <typename T>
 void DoublyLinkedList<T>::removeFromTail() {
   if (tail_ == nullptr) {
-    return;
+    throw std::runtime_error("Cannot remove head: list is empty");
   }
   DoublyNode<T>* temp = tail_;
   tail_ = tail_->prev_;
