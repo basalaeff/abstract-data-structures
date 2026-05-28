@@ -307,7 +307,7 @@ TEST(DLListTest, RemoveByValueNotFound) {
 }
 
 // Тест для записи и загрузки данных в/из файла
-TEST(SLListTest, SaveAndLoadFromFile) {
+TEST(DLListTest, SaveAndLoadFromFile) {
   // Arrange (подготовка исходных данных)
   DoublyLinkedList<std::string> dll;
 
@@ -332,7 +332,7 @@ TEST(SLListTest, SaveAndLoadFromFile) {
 }
 
 // Тест для метода print
-TEST(SLListTest, Print) {
+TEST(DLListTest, Print) {
   // Arrange (подготовка исходных данных)
   DoublyLinkedList<std::string> dll;
 
