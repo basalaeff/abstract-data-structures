@@ -25,5 +25,5 @@ void SinglyLinkedList<T>::removeByValue(const T& value) {
     current = current->next_;
   }
   // Значение не найдено
-  std::cerr << "Value not found: " << value << std::endl;
+  throw std::runtime_error("Value not found: " + value);
 }
