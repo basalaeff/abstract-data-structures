@@ -168,18 +168,30 @@ add_executable(ArrayBenchmark
     benchmarks/a.ArrayBenchmark.cpp
 )
 
+add_executable(SLListBenchmark
+    benchmarks/b.SLListBenchmark.cpp
+)
+
 target_include_directories(ArrayBenchmark PRIVATE src)
+target_include_directories(SLListBenchmark PRIVATE src)
 
 target_link_libraries(ArrayBenchmark
     benchmark::benchmark
     pthread
 )
 
+target_link_libraries(SLListBenchmark
+    benchmark::benchmark
+    pthread
+)
+
 target_compile_options(ArrayBenchmark PRIVATE -O2)
+target_compile_options(SLListBenchmark PRIVATE -O2)
 
 add_custom_target(benchmarks
     COMMAND ArrayBenchmark
-    DEPENDS ArrayBenchmark
+    COMMAND SLListBenchmark
+    DEPENDS ArrayBenchmark SLListBenchmark
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
     COMMENT "Running benchmarks"
 )
