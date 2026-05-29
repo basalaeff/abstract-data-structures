@@ -37,7 +37,7 @@ bool CBTree<T>::get_value(T value) const {
 template <typename T>
 void CBTree<T>::find_index(int index) const {
   if (index < 0 || root_ == nullptr) {
-    return;
+    throw std::out_of_range("Invalid index.");
   }
 
   Queue<TreeNode<T>*> Q;

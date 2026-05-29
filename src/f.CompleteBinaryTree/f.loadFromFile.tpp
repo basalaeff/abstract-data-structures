@@ -6,7 +6,7 @@ void CBTree<T>::loadFromFile(const std::string& file) {
   clear(root_);
   std::ifstream load(file);
   if (!load.is_open()) {
-    return;
+    throw std::runtime_error("Failed to open file for loading");
   }
 
   T value;
