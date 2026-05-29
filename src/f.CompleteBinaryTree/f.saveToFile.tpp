@@ -4,12 +4,12 @@
 template <typename T>
 void CBTree<T>::saveToFile(const std::string& file) const {
   if (root_ == nullptr) {
-    return;
+    throw std::runtime_error("Tree is empty.");
   }
 
   std::ofstream save(file);
   if (!save.is_open()) {
-    return;
+    throw std::runtime_error("Failed to open file for saving");
   }
 
   Queue<TreeNode<T>*> Q;
