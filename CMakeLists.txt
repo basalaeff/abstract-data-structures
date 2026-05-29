@@ -149,3 +149,25 @@ if(LCOV AND GENHTML)
         VERBATIM
     )
 endif()
+
+# ====================== Benchmark ======================
+
+find_package(benchmark REQUIRED)
+
+add_executable(ArrayBenchmark
+    benchmarks/a.ArrayBenchmark.cpp
+)
+
+target_include_directories(ArrayBenchmark PRIVATE src)
+
+target_link_libraries(ArrayBenchmark
+    benchmark::benchmark
+    pthread
+)
+
+add_custom_target(benchmarks
+    COMMAND ArrayBenchmark
+    DEPENDS ArrayBenchmark
+    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+    COMMENT "Running benchmarks"
+)
