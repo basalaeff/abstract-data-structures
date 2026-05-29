@@ -61,7 +61,7 @@ add_executable(QueueTests
 )
 
 add_executable(CBTreeTests
-    test/e.CBTreeTests.cpp
+    test/f.CBTreeTest.cpp
 )
 
 
