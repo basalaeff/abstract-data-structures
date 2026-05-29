@@ -60,11 +60,17 @@ add_executable(QueueTests
     test/e.QueueTest.cpp
 )
 
+add_executable(CBTreeTests
+    test/e.CBTreeTests.cpp
+)
+
+
 target_include_directories(ArrayTests PRIVATE src)
 target_include_directories(SLListTests PRIVATE src)
 target_include_directories(DLListTests PRIVATE src)
 target_include_directories(StackTests PRIVATE src)
 target_include_directories(QueueTests PRIVATE src)
+target_include_directories(CBTreeTests PRIVATE src)
 
 target_link_libraries(ArrayTests
     GTest::gtest
@@ -89,15 +95,21 @@ target_link_libraries(QueueTests
     GTest::gtest_main
 )
 
+target_link_libraries(CBTreeTests
+    GTest::gtest
+    GTest::gtest_main
+)
+
 add_test(NAME ArrayTests COMMAND ArrayTests)
 add_test(NAME SLListTests COMMAND SLListTests)
 add_test(NAME DLListTests COMMAND DLListTests)
 add_test(NAME StackTests COMMAND StackTests)
 add_test(NAME QueueTests COMMAND QueueTests)
+add_test(NAME CBTreeTests COMMAND CBTreeTests)
 
 add_custom_target(tests
     COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure
-    DEPENDS ArrayTests SLListTests DLListTests StackTests QueueTests
+    DEPENDS ArrayTests SLListTests DLListTests StackTests QueueTests CBTreeTests
 )
 
 # ====================== Coverage ======================
