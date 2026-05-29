@@ -6,17 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(CMAKE_COLOR_DIAGNOSTICS ON)
-
-# ====================== Coverage ======================
-
 option(ENABLE_COVERAGE "Enable coverage reporting" ON)
-
-if(ENABLE_COVERAGE)
-    message(STATUS "Coverage enabled")
-
-    add_compile_options(--coverage -O0 -g)
-    add_link_options(--coverage)
-endif()
 
 # ====================== Main ======================
 
@@ -63,7 +53,6 @@ add_executable(QueueTests
 add_executable(CBTreeTests
     test/f.CBTreeTest.cpp
 )
-
 
 target_include_directories(ArrayTests PRIVATE src)
 target_include_directories(SLListTests PRIVATE src)
@@ -113,6 +102,27 @@ add_custom_target(tests
 )
 
 # ====================== Coverage ======================
+function(enable_coverage target_name)
+    if(ENABLE_COVERAGE)
+        target_compile_options(${target_name} PRIVATE
+            --coverage
+            -O0
+            -g
+        )
+
+        target_link_options(${target_name} PRIVATE
+            --coverage
+        )
+    endif()
+endfunction()
+
+enable_coverage(ArrayTests)
+enable_coverage(SLListTests)
+enable_coverage(DLListTests)
+enable_coverage(StackTests)
+enable_coverage(QueueTests)
+enable_coverage(CBTreeTests)
+
 find_program(LCOV lcov)
 find_program(GENHTML genhtml)
 
@@ -164,6 +174,8 @@ target_link_libraries(ArrayBenchmark
     benchmark::benchmark
     pthread
 )
+
+target_compile_options(ArrayBenchmark PRIVATE -O2)
 
 add_custom_target(benchmarks
     COMMAND ArrayBenchmark
