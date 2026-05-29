@@ -98,3 +98,44 @@ TEST(CBTreeTest, SaveAndLoadFromFile) {
 
   remove(filename.c_str());
 }
+
+// Тест для ошибки при сохранении в файл
+TEST(CBTreeTest, SaveToFileError) {
+  // Arrange
+  CBTree<std::string> tree;
+  tree.insert("F1");
+  tree.insert("F2");
+
+
+  // Act & Assert
+  EXPECT_THROW(tree.saveToFile("/invalid/path/test.txt"), std::exception);
+}
+
+// Тест для ошибки при загрузке из файла
+TEST(CBTreeTest, LoadFromFileError) {
+  // Arrange
+  CBTree<std::string> tree;
+  tree.insert("F1");
+  tree.insert("F2");
+
+  // Act & Assert
+  EXPECT_THROW(tree.loadFromFile("/invalid/path/test.txt"), std::exception);
+}
+
+// Тест сохранения пустого дерева
+TEST(CBTreeTest, SaveEmptyTree) {
+  // Arrange
+  CBTree<std::string> tree;
+
+  // Act & Assert
+  EXPECT_THROW(tree.saveToFile("empty_tree.txt"), std::exception);
+}
+
+// Тест вывода пустого дерева
+TEST(CBTreeTest, PrintEmptyTree) {
+  // Arrange
+  CBTree<std::string> tree;
+
+  // Act & Assert
+  EXPECT_THROW(tree.print(), std::exception);
+}
