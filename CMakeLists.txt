@@ -180,10 +180,15 @@ add_executable(StackBenchmark
     benchmarks/d.StackBenchmark.cpp
 )
 
+add_executable(QueueBenchmark
+    benchmarks/e.QueueBenchmark.cpp
+)
+
 target_include_directories(ArrayBenchmark PRIVATE src)
 target_include_directories(SLListBenchmark PRIVATE src)
 target_include_directories(DLListBenchmark PRIVATE src)
 target_include_directories(StackBenchmark PRIVATE src)
+target_include_directories(QueueBenchmark PRIVATE src)
 
 target_link_libraries(ArrayBenchmark
     benchmark::benchmark
@@ -205,17 +210,24 @@ target_link_libraries(StackBenchmark
     pthread
 )
 
+target_link_libraries(QueueBenchmark
+    benchmark::benchmark
+    pthread
+)
+
 target_compile_options(ArrayBenchmark PRIVATE -O2)
 target_compile_options(SLListBenchmark PRIVATE -O2)
 target_compile_options(DLListBenchmark PRIVATE -O2)
 target_compile_options(StackBenchmark PRIVATE -O2)
+target_compile_options(QueueBenchmark PRIVATE -O2)
 
 add_custom_target(benchmarks
     COMMAND ArrayBenchmark
     COMMAND SLListBenchmark
     COMMAND DLListBenchmark
     COMMAND StackBenchmark
-    DEPENDS ArrayBenchmark SLListBenchmark DLListBenchmark StackBenchmark
+    COMMAND QueueBenchmark
+    DEPENDS ArrayBenchmark SLListBenchmark DLListBenchmark StackBenchmark QueueBenchmark
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
     COMMENT "Running benchmarks"
 )
