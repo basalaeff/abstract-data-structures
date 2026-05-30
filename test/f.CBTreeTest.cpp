@@ -57,7 +57,6 @@ TEST(CBTreeTest, Print) {
   tree.insert("F2");
   tree.insert("F3");
 
-
   std::stringstream buffer;
   std::streambuf* old =
       std::cout.rdbuf(buffer.rdbuf());  // Перенаправляем std::cout
@@ -83,7 +82,6 @@ TEST(CBTreeTest, SaveAndLoadFromFile) {
   tree.insert("F2");
   tree.insert("F3");
 
-
   std::string filename = "testfile.txt";
   tree.saveToFile(filename);
 
@@ -105,7 +103,6 @@ TEST(CBTreeTest, SaveToFileError) {
   CBTree<std::string> tree;
   tree.insert("F1");
   tree.insert("F2");
-
 
   // Act & Assert
   EXPECT_THROW(tree.saveToFile("/invalid/path/test.txt"), std::exception);

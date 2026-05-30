@@ -69,7 +69,6 @@ TEST(QueueTest, SaveAndLoadFromFile) {
   queue.push("E002");
   queue.push("E003");
 
-
   std::string filename = "testfile.txt";
   queue.saveToFile(filename);
 
@@ -94,7 +93,6 @@ TEST(QueueTest, Print) {
   queue.push("E001");
   queue.push("E002");
   queue.push("E003");
-
 
   std::stringstream buffer;
   std::streambuf* old =

@@ -69,7 +69,6 @@ TEST(StackTest, SaveAndLoadFromFile) {
   stack.push("Banana");
   stack.push("Cherry");
 
-
   std::string filename = "testfile.txt";
   stack.saveToFile(filename);
 
@@ -94,7 +93,6 @@ TEST(StackTest, Print) {
   stack.push("Apple");
   stack.push("Banana");
   stack.push("Cherry");
-
 
   std::stringstream buffer;
   std::streambuf* old =
