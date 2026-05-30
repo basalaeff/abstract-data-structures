@@ -253,7 +253,7 @@ static void BM_SLListRemoveByValue(benchmark::State& state) {
 }
 
 BENCHMARK(BM_SLListRemoveByValue)
-    ->Arg(100)
+    ->Arg(100);
     // ->Arg(1000)
     // ->Arg(10000);
 BENCHMARK_MAIN();
