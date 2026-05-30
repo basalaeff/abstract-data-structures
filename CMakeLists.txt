@@ -190,6 +190,11 @@ target_link_libraries(SLListBenchmark
     pthread
 )
 
+target_link_libraries(DLListBenchmark
+    benchmark::benchmark
+    pthread
+)
+
 target_compile_options(ArrayBenchmark PRIVATE -O2)
 target_compile_options(SLListBenchmark PRIVATE -O2)
 target_compile_options(DLListBenchmark PRIVATE -O2)
