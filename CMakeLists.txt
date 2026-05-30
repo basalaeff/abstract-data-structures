@@ -176,9 +176,14 @@ add_executable(DLListBenchmark
     benchmarks/c.DLListBenchmark.cpp
 )
 
+add_executable(StackBenchmark
+    benchmarks/d.StackBenchmark.cpp
+)
+
 target_include_directories(ArrayBenchmark PRIVATE src)
 target_include_directories(SLListBenchmark PRIVATE src)
 target_include_directories(DLListBenchmark PRIVATE src)
+target_include_directories(StackBenchmark PRIVATE src)
 
 target_link_libraries(ArrayBenchmark
     benchmark::benchmark
@@ -195,15 +200,22 @@ target_link_libraries(DLListBenchmark
     pthread
 )
 
+target_link_libraries(StackBenchmark
+    benchmark::benchmark
+    pthread
+)
+
 target_compile_options(ArrayBenchmark PRIVATE -O2)
 target_compile_options(SLListBenchmark PRIVATE -O2)
 target_compile_options(DLListBenchmark PRIVATE -O2)
+target_compile_options(StackBenchmark PRIVATE -O2)
 
 add_custom_target(benchmarks
     COMMAND ArrayBenchmark
     COMMAND SLListBenchmark
     COMMAND DLListBenchmark
-    DEPENDS ArrayBenchmark SLListBenchmark DLListBenchmark
+    COMMAND StackBenchmark
+    DEPENDS ArrayBenchmark SLListBenchmark DLListBenchmark StackBenchmark
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
     COMMENT "Running benchmarks"
 )
