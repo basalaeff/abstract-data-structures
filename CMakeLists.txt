@@ -184,11 +184,16 @@ add_executable(QueueBenchmark
     benchmarks/e.QueueBenchmark.cpp
 )
 
+add_executable(CBTreeBenchmark
+    benchmarks/f.CBTreeBenchmark.cpp
+)
+
 target_include_directories(ArrayBenchmark PRIVATE src)
 target_include_directories(SLListBenchmark PRIVATE src)
 target_include_directories(DLListBenchmark PRIVATE src)
 target_include_directories(StackBenchmark PRIVATE src)
 target_include_directories(QueueBenchmark PRIVATE src)
+target_include_directories(CBTreeBenchmark PRIVATE src)
 
 target_link_libraries(ArrayBenchmark
     benchmark::benchmark
@@ -215,11 +220,17 @@ target_link_libraries(QueueBenchmark
     pthread
 )
 
+target_link_libraries(CBTreeBenchmark
+    benchmark::benchmark
+    pthread
+)
+
 target_compile_options(ArrayBenchmark PRIVATE -O2)
 target_compile_options(SLListBenchmark PRIVATE -O2)
 target_compile_options(DLListBenchmark PRIVATE -O2)
 target_compile_options(StackBenchmark PRIVATE -O2)
 target_compile_options(QueueBenchmark PRIVATE -O2)
+target_compile_options(CBTreeBenchmark PRIVATE -O2)
 
 add_custom_target(benchmarks
     COMMAND ArrayBenchmark
@@ -227,7 +238,8 @@ add_custom_target(benchmarks
     COMMAND DLListBenchmark
     COMMAND StackBenchmark
     COMMAND QueueBenchmark
-    DEPENDS ArrayBenchmark SLListBenchmark DLListBenchmark StackBenchmark QueueBenchmark
+    COMMAND CBTreeBenchmark
+    DEPENDS ArrayBenchmark SLListBenchmark DLListBenchmark StackBenchmark QueueBenchmark CBTreeBenchmark
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
     COMMENT "Running benchmarks"
 )
