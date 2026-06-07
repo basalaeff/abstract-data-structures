@@ -3,7 +3,7 @@
 #include <sstream>
 #include <vector>
 
-#include "UI/consoleUI.hpp"
+#include "UI/ConsoleUI.hpp"
 
 int main(int argc, char *argv[]) {
   std::string query;
