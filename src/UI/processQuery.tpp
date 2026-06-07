@@ -178,7 +178,7 @@ void ConsoleUI<T>::processQuery(const std::string& query) {
   } else if (cmd == "BSEARCH") {
     if (tokens.size() == 2) {
       T value = tokens[1];
-      Node<T>* result = singlyList_.search(value);
+      Node<T>* result = singlyList_.searchByValue(value);
       if (result != nullptr) {
         std::cout << "Value " << value << " found in the list." << std::endl;
       } else {

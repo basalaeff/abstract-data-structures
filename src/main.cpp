@@ -4,12 +4,6 @@
 #include <vector>
 
 #include "UI/consoleUI.hpp"
-#include "a.Array/a.Array.hpp"
-#include "b.SinglyLinkedList/b.SinglyLinkedList.hpp"
-#include "c.DoublyLinkedList/c.DoublyLinkedList.hpp"
-#include "d.Stack/d.Stack.hpp"
-#include "e.Queue/e.Queue.hpp"
-#include "f.CompleteBinaryTree/f.CBTree.hpp"
 
 int main(int argc, char *argv[]) {
   std::string query;

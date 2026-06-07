@@ -12,8 +12,11 @@
 
 template <typename T>
 void Array<T>::addToTheIndex(int index, const T& value) {
-  if (index < 0 || index > size_ || size_ >= maxCapacity_) {
-    throw std::out_of_range("Index invalid or array is full");
+  if (index < 0 || index > size_) {
+    throw std::out_of_range("Index invalid");
+  }
+  if (size_ >= maxCapacity_) {
+    resize(maxCapacity_ == 0 ? 1 : maxCapacity_ * 2);
   }
   // Сдвигаем элементы вправо начиная с указанного индекса
   for (int i = size_; i > index; i--) {

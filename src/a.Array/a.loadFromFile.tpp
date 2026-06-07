@@ -9,7 +9,10 @@ void Array<T>::loadFromFile(const std::string& filename) {
   }
   T value;
   size_ = 0;
-  while (inFile >> value && size_ < maxCapacity_) {
+  while (inFile >> value) {
+    if (size_ >= maxCapacity_) {
+      resize(maxCapacity_ == 0 ? 1 : maxCapacity_ * 2);
+    }
     data_[size_] = value;
     size_++;
   }
