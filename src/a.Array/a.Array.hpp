@@ -17,13 +17,14 @@ class Array {
   // ============================================================================
   // КОНСТРУКТОР
   // ============================================================================
-  explicit Array(int max);  // Создает массив на max элементов
+  explicit Array(int capacity)
+      : maxCapacity_(capacity), size_(0), data_(new T[capacity]) {}
   // explicit защищает от неожиданных неявных преобразований
 
   // ============================================================================
   // ДЕСТРУКТОР
   // ============================================================================
-  ~Array();  // Освобождает память
+  ~Array() { delete[] data_; };  // Освобождает память
 
   // ============================================================================
   // A1 Добавление элемента(в конец массива): AADD value
@@ -60,12 +61,18 @@ class Array {
   // ============================================================================
   void print() const;
 
-  void saveToFile(const std::string &filename) const;
+  // ============================================================================
+  // A8 Загрузка из файла
+  // ============================================================================
   void loadFromFile(const std::string &filename);
+
+  // ============================================================================
+  // A9 Сохранение в файл
+  // ============================================================================
+  void saveToFile(const std::string &filename) const;
 };
-#include "a.Array.tpp"
-#include "a.loadFromFile.tpp"
-#include "a.saveToFile.tpp"
+
+#include "a.resize.tpp"
 #include "a1.addToTheEnd.tpp"
 #include "a2.addToTheIndex.tpp"
 #include "a3.get.tpp"
@@ -73,3 +80,5 @@ class Array {
 #include "a5.replaceByIndex.tpp"
 #include "a6.length.tpp"
 #include "a7.print.tpp"
+#include "a8.loadFromFile.tpp"
+#include "a9.saveToFile.tpp"
