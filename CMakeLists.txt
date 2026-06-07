@@ -16,7 +16,7 @@ target_include_directories(dbms PRIVATE src)
 # ====================== Formatting ======================
 
 file(GLOB_RECURSE FORMAT_FILES
-    "src/*.cpp" "src/*.hpp" "src/*.tpp" "test/*.cpp" "test/*.hpp" "benchmarks/*.cpp" "benchmarks/*.hpp"
+    "src/*.cpp" "src/*.hpp" "src/*.tpp"
 )
 
 add_custom_target(format
