@@ -21,9 +21,7 @@ class DoublyLinkedList {
   // ============================================================================
   // ДЕСТРУКТОР
   // ============================================================================
-  ~DoublyLinkedList() {
-    clear();
-  };
+  ~DoublyLinkedList() { clear(); };
 
   void clear() {
     while (head_ != nullptr) {
@@ -120,6 +118,8 @@ class DoublyLinkedList {
 #include "c11.print.tpp"
 #include "c12.loadFromFile.tpp"
 #include "c13.saveToFile.tpp"
+#include "c14.loadFromBinaryFile.tpp"
+#include "c15.saveToBinaryFile.tpp"
 #include "c2.addToTail.tpp"
 #include "c3.removeFromHead.tpp"
 #include "c4.removeFromTail.tpp"
@@ -128,6 +128,3 @@ class DoublyLinkedList {
 #include "c7.removeBefore.tpp"
 #include "c8.removeAfter.tpp"
 #include "c9.searchByValue.tpp"
-#include "c14.loadFromBinaryFile.tpp"
-#include "c15.saveToBinaryFile.tpp"
-
