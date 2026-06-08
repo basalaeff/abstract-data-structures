@@ -43,7 +43,11 @@ void ConsoleUI<T>::saveData(const std::string& filename,
           queue_.saveToFile(filename);
         }
       } else if (cmd == 'F') {
-        cbtree_.saveToFile(filename);
+        if (format == Format::BINARY) {
+          cbtree_.saveToBinaryFile(filename);
+        } else {
+          cbtree_.saveToFile(filename);
+        }
       }
     } catch (const std::exception& e) {
       std::cerr << "Save error: " << e.what() << std::endl;

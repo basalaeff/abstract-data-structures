@@ -59,6 +59,16 @@ class CBTree {
   // F6 СОХРАНЕНИЕ В ФАЙЛ
   // ============================================================================
   void saveToFile(const std::string& file) const;
+
+  // ============================================================================
+  // F7 ЗАГРУЗКА ИЗ БИНАРНОГО ФАЙЛА
+  // ============================================================================
+  void loadFromBinaryFile(const std::string& file);
+
+  // ============================================================================
+  // F8 СОХРАНЕНИЕ В БИНАРНЫЙ ФАЙЛ
+  // ============================================================================
+  void saveToBinaryFile(const std::string& file) const;
 };
 
 #include "f.clear.tpp"
@@ -68,3 +78,5 @@ class CBTree {
 #include "f4.print.tpp"
 #include "f5.loadFromFile.tpp"
 #include "f6.saveToFile.tpp"
+#include "f7.loadFromBinaryFile.tpp"
+#include "f8.saveToBinaryFile.tpp"
