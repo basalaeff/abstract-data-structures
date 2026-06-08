@@ -18,7 +18,7 @@ void CBTree<T>::loadFromBinaryFile(const std::string& file) {
     if (load.eof()) break;
 
     // 2. Читаем данные
-    std::string value(len, '\0'); // Создаем строку нужной длины
+    std::string value(len, '\0');  // Создаем строку нужной длины
     if (len > 0) {
       load.read(&value[0], len);
     }

@@ -1,7 +1,7 @@
 #include <benchmark/benchmark.h>
 
-#include <sstream>
 #include <iostream>
+#include <sstream>
 
 #include "../src/f.CompleteBinaryTree/f.CBTree.hpp"
 
