@@ -36,7 +36,11 @@ void ConsoleUI<T>::loadData(const std::string& filename,
           stack_.loadFromFile(filename);
         }
       } else if (cmd == 'E') {
-        queue_.loadFromFile(filename);
+        if (format == Format::BINARY) {
+          queue_.loadFromBinaryFile(filename);
+        } else {
+          queue_.loadFromFile(filename);
+        }
       } else if (cmd == 'F') {
         cbtree_.loadFromFile(filename);
       } else if (command == "PRINT") {
