@@ -1,0 +1,127 @@
+@startuml
+
+class Node<T> {
+  +data_ : T
+  +next_ : Node<T>*
+}
+
+class DoublyNode<T> {
+  +data_ : T
+  +next_ : DoublyNode<T>*
+  +prev_ : DoublyNode<T>*
+}
+
+class TreeNode<T> {
+  +data_ : T
+  +left_ : TreeNode<T>*
+  +right_ : TreeNode<T>*
+}
+
+class Array<T> {
+  -maxCapacity_ : int
+  -size_ : int
+  -data_ : T*
+
+  +addToTheEnd(value : T)
+  +addToTheIndex(index : int, value : T)
+  +get(index : int) : T
+  +removeByIndex(index : int)
+  +replaceByIndex(index : int, value : T)
+  +length() : int
+  +print()
+}
+
+class SinglyLinkedList<T> {
+  -head_ : Node<T>*
+  -size_ : int
+
+  +addToHead(value : T)
+  +addToTail(value : T)
+  +removeFromHead()
+  +removeFromTail()
+  +insertBefore(target : T, value : T)
+  +insertAfter(target : T, value : T)
+  +removeBefore(target : T)
+  +removeAfter(target : T)
+  +search(value : T) : Node<T>*
+  +removeByValue(value : T)
+  +print()
+}
+
+class DoublyLinkedList<T> {
+  -head_ : DoublyNode<T>*
+  -tail_ : DoublyNode<T>*
+  -size_ : int
+
+  +addToHead(value : T)
+  +addToTail(value : T)
+  +removeFromHead()
+  +removeFromTail()
+  +insertBefore(target : T, value : T)
+  +insertAfter(target : T, value : T)
+  +removeBefore(target : T)
+  +removeAfter(target : T)
+  +searchByValue(value : T) : DoublyNode<T>*
+  +removeByValue(value : T)
+  +print()
+}
+
+class Stack<T> {
+  -top_ : Node<T>*
+  -size_ : int
+
+  +push(value : T)
+  +pop()
+  +print()
+}
+
+class Queue<T> {
+  -front_ : Node<T>*
+  -end_ : Node<T>*
+  -size_ : int
+
+  +push(value : T)
+  +pop()
+  +print()
+  +front() : T
+  +isEmpty() : bool
+}
+
+class CBTree<T> {
+  -root_ : TreeNode<T>*
+
+  +insert(value : T)
+  +get_value(value : T) : bool
+  +find_index(index : int)
+  +find_value(current : TreeNode<T>*, value : T) : bool
+  +isCBT() : bool
+  +print()
+}
+
+class ConsoleUI<T> {
+  -array_ : Array<T>&
+  -singlyList_ : SinglyLinkedList<T>&
+  -doublyList_ : DoublyLinkedList<T>&
+  -stack_ : Stack<T>&
+  -queue_ : Queue<T>&
+  -cbtree_ : CBTree<T>&
+
+  +processQuery(query : string)
+  +loadData(filename : string, query : string)
+  +saveData(filename : string, query : string)
+}
+
+SinglyLinkedList --> Node
+Stack --> Node
+Queue --> Node
+
+DoublyLinkedList --> DoublyNode
+CBTree --> TreeNode
+
+ConsoleUI --> Array
+ConsoleUI --> SinglyLinkedList
+ConsoleUI --> DoublyLinkedList
+ConsoleUI --> Stack
+ConsoleUI --> Queue
+ConsoleUI --> CBTree
+@enduml

@@ -16,12 +16,16 @@ class DoublyLinkedList {
   // ============================================================================
   // КОНСТРУКТОР
   // ============================================================================
-  DoublyLinkedList();  // Конструктор
+  DoublyLinkedList() : head_(nullptr), tail_(nullptr), size_(0){};
 
   // ============================================================================
   // ДЕСТРУКТОР
   // ============================================================================
-  ~DoublyLinkedList();  // Деструктор
+  ~DoublyLinkedList() {
+    while (head_ != nullptr) {
+      removeFromHead();  // используем существующий метод
+    }
+  };
 
   // ============================================================================
   // Запрет копирования (так проще)
@@ -35,16 +39,6 @@ class DoublyLinkedList {
   int getSize() const { return size_; }
   DoublyNode<T>* getHead() const { return head_; }
   DoublyNode<T>* getTail() const { return tail_; }
-
-  // ============================================================================
-  // СОХРАНЕНИЕ В ФАЙЛ
-  // ============================================================================
-  void saveToFile(const std::string& filename) const;
-
-  // ============================================================================
-  // ЗАГРУЗКА ИЗ ФАЙЛА
-  // ============================================================================
-  void loadFromFile(const std::string& filename);
 
   // ============================================================================
   // C1 Добавление элемента (в голову): BADDHEAD value
@@ -102,13 +96,23 @@ class DoublyLinkedList {
   // C11 Вывод списка: PRINT
   // ============================================================================
   void print() const;
+
+  // ============================================================================
+  // C12 Загрузка из файла
+  // ============================================================================
+  void loadFromFile(const std::string& filename);
+
+  // ============================================================================
+  // C13 Сохранение в файл
+  // ============================================================================
+  void saveToFile(const std::string& filename) const;
 };
-#include "c.DoublyLinkedList.tpp"
-#include "c.loadFromFile.tpp"
-#include "c.saveToFile.tpp"
+
 #include "c1.addToHead.tpp"
 #include "c10.removeByValue.tpp"
 #include "c11.print.tpp"
+#include "c12.loadFromFile.tpp"
+#include "c13.saveToFile.tpp"
 #include "c2.addToTail.tpp"
 #include "c3.removeFromHead.tpp"
 #include "c4.removeFromTail.tpp"
