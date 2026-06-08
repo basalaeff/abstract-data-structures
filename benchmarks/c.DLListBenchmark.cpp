@@ -130,10 +130,7 @@ static void BM_DLListInsertAfter(benchmark::State& state) {
   }
 }
 
-// BENCHMARK(BM_DLListInsertAfter)
-//     ->Arg(100)
-//     ->Arg(1000)
-//     ->Arg(10000);
+BENCHMARK(BM_DLListInsertAfter)->Arg(100)->Arg(1000)->Arg(10000);
 
 // ============================================================================
 // c7.removeBefore

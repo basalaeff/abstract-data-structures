@@ -4,6 +4,7 @@
 // ============================================================================
 // Сложность: O(n) - линейное время
 // Алгоритм: линейный поиск + вставка
+
 template <typename T>
 void DoublyLinkedList<T>::insertAfter(const T& targetValue, const T& newValue) {
   if (head_ == nullptr) {
@@ -18,7 +19,14 @@ void DoublyLinkedList<T>::insertAfter(const T& targetValue, const T& newValue) {
   DoublyNode<T>* newNode = new DoublyNode<T>(newValue);
   newNode->next_ = current->next_;
   newNode->prev_ = current;
-  current->next_->prev_ = newNode;
+
+  if (current->next_ != nullptr) {
+    current->next_->prev_ = newNode;
+  } else {
+    // Если current был последним, обновляем tail_
+    tail_ = newNode;
+  }
+
   current->next_ = newNode;
   size_++;
 }
