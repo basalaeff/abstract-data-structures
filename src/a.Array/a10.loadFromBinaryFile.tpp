@@ -12,7 +12,7 @@ void Array<T>::loadFromBinaryFile(const std::string& filename) {
   inFile.read(reinterpret_cast<char*>(&size_), sizeof(size_));
   inFile.read(reinterpret_cast<char*>(&maxCapacity_), sizeof(maxCapacity_));
   delete[] data_;
-  data_ = new std::string[maxCapacity_];
+  data_ = new T[maxCapacity_];
   for (int i = 0; i < size_; ++i) {
     size_t len;
     inFile.read(reinterpret_cast<char*>(&len), sizeof(len));
