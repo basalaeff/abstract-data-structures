@@ -12,6 +12,12 @@ class DoublyLinkedList {
   DoublyNode<T>* tail_;
   int size_;
 
+  void clear() {
+    while (head_ != nullptr) {
+      removeFromHead();
+    }
+  }
+
  public:
   // ============================================================================
   // КОНСТРУКТОР
@@ -22,12 +28,6 @@ class DoublyLinkedList {
   // ДЕСТРУКТОР
   // ============================================================================
   ~DoublyLinkedList() { clear(); };
-
-  void clear() {
-    while (head_ != nullptr) {
-      removeFromHead();
-    }
-  }
 
   // ============================================================================
   // Запрет копирования (так проще)
