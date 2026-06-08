@@ -30,7 +30,11 @@ void ConsoleUI<T>::loadData(const std::string& filename,
           doublyList_.loadFromFile(filename);
         }
       } else if (cmd == 'D') {
-        stack_.loadFromFile(filename);
+        if (format == Format::BINARY) {
+          stack_.loadFromBinaryFile(filename);
+        } else {
+          stack_.loadFromFile(filename);
+        }
       } else if (cmd == 'E') {
         queue_.loadFromFile(filename);
       } else if (cmd == 'F') {
