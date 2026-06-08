@@ -6,15 +6,22 @@
 
 template <typename T>
 void DoublyLinkedList<T>::removeBefore(const T& targetValue) {
+  if (head_ == nullptr) {
+    throw std::runtime_error("Cannot remove before: list is empty");
+  }
+
   DoublyNode<T>* target = searchByValue(targetValue);
   if (target == nullptr) {
     throw std::runtime_error("Cannot remove before: target value not found: " +
                              targetValue);
   }
+
   if (target == head_) {
     throw std::runtime_error("Cannot remove before: no element before head");
   }
+
   DoublyNode<T>* toRemove = target->prev_;
+
   if (toRemove == head_) {
     removeFromHead();  // удаляем голову
   } else {

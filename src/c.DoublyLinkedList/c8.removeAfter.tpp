@@ -5,6 +5,10 @@
 // Алгоритм: линейный поиск + удаление
 template <typename T>
 void DoublyLinkedList<T>::removeAfter(const T& targetValue) {
+  if (head_ == nullptr) {
+    throw std::runtime_error("Cannot remove after: list is empty");
+  }
+
   DoublyNode<T>* target = searchByValue(targetValue);
   if (target == nullptr) {
     throw std::runtime_error("Cannot remove after: target value not found: " +
