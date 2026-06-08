@@ -21,11 +21,14 @@ class SinglyLinkedList {
   // ДЕСТРУКТОР
   // ============================================================================
   ~SinglyLinkedList() {
+    clear();
+  };  // Деструктор
+
+  void clear() {
     while (head_ != nullptr) {
       removeFromHead();  // используем существующий метод
     }
-  };  // Деструктор
-
+  };
   // ============================================================================
   // Запрет копирования (так проще)
   // ============================================================================
@@ -98,12 +101,24 @@ class SinglyLinkedList {
   // B13 СОХРАНЕНИЕ В ФАЙЛ
   // ============================================================================
   void saveToFile(const std::string& filename) const;
+
+  // ============================================================================
+  // B14 ЗАГРУЗКА ИЗ БИНАРНОГО ФАЙЛА
+  // ============================================================================
+  void loadFromBinaryFile(const std::string& filename);
+
+  // ============================================================================
+  // B15 СОХРАНЕНИЕ В БИНАРНЫЙ ФАЙЛ
+  // ============================================================================
+  void saveToBinaryFile(const std::string& filename) const;
 };
 #include "b1.addToHead.tpp"
 #include "b10.removeByValue.tpp"
 #include "b11.print.tpp"
 #include "b12.loadFromFile.tpp"
 #include "b13.saveToFile.tpp"
+#include "b14.loadFromBinaryFile.tpp"
+#include "b15.saveToBinaryFile.tpp"
 #include "b2.addToTail.tpp"
 #include "b3.removeFromHead.tpp"
 #include "b4.removeFromTail.tpp"

@@ -19,7 +19,11 @@ void ConsoleUI<T>::saveData(const std::string& filename,
           array_.saveToFile(filename);
         }
       } else if (cmd == 'B') {
-        singlyList_.saveToFile(filename);
+        if (format == Format::BINARY) {
+          singlyList_.saveToBinaryFile(filename);
+        } else {
+          singlyList_.saveToFile(filename);
+        }
       } else if (cmd == 'C') {
         doublyList_.saveToFile(filename);
       } else if (cmd == 'D') {
