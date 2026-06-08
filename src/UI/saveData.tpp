@@ -4,7 +4,7 @@
 
 template <typename T>
 void ConsoleUI<T>::saveData(const std::string& filename,
-                            const std::string& query) {
+                            const std::string& query, Format format) {
   if (!filename.empty() && !query.empty()) {
     std::stringstream ss(query);
     std::string command;
@@ -13,17 +13,41 @@ void ConsoleUI<T>::saveData(const std::string& filename,
     try {
       // Проверка команд для массива и списка
       if (cmd == 'A') {
-        array_.saveToFile(filename);
+        if (format == Format::BINARY) {
+          array_.saveToBinaryFile(filename);
+        } else {
+          array_.saveToFile(filename);
+        }
       } else if (cmd == 'B') {
-        singlyList_.saveToFile(filename);
+        if (format == Format::BINARY) {
+          singlyList_.saveToBinaryFile(filename);
+        } else {
+          singlyList_.saveToFile(filename);
+        }
       } else if (cmd == 'C') {
-        doublyList_.saveToFile(filename);
+        if (format == Format::BINARY) {
+          doublyList_.saveToBinaryFile(filename);
+        } else {
+          doublyList_.saveToFile(filename);
+        }
       } else if (cmd == 'D') {
-        stack_.saveToFile(filename);
+        if (format == Format::BINARY) {
+          stack_.saveToBinaryFile(filename);
+        } else {
+          stack_.saveToFile(filename);
+        }
       } else if (cmd == 'E') {
-        queue_.saveToFile(filename);
+        if (format == Format::BINARY) {
+          queue_.saveToBinaryFile(filename);
+        } else {
+          queue_.saveToFile(filename);
+        }
       } else if (cmd == 'F') {
-        cbtree_.saveToFile(filename);
+        if (format == Format::BINARY) {
+          cbtree_.saveToBinaryFile(filename);
+        } else {
+          cbtree_.saveToFile(filename);
+        }
       }
     } catch (const std::exception& e) {
       std::cerr << "Save error: " << e.what() << std::endl;

@@ -1,6 +1,9 @@
 #include "UI/ConsoleUI.hpp"
 
 int main(int argc, char *argv[]) {
+  // BINARY || TEXT
+  const Format currentFormat = Format::BINARY;
+
   std::string query;
   std::string filename;
   Array<std::string> array(10);              // Массив
@@ -26,7 +29,7 @@ int main(int argc, char *argv[]) {
   // ================================================
   // Загрузка данных
   // ================================================
-  ui.loadData(filename, query);
+  ui.loadData(filename, query, currentFormat);
 
   // ================================================
   // Выполнение запроса
@@ -41,7 +44,7 @@ int main(int argc, char *argv[]) {
   // ================================================
   // Сохранение данных
   // ================================================
-  ui.saveData(filename, query);
+  ui.saveData(filename, query, currentFormat);
 
   return 0;
 }

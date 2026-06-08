@@ -76,10 +76,22 @@ class Array {
   // A9 Сохранение в файл
   // ============================================================================
   void saveToFile(const std::string &filename) const;
+
+  // ============================================================================
+  // A10 Загрузка из бинарного файла
+  // ============================================================================
+  void loadFromBinaryFile(const std::string &filename);
+
+  // ============================================================================
+  // A11 Сохранение в бинарный файл
+  // ============================================================================
+  void saveToBinaryFile(const std::string &filename) const;
 };
 
 #include "a.resize.tpp"
 #include "a1.addToTheEnd.tpp"
+#include "a10.loadFromBinaryFile.tpp"
+#include "a11.saveToBinaryFile.tpp"
 #include "a2.addToTheIndex.tpp"
 #include "a3.get.tpp"
 #include "a4.removeByIndex.tpp"
