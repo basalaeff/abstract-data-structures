@@ -435,18 +435,18 @@
 ```
 - F2 Поиск элемента (по значению): `FFIND value`
 ```bash
-./dbms --file ../data/Fdata.txt --query 'FINSERT F1'
-./dbms --file ../data/Fdata.txt --query 'FINSERT F2'
-./dbms --file ../data/Fdata.txt --query 'FINSERT F3'
-./dbms --file ../data/Fdata.txt --query 'FINSERT F4'
-./dbms --file ../data/Fdata.txt --query 'FINSERT F5'
+./dbms --file ../data/Fdata.txt --query 'FFIND F1'
+./dbms --file ../data/Fdata.txt --query 'FFIND F2'
+./dbms --file ../data/Fdata.txt --query 'FFIND F3'
+./dbms --file ../data/Fdata.txt --query 'FFIND F4'
+./dbms --file ../data/Fdata.txt --query 'FFIND F5'
 ```
 ```bash
-./dbms --file ../data/Fdata.bin --query 'FINSERT F1'
-./dbms --file ../data/Fdata.bin --query 'FINSERT F2'
-./dbms --file ../data/Fdata.bin --query 'FINSERT F3'
-./dbms --file ../data/Fdata.bin --query 'FINSERT F4'
-./dbms --file ../data/Fdata.bin --query 'FINSERT F5'
+./dbms --file ../data/Fdata.bin --query 'FFIND F1'
+./dbms --file ../data/Fdata.bin --query 'FFIND F2'
+./dbms --file ../data/Fdata.bin --query 'FFIND F3'
+./dbms --file ../data/Fdata.bin --query 'FFIND F4'
+./dbms --file ../data/Fdata.bin --query 'FFIND F5'
 ```
 - F3 Проверка дерева на завершённость (complete): `FISCBT`
 ```bash
