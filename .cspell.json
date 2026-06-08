@@ -29,6 +29,7 @@
     "CDELHEAD",
     "CDELTAIL",
     "CINSERTAFTER",
+    "CINSERTBEFORE",
     "CSEARCH",
     "dbms",
     "Ddata",

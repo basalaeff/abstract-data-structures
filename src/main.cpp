@@ -1,8 +1,3 @@
-#include <fstream>
-#include <iostream>
-#include <sstream>
-#include <vector>
-
 #include "UI/ConsoleUI.hpp"
 
 int main(int argc, char *argv[]) {

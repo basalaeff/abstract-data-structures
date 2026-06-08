@@ -36,6 +36,13 @@ class DoublyLinkedList {
   DoublyLinkedList& operator=(const DoublyLinkedList&) = delete;
 
   // ============================================================================
+  // ГЕТТЕРЫ
+  // ============================================================================
+  int getSize() const { return size_; }
+  DoublyNode<T>* getHead() const { return head_; }
+  DoublyNode<T>* getTail() const { return tail_; }
+
+  // ============================================================================
   // C1 Добавление элемента (в голову): BADDHEAD value
   // ============================================================================
   void addToHead(const T& value);
