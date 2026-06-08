@@ -3,7 +3,7 @@
 // ================================================
 template <typename T>
 void ConsoleUI<T>::loadData(const std::string& filename,
-                            const std::string& query) {
+                            const std::string& query, Format format) {
   try {
     if (!filename.empty() && !query.empty()) {
       std::stringstream ss(query);
@@ -12,7 +12,11 @@ void ConsoleUI<T>::loadData(const std::string& filename,
       char cmd = command[0];
       // Проверка команд для массива
       if (cmd == 'A') {
-        array_.loadFromFile(filename);
+        if (format == Format::BINARY) {
+          array_.loadFromBinaryFile(filename);
+        } else {
+          array_.loadFromFile(filename);
+        }
       } else if (cmd == 'B') {
         singlyList_.loadFromFile(filename);
       } else if (cmd == 'C') {

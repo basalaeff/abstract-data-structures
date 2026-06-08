@@ -13,6 +13,8 @@
 #include "../e.Queue/e.Queue.hpp"
 #include "../f.CompleteBinaryTree/f.CBTree.hpp"
 
+enum class Format { TEXT, BINARY };
+
 template <typename T>
 class ConsoleUI {
  private:
@@ -38,10 +40,12 @@ class ConsoleUI {
   void processQuery(const std::string& query);
 
   // Загрузка данных из файла
-  void loadData(const std::string& filename, const std::string& query);
+  void loadData(const std::string& filename, const std::string& query,
+                Format format);
 
   // Сохранение данных в файл
-  void saveData(const std::string& filename, const std::string& query);
+  void saveData(const std::string& filename, const std::string& query,
+                Format format);
 };
 
 #include "loadData.tpp"
