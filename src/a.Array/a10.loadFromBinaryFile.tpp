@@ -5,7 +5,8 @@ template <typename T>
 void Array<T>::loadFromBinaryFile(const std::string& filename) {
   std::ifstream inFile(filename, std::ios::binary);
   if (!inFile) {
-    std::cout << "Cannot open file for binary reading: " << filename << std::endl;
+    std::cout << "Cannot open file for binary reading: " << filename
+              << std::endl;
     return;
   }
   inFile.read(reinterpret_cast<char*>(&size_), sizeof(size_));

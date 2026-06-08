@@ -5,7 +5,8 @@ template <typename T>
 void Array<T>::saveToBinaryFile(const std::string& filename) const {
   std::ofstream outFile(filename, std::ios::binary);
   if (!outFile) {
-    std::cout << "Cannot open file for binary writing: " << filename << std::endl;
+    std::cout << "Cannot open file for binary writing: " << filename
+              << std::endl;
     return;
   }
   outFile.write(reinterpret_cast<const char*>(&size_), sizeof(size_));
