@@ -18,7 +18,7 @@ class Queue {
   // КОНСТРУКТОР И ДЕСТРУКТОР
   // ============================================================================
   Queue() : front_(nullptr), end_(nullptr), size_(0) {}  // Конструктор
-  ~Queue() { clear(); };  // Деструктор
+  ~Queue() { clear(); };                                 // Деструктор
 
   void clear() {
     while (front_ != nullptr) {
