@@ -22,10 +22,14 @@ class DoublyLinkedList {
   // ДЕСТРУКТОР
   // ============================================================================
   ~DoublyLinkedList() {
-    while (head_ != nullptr) {
-      removeFromHead();  // используем существующий метод
-    }
+    clear();
   };
+
+  void clear() {
+    while (head_ != nullptr) {
+      removeFromHead();
+    }
+  }
 
   // ============================================================================
   // Запрет копирования (так проще)
@@ -99,6 +103,16 @@ class DoublyLinkedList {
   // C13 Сохранение в файл
   // ============================================================================
   void saveToFile(const std::string& filename) const;
+
+  // ============================================================================
+  // C14 Загрузка из бинарного файла
+  // ============================================================================
+  void loadFromBinaryFile(const std::string& filename);
+
+  // ============================================================================
+  // C15 Сохранение в бинарный файл
+  // ============================================================================
+  void saveToBinaryFile(const std::string& filename) const;
 };
 
 #include "c1.addToHead.tpp"
@@ -114,3 +128,6 @@ class DoublyLinkedList {
 #include "c7.removeBefore.tpp"
 #include "c8.removeAfter.tpp"
 #include "c9.searchByValue.tpp"
+#include "c14.loadFromBinaryFile.tpp"
+#include "c15.saveToBinaryFile.tpp"
+

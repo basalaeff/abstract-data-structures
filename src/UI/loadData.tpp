@@ -24,7 +24,11 @@ void ConsoleUI<T>::loadData(const std::string& filename,
           singlyList_.loadFromFile(filename);
         }
       } else if (cmd == 'C') {
-        doublyList_.loadFromFile(filename);
+        if (format == Format::BINARY) {
+          doublyList_.loadFromBinaryFile(filename);
+        } else {
+          doublyList_.loadFromFile(filename);
+        }
       } else if (cmd == 'D') {
         stack_.loadFromFile(filename);
       } else if (cmd == 'E') {

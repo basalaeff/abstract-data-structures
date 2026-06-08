@@ -25,7 +25,11 @@ void ConsoleUI<T>::saveData(const std::string& filename,
           singlyList_.saveToFile(filename);
         }
       } else if (cmd == 'C') {
-        doublyList_.saveToFile(filename);
+        if (format == Format::BINARY) {
+          doublyList_.saveToBinaryFile(filename);
+        } else {
+          doublyList_.saveToFile(filename);
+        }
       } else if (cmd == 'D') {
         stack_.saveToFile(filename);
       } else if (cmd == 'E') {
