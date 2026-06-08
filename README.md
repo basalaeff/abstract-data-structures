@@ -28,29 +28,54 @@
 ./dbms --file data/Adata.txt --query 'AADD Green'
 ./dbms --file data/Adata.txt --query 'AADD Blue'
 ```
+```bash
+./dbms --file data/Adata.bin --query 'AADD Black'
+./dbms --file data/Adata.bin --query 'AADD White'
+./dbms --file data/Adata.bin --query 'AADD Red'
+./dbms --file data/Adata.bin --query 'AADD Green'
+./dbms --file data/Adata.bin --query 'AADD Blue'
+```
 - A2 Добавление элемента (по индексу): `AINSERT index value`
 ```bash
 ./dbms --file data/Adata.txt --query 'AINSERT 2 Yellow'
+```
+```bash
+./dbms --file data/Adata.bin --query 'AINSERT 2 Yellow'
 ```
 - A3 Получение элемента (по индексу): `AGET index`
 ```bash
 ./dbms --file data/Adata.txt --query 'AGET 2'
 ```
+```bash
+./dbms --file data/Adata.bin --query 'AGET 2'
+```
 - A4 Удаление элемента (по индексу): `ADEL index`
 ```bash
 ./dbms --file data/Adata.txt --query 'ADEL 2'
+```
+```bash
+./dbms --file data/Adata.bin --query 'ADEL 2'
 ```
 - A5 Замена элемента (по индексу): `AREPLACE index value`
 ```bash
 ./dbms --file data/Adata.txt --query 'AREPLACE 2 Grey'
 ```
+```bash
+./dbms --file data/Adata.bin --query 'AREPLACE 2 Grey'
+```
 - A6 Длина массива: `ALEN`
 ```bash
 ./dbms --file data/Adata.txt --query 'ALEN'
 ```
+```bash
+./dbms --file data/Adata.bin --query 'ALEN'
+```
 - A7 Чтение: `PRINT`
 ```bash
 ./dbms --file data/Adata.txt --query 'PRINT'
+```
+```bash
+./dbms --file data/Adata.bin --query 'PRINT'
 ```
 
 **Односвязный список (B)**:
@@ -66,6 +91,12 @@
 ./dbms --file data/Bdata.txt --query 'BADDHEAD Novokuznetsk'
 ./dbms --file data/Bdata.txt --query 'BADDHEAD Norilsk'
 ```
+```bash
+./dbms --file data/Bdata.bin --query 'BADDHEAD Omsk'
+./dbms --file data/Bdata.bin --query 'BADDHEAD Podolsk'
+./dbms --file data/Bdata.bin --query 'BADDHEAD Novokuznetsk'
+./dbms --file data/Bdata.bin --query 'BADDHEAD Norilsk'
+```
 - B2 Добавление элемента (в хвост): `BADDTAIL value`
 ```bash
 ./dbms --file data/Bdata.txt --query 'BADDTAIL Kemerovo'
@@ -77,29 +108,53 @@
 ./dbms --file data/Bdata.txt --query 'BADDTAIL Tomsk'
 ./dbms --file data/Bdata.txt --query 'BADDTAIL Voronezh'
 ```
+```bash
+./dbms --file data/Bdata.bin --query 'BADDTAIL Kemerovo'
+./dbms --file data/Bdata.bin --query 'BADDTAIL Moscow'
+./dbms --file data/Bdata.bin --query 'BADDTAIL Tomsk'
+./dbms --file data/Bdata.bin --query 'BADDTAIL Voronezh'
+```
 - B3 Удаление элемента (из головы): `BDELHEAD`
 ```bash
 ./dbms --file data/Bdata.txt --query 'BDELHEAD'
+```
+```bash
+./dbms --file data/Bdata.bin --query 'BDELHEAD'
 ```
 - B4 Удаление элемента (из хвоста): `BDELTAIL`
 ```bash
 ./dbms --file data/Bdata.txt --query 'BDELTAIL'
 ```
+```bash
+./dbms --file data/Bdata.bin --query 'BDELTAIL'
+```
 - B5 Вставка элемента перед указанным значением: `BINSERTBEFORE targetValue newValue`
 ```bash
 ./dbms --file data/Bdata.txt --query 'BINSERTBEFORE Moscow Novosibirsk'
+```
+```bash
+./dbms --file data/Bdata.bin --query 'BINSERTBEFORE Moscow Novosibirsk'
 ```
 - B6 Вставка элемента после указанного значения: `BINSERTAFTER targetValue newValue`
 ```bash
 ./dbms --file data/Bdata.txt --query 'BINSERTAFTER Moscow Kazan'
 ```
+```bash
+./dbms --file data/Bdata.bin --query 'BINSERTAFTER Moscow Kazan'
+```
 - B7 Удаление элемента перед указанным значением: `BDELBEFORE targetValue`
 ```bash
 ./dbms --file data/Bdata.txt --query 'BDELBEFORE Moscow'
 ```
+```bash
+./dbms --file data/Bdata.bin --query 'BDELBEFORE Moscow'
+```
 - B8 Удаление элемента после указанного значения: `BDELAFTER targetValue`
 ```bash
 ./dbms --file data/Bdata.txt --query 'BDELAFTER Moscow'
+```
+```bash
+./dbms --file data/Bdata.bin --query 'BDELAFTER Moscow'
 ```
 - B9 Поиск элемента: `BSEARCH value`
 ```bash
@@ -118,6 +173,18 @@
 ./dbms --file data/Bdata.txt --query 'BSEARCH Novosibirsk'
 ./dbms --file data/Bdata.txt --query 'BSEARCH Kazan'
 ```
+```bash
+./dbms --file data/Bdata.bin --query 'BSEARCH Omsk'
+./dbms --file data/Bdata.bin --query 'BSEARCH Podolsk'
+./dbms --file data/Bdata.bin --query 'BSEARCH Novokuznetsk'
+./dbms --file data/Bdata.bin --query 'BSEARCH Norilsk'
+./dbms --file data/Bdata.bin --query 'BSEARCH Kemerovo'
+./dbms --file data/Bdata.bin --query 'BSEARCH Moscow'
+./dbms --file data/Bdata.bin --query 'BSEARCH Tomsk'
+./dbms --file data/Bdata.bin --query 'BSEARCH Voronezh'
+./dbms --file data/Bdata.bin --query 'BSEARCH Novosibirsk'
+./dbms --file data/Bdata.bin --query 'BSEARCH Kazan'
+```
 - B10 Удаление элемента по значению: `BDEL value`
 ```bash
 ./dbms --file data/Bdata.txt --query 'BDEL Omsk'
@@ -129,9 +196,18 @@
 ./dbms --file data/Bdata.txt --query 'BDEL Novosibirsk'
 ./dbms --file data/Bdata.txt --query 'BDEL Kazan'
 ```
+```bash
+./dbms --file data/Bdata.bin --query 'BDEL Omsk'
+./dbms --file data/Bdata.bin --query 'BDEL Moscow'
+./dbms --file data/Bdata.bin --query 'BDEL Novosibirsk'
+./dbms --file data/Bdata.bin --query 'BDEL Kazan'
+```
 - B11 Вывод списка: `PRINT`
 ```bash
 ./dbms --file data/Bdata.txt --query 'PRINT'
+```
+```bash
+./dbms --file data/Bdata.bin --query 'PRINT'
 ```
 
 **Двусвязный список (C)**:
@@ -147,6 +223,12 @@
 ./dbms --file data/Cdata.txt --query 'CADDHEAD Albania'
 ./dbms --file data/Cdata.txt --query 'CADDHEAD Japan'
 ```
+```bash
+./dbms --file data/Cdata.bin --query 'CADDHEAD Australia'
+./dbms --file data/Cdata.bin --query 'CADDHEAD Armenia'
+./dbms --file data/Cdata.bin --query 'CADDHEAD Albania'
+./dbms --file data/Cdata.bin --query 'CADDHEAD Japan'
+```
 - C2 Добавление элемента (в хвост): `CADDTAIL value`
 ```bash
 ./dbms --file data/Cdata.txt --query 'CADDTAIL UK'
@@ -158,29 +240,53 @@
 ./dbms --file data/Cdata.txt --query 'CADDTAIL USA'
 ./dbms --file data/Cdata.txt --query 'CADDTAIL France'
 ```
+```bash
+./dbms --file data/Cdata.bin --query 'CADDTAIL UK'
+./dbms --file data/Cdata.bin --query 'CADDTAIL Russia'
+./dbms --file data/Cdata.bin --query 'CADDTAIL USA'
+./dbms --file data/Cdata.bin --query 'CADDTAIL France'
+```
 - C3 Удаление элемента (из головы): `CDELHEAD`
 ```bash
 ./dbms --file data/Cdata.txt --query 'CDELHEAD'
+```
+```bash
+./dbms --file data/Cdata.bin --query 'CDELHEAD'
 ```
 - C4 Удаление элемента (из хвоста): `CDELTAIL`
 ```bash
 ./dbms --file data/Cdata.txt --query 'CDELTAIL'
 ```
+```bash
+./dbms --file data/Cdata.bin --query 'CDELTAIL'
+```
 - C5 Вставка элемента перед указанным значением: `CINSERTBEFORE targetValue newValue`
 ```bash
 ./dbms --file data/Cdata.txt --query 'CINSERTBEFORE Russia Belarus'
+```
+```bash
+./dbms --file data/Cdata.bin --query 'CINSERTBEFORE Russia Belarus'
 ```
 - C6 Вставка элемента после указанного значения: `CINSERTAFTER targetValue newValue`
 ```bash
 ./dbms --file data/Cdata.txt --query 'CINSERTAFTER Russia China'
 ```
+```bash
+./dbms --file data/Cdata.bin --query 'CINSERTAFTER Russia China'
+```
 - C7 Удаление элемента перед указанным значением: `CDELBEFORE targetValue`
 ```bash
 ./dbms --file data/Cdata.txt --query 'CDELBEFORE Russia'
 ```
+```bash
+./dbms --file data/Cdata.bin --query 'CDELBEFORE Russia'
+```
 - C8 Удаление элемента после указанного значения: `CDELAFTER targetValue`
 ```bash
 ./dbms --file data/Cdata.txt --query 'CDELAFTER Russia'
+```
+```bash
+./dbms --file data/Cdata.bin --query 'CDELAFTER Russia'
 ```
 - C9 Поиск элемента по значению: `CSEARCH value`
 ```bash
@@ -199,6 +305,18 @@
 ./dbms --file data/Cdata.txt --query 'CSEARCH Belarus'
 ./dbms --file data/Cdata.txt --query 'CSEARCH China'
 ```
+```bash
+./dbms --file data/Cdata.bin --query 'CSEARCH Australia'
+./dbms --file data/Cdata.bin --query 'CSEARCH Armenia'
+./dbms --file data/Cdata.bin --query 'CSEARCH Albania'
+./dbms --file data/Cdata.bin --query 'CSEARCH Japan'
+./dbms --file data/Cdata.bin --query 'CSEARCH UK'
+./dbms --file data/Cdata.bin --query 'CSEARCH Russia'
+./dbms --file data/Cdata.bin --query 'CSEARCH USA'
+./dbms --file data/Cdata.bin --query 'CSEARCH France'
+./dbms --file data/Cdata.bin --query 'CSEARCH Belarus'
+./dbms --file data/Cdata.bin --query 'CSEARCH China'
+```
 - C10 Удаление элемента по значению: `CDEL value`
 ```bash
 ./dbms --file data/Cdata.txt --query 'CDEL value'
@@ -211,9 +329,19 @@
 ./dbms --file data/Cdata.txt --query 'CDEL USA'
 ./dbms --file data/Cdata.txt --query 'CDEL France'
 ```
+```bash
+./dbms --file data/Cdata.bin --query 'CDEL Japan'
+./dbms --file data/Cdata.bin --query 'CDEL UK'
+./dbms --file data/Cdata.bin --query 'CDEL Russia'
+./dbms --file data/Cdata.bin --query 'CDEL USA'
+./dbms --file data/Cdata.bin --query 'CDEL France'
+```
 - C11 Чтение: `PRINT`
 ```bash
 ./dbms --file data/Cdata.txt --query 'PRINT'
+```
+```bash
+./dbms --file data/Cdata.bin --query 'PRINT'
 ```
 
 **Стек (D)**:
@@ -229,13 +357,25 @@
 ./dbms --file data/Ddata.txt --query 'DPUSH Watermelon'
 ./dbms --file data/Ddata.txt --query 'DPUSH Raspberry'
 ```
+```bash
+./dbms --file data/Ddata.bin --query 'DPUSH Cherry'
+./dbms --file data/Ddata.bin --query 'DPUSH Lemon'
+./dbms --file data/Ddata.bin --query 'DPUSH Watermelon'
+./dbms --file data/Ddata.bin --query 'DPUSH Raspberry'
+```
 - D2 Удаление элемента: `DPOP`
 ```bash
 ./dbms --file data/Ddata.txt --query 'DPOP'
 ```
+```bash
+./dbms --file data/Ddata.bin --query 'DPOP'
+```
 - D3 Чтение: `PRINT`
 ```bash
 ./dbms --file data/Ddata.txt --query 'PRINT'
+```
+```bash
+./dbms --file data/Ddata.bin --query 'PRINT'
 ```
 
 **Очередь (E)**:
@@ -251,13 +391,25 @@
 ./dbms --file data/Edata.txt --query 'EPUSH E003'
 ./dbms --file data/Edata.txt --query 'EPUSH E004'
 ```
+```bash
+./dbms --file data/Edata.bin --query 'EPUSH E001'
+./dbms --file data/Edata.bin --query 'EPUSH E002'
+./dbms --file data/Edata.bin --query 'EPUSH E003'
+./dbms --file data/Edata.bin --query 'EPUSH E004'
+```
 - E2 Удаление элемента: `EPOP`
 ```bash
 ./dbms --file data/Edata.txt --query 'EPOP'
 ```
+```bash
+./dbms --file data/Edata.bin --query 'EPOP'
+```
 - E3 Чтение: `PRINT`
 ```bash
 ./dbms --file data/Edata.txt --query 'PRINT'
+```
+```bash
+./dbms --file data/Edata.bin --query 'PRINT'
 ```
 
 **Бинарное дерево (F)**:
@@ -274,6 +426,13 @@
 ./dbms --file data/Fdata.txt --query 'FINSERT F4'
 ./dbms --file data/Fdata.txt --query 'FINSERT F5'
 ```
+```bash
+./dbms --file data/Fdata.bin --query 'FINSERT F1'
+./dbms --file data/Fdata.bin --query 'FINSERT F2'
+./dbms --file data/Fdata.bin --query 'FINSERT F3'
+./dbms --file data/Fdata.bin --query 'FINSERT F4'
+./dbms --file data/Fdata.bin --query 'FINSERT F5'
+```
 - F2 Поиск элемента (по значению): `FFIND value`
 ```bash
 ./dbms --file data/Fdata.txt --query 'FINSERT F1'
@@ -282,11 +441,24 @@
 ./dbms --file data/Fdata.txt --query 'FINSERT F4'
 ./dbms --file data/Fdata.txt --query 'FINSERT F5'
 ```
+```bash
+./dbms --file data/Fdata.bin --query 'FINSERT F1'
+./dbms --file data/Fdata.bin --query 'FINSERT F2'
+./dbms --file data/Fdata.bin --query 'FINSERT F3'
+./dbms --file data/Fdata.bin --query 'FINSERT F4'
+./dbms --file data/Fdata.bin --query 'FINSERT F5'
+```
 - F3 Проверка дерева на завершённость (complete): `FISCBT`
 ```bash
 ./dbms --file data/Fdata.txt --query 'FISCBT'
 ```
+```bash
+./dbms --file data/Fdata.bin --query 'FISCBT'
+```
 - F4 Чтение: `FPRINT`
 ```bash
 ./dbms --file data/Fdata.txt --query 'FPRINT'
+```
+```bash
+./dbms --file data/Fdata.bin --query 'FPRINT'
 ```
