@@ -3,7 +3,7 @@
 // ================================================
 template <typename T>
 void ConsoleUI<T>::loadData(const std::string& filename,
-                            const std::string& query) {
+                            const std::string& query, Format format) {
   try {
     if (!filename.empty() && !query.empty()) {
       std::stringstream ss(query);
@@ -12,17 +12,41 @@ void ConsoleUI<T>::loadData(const std::string& filename,
       char cmd = command[0];
       // Проверка команд для массива
       if (cmd == 'A') {
-        array_.loadFromFile(filename);
+        if (format == Format::BINARY) {
+          array_.loadFromBinaryFile(filename);
+        } else {
+          array_.loadFromFile(filename);
+        }
       } else if (cmd == 'B') {
-        singlyList_.loadFromFile(filename);
+        if (format == Format::BINARY) {
+          singlyList_.loadFromBinaryFile(filename);
+        } else {
+          singlyList_.loadFromFile(filename);
+        }
       } else if (cmd == 'C') {
-        doublyList_.loadFromFile(filename);
+        if (format == Format::BINARY) {
+          doublyList_.loadFromBinaryFile(filename);
+        } else {
+          doublyList_.loadFromFile(filename);
+        }
       } else if (cmd == 'D') {
-        stack_.loadFromFile(filename);
+        if (format == Format::BINARY) {
+          stack_.loadFromBinaryFile(filename);
+        } else {
+          stack_.loadFromFile(filename);
+        }
       } else if (cmd == 'E') {
-        queue_.loadFromFile(filename);
+        if (format == Format::BINARY) {
+          queue_.loadFromBinaryFile(filename);
+        } else {
+          queue_.loadFromFile(filename);
+        }
       } else if (cmd == 'F') {
-        cbtree_.loadFromFile(filename);
+        if (format == Format::BINARY) {
+          cbtree_.loadFromBinaryFile(filename);
+        } else {
+          cbtree_.loadFromFile(filename);
+        }
       } else if (command == "PRINT") {
         std::ifstream file(filename);
         if (!file.is_open()) {

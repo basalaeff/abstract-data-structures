@@ -21,6 +21,10 @@ class Array<T> {
   -maxCapacity_ : int
   -size_ : int
   -data_ : T*
+  -resize(new_capacity : int)
+
+  + Array(capacity : int)
+  + ~Array()
 
   +addToTheEnd(value : T)
   +addToTheIndex(index : int, value : T)
@@ -29,11 +33,19 @@ class Array<T> {
   +replaceByIndex(index : int, value : T)
   +length() : int
   +print()
+  +loadFromFile(filename : string)
+  +saveToFile(filename : string)
+  +loadFromBinaryFile(filename : string)
+  +saveToBinaryFile(filename : string)
 }
 
 class SinglyLinkedList<T> {
   -head_ : Node<T>*
   -size_ : int
+  -clear()
+
+  +SinglyLinkedList()
+  +~SinglyLinkedList()
 
   +addToHead(value : T)
   +addToTail(value : T)
@@ -46,12 +58,20 @@ class SinglyLinkedList<T> {
   +search(value : T) : Node<T>*
   +removeByValue(value : T)
   +print()
+  +loadFromFile(filename : string)
+  +saveToFile(filename : string)
+  +loadFromBinaryFile(filename : string)
+  +saveToBinaryFile(filename : string)
 }
 
 class DoublyLinkedList<T> {
   -head_ : DoublyNode<T>*
   -tail_ : DoublyNode<T>*
   -size_ : int
+  -clear()
+
+  +DoublyLinkedList()
+  +~DoublyLinkedList()
 
   +addToHead(value : T)
   +addToTail(value : T)
@@ -64,31 +84,55 @@ class DoublyLinkedList<T> {
   +searchByValue(value : T) : DoublyNode<T>*
   +removeByValue(value : T)
   +print()
+  +loadFromFile(filename : string)
+  +saveToFile(filename : string)
+  +loadFromBinaryFile(filename : string)
+  +saveToBinaryFile(filename : string)
 }
 
 class Stack<T> {
   -top_ : Node<T>*
   -size_ : int
+  -clear()
+
+  +Stack()
+  +~Stack()
 
   +push(value : T)
   +pop()
   +print()
+  +loadFromFile(filename : string)
+  +saveToFile(filename : string)
+  +loadFromBinaryFile(filename : string)
+  +saveToBinaryFile(filename : string)
 }
 
 class Queue<T> {
   -front_ : Node<T>*
   -end_ : Node<T>*
   -size_ : int
+  -clear()
+
+  +Queue()
+  +~Queue()
 
   +push(value : T)
   +pop()
   +print()
   +front() : T
   +isEmpty() : bool
+  +loadFromFile(filename : string)
+  +saveToFile(filename : string)
+  +loadFromBinaryFile(filename : string)
+  +saveToBinaryFile(filename : string)
 }
 
 class CBTree<T> {
   -root_ : TreeNode<T>*
+  -clear(node : TreeNode<T>*)
+
+  +CBTree()
+  +~CBTree()
 
   +insert(value : T)
   +get_value(value : T) : bool
@@ -96,6 +140,10 @@ class CBTree<T> {
   +find_value(current : TreeNode<T>*, value : T) : bool
   +isCBT() : bool
   +print()
+  +loadFromFile(filename : string)
+  +saveToFile(filename : string)
+  +loadFromBinaryFile(filename : string)
+  +saveToBinaryFile(filename : string)
 }
 
 class ConsoleUI<T> {

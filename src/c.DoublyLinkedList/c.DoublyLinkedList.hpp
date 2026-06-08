@@ -12,6 +12,12 @@ class DoublyLinkedList {
   DoublyNode<T>* tail_;
   int size_;
 
+  void clear() {
+    while (head_ != nullptr) {
+      removeFromHead();
+    }
+  }
+
  public:
   // ============================================================================
   // КОНСТРУКТОР
@@ -21,11 +27,7 @@ class DoublyLinkedList {
   // ============================================================================
   // ДЕСТРУКТОР
   // ============================================================================
-  ~DoublyLinkedList() {
-    while (head_ != nullptr) {
-      removeFromHead();  // используем существующий метод
-    }
-  };
+  ~DoublyLinkedList() { clear(); };
 
   // ============================================================================
   // Запрет копирования (так проще)
@@ -99,6 +101,16 @@ class DoublyLinkedList {
   // C13 Сохранение в файл
   // ============================================================================
   void saveToFile(const std::string& filename) const;
+
+  // ============================================================================
+  // C14 Загрузка из бинарного файла
+  // ============================================================================
+  void loadFromBinaryFile(const std::string& filename);
+
+  // ============================================================================
+  // C15 Сохранение в бинарный файл
+  // ============================================================================
+  void saveToBinaryFile(const std::string& filename) const;
 };
 
 #include "c1.addToHead.tpp"
@@ -106,6 +118,8 @@ class DoublyLinkedList {
 #include "c11.print.tpp"
 #include "c12.loadFromFile.tpp"
 #include "c13.saveToFile.tpp"
+#include "c14.loadFromBinaryFile.tpp"
+#include "c15.saveToBinaryFile.tpp"
 #include "c2.addToTail.tpp"
 #include "c3.removeFromHead.tpp"
 #include "c4.removeFromTail.tpp"
